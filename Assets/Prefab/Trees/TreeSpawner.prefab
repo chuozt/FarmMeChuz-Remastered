@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7614746088612309394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7614746088612309396}
+  - component: {fileID: 7614746088612309395}
+  - component: {fileID: 7614746088612309397}
+  m_Layer: 0
+  m_Name: TreeSpawner
+  m_TagString: TreeSpawners
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7614746088612309396
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7614746088612309394}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -77.09, y: -25.44, z: -0.043631505}
+  m_LocalScale: {x: 8.560199, y: 2.446814, z: 5.339298}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &7614746088612309395
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7614746088612309394}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &7614746088612309397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7614746088612309394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e6789ae807385342878c6cd90099882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treesToSpawn:
+  - {fileID: 6948638796759350840, guid: a385ad0f03863d644bc174df17d2da14, type: 3}
+  - {fileID: 3624210569269222426, guid: a3f4f3c8be67d034491e79eb0609c3b5, type: 3}
+  - {fileID: 9083090571891213902, guid: 312f666bfebd5644d9d5d7fad8d172f7, type: 3}
+  - {fileID: 6158244432055065481, guid: 6ce0b37d307ceb7488fca06e90de7e11, type: 3}
+  - {fileID: 2877484671924853379, guid: 1ea08d7b3f0f6dc4a88b5c15595416b0, type: 3}
+  - {fileID: 7690979186384267149, guid: 12dbb307147c1c94b921880b1c5a71c5, type: 3}
+  padding: 0.5
+  treeZoneLayer:
+    serializedVersion: 2
+    m_Bits: 262144
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  grassLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  layersTreeAffect:
+    serializedVersion: 2
+    m_Bits: 1835072
+  percentages:
+  - 25
+  - 20
+  - 15
+  - 13
+  - 10
+  - 7

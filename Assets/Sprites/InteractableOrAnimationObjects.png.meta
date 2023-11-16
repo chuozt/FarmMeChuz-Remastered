@@ -1,0 +1,1979 @@
+fileFormatVersion: 2
+guid: 54ea5659c7f59d3428324c9985820c5c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 160
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5600
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be8730b642299e94a91e49f339da41de
+      internalID: -805303102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 5600
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 205d2954dc17e1b40a9b97b058c19416
+      internalID: 206371146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 5600
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 607684fb31a9bb84e92e1d1b3b448a6d
+      internalID: 796090952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_3
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 5600
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fa95c96e788c9f4aa201330826aa79a
+      internalID: -71519847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_181_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1151
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83bbee31b4436fb44b2704a6a8bc747d
+      internalID: -1864766867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5440
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38805ead94b96654d91e1e404b36ef8d
+      internalID: -740480069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_6
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 5440
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb0dbbc39b79f8349974b5595a229dce
+      internalID: 1276138285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_7
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 5440
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e13a98c6cfeb4054795ee7e867acd08e
+      internalID: -802185577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_8
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 5440
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e274e7c4edecdc745a5ced489fe1ff38
+      internalID: -153757552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5280
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fab06de8a19f53409dfaa81e14b4271
+      internalID: 737131667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_12
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 5280
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf1b5f2a10a01c643bc85de4659f8ec4
+      internalID: 1565762119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_13
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 5280
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e51db0181d4993e40b6fe9966e3c6a5d
+      internalID: -339938503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_19
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 5280
+        width: 480
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e6568f7cd369d4fa3f0a02dbea96b7
+      internalID: -2098189658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5120
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc2a8f32f78fe224ab8a0f6167bcd6d9
+      internalID: -977619153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_23
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 5120
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 504a44f9ac6d8fb49ba7c8b6d73f1e91
+      internalID: 1775970627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_24
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 5120
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17e0a0ce08b2684ea40de041416a710
+      internalID: 1473920160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_25
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 5120
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e458e109b3b71a149b6ea17dfbbbcf7b
+      internalID: 1523286703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4960
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd1421f8d6129be46a13e00e53e4bbcd
+      internalID: 701956303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_28
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 4960
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45016c25552dc4a46a6ee63bf7baefd0
+      internalID: -1013024192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_29
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 4960
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46e413d6ea2aa1d4b9d4d63bab24640a
+      internalID: -701638161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_30
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 4960
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96120e47299c430438756f23cda1db55
+      internalID: 956973156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_53
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 4320
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60cca6aa446153d44a321ee2c556ffda
+      internalID: 1284791986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_61
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4160
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e8024b8d9288c74cb08dc553d886262
+      internalID: 614582947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_62
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 4160
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49ccdfca7d4af54a8c41e1e4e00abd5
+      internalID: 515348157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_63
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 783da78bf0fbd6c4388d78431af2c9d9
+      internalID: 1672768058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_65
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8334699243db62e47af1e5f2618d5ed5
+      internalID: 1597574921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_67
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 4160
+        width: 480
+        height: 474
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39ab31180f03cca43a687fcbfc0a3403
+      internalID: -357424169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_88
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 3520
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 784cc0cb7a4a9f84c8b695043fb3fc92
+      internalID: 319168691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_93
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 3360
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 000d05f3f938b4146b4a9b7e179cfbd7
+      internalID: 1031153424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_102
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 3040
+        width: 160
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08798af1a5be6124c88d75426d63c981
+      internalID: -2101381168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_166
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1600
+        width: 640
+        height: 474
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e52dfcb949ee5d4081dbef1cfee088c
+      internalID: 685240985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_14
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 5280
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07cfd5cd54992c346aae762b63ab8052
+      internalID: 879880231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_16
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 5280
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb62356d71998c14fb9cc13d659f6211
+      internalID: 2083220395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_17
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 5280
+        width: 320
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a5bee3a62970c4dab410a1639f8c58
+      internalID: -1393634946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4640
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05009976a825c534db54d6ca745a6b6e
+      internalID: -1257073779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_38
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 4640
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 528159f32113a554cb7910bbf0e0205b
+      internalID: 1438324816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_39
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 4640
+        width: 160
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6346b43c29206fc4093cd1869493ba26
+      internalID: 1501155413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_40
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 4640
+        width: 156
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 354173fdb604594448fc00f9b188fdbc
+      internalID: -838025016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_41
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 4640
+        width: 158
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e48508d869606144ae6251c36cd1373
+      internalID: -513971754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_42
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 4640
+        width: 160
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 377b1b743d5a5304d8249c267a4170b5
+      internalID: 1776062898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4320
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a655301f9cb702947aeae3961fe7a76e
+      internalID: 1096639370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_79
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3840
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe9bb5b3417e6f84b9011daf3d2c4d6e
+      internalID: -1550963579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_80
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 3840
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c71ef2db3826ef14e9fb236866487ef3
+      internalID: -1930808326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_81
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 3840
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f9ff7329471ec84283ffe99c478e3c4
+      internalID: 1418956287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_82
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 3840
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6d77dc6a9c7e73429b269a085520b24
+      internalID: 279636915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_83
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3680
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12083bc7922cdb24d8b6f45a9156d3cc
+      internalID: 431368773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_84
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 3680
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b20d0a81c316034981e1fd31b760868
+      internalID: -2055975758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_85
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3520
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ceed4fb729b56b45bdb2ae53826eae8
+      internalID: -1736445313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_86
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 3520
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1761ebbffdd5354eab8f4ba68c3b3af
+      internalID: -1228891225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_87
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 3520
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a6573c9b58762945abd38f83ef8c928
+      internalID: -1303439604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3360
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f231351abdb426c4384eefcde965f512
+      internalID: -386601692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_91
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 3360
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a33f11594e95aa4492a583c46635ce7
+      internalID: 1979254344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_92
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 3360
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebdb55c6a8d265443baeb37d7688abfe
+      internalID: -984011315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_95
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3200
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2524c5035f207740aefeb65a0035a33
+      internalID: -522934320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_96
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 3200
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e35ea138157f86247a89ab0507f7b3f0
+      internalID: -125701544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_97
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 3200
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ed465d8de82b5548beb5305253adf81
+      internalID: -284225305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_98
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 3200
+        width: 160
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a3faff8c33f06e4191d034c36e524f9
+      internalID: -939565895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_100
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3040
+        width: 160
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f7885dfd443cf14d9d768904e6ed17f
+      internalID: -1582914699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_101
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 3040
+        width: 160
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba8cb82a3daa6e4b8c75f00090384ec
+      internalID: -1605896224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_125
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2400
+        width: 800
+        height: 474
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7cd1c8143dd22e4382604df6ac94ff4
+      internalID: -1535609966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_130
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 2400
+        width: 640
+        height: 396
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc0e09bbaa310ec4b9b84730d261b849
+      internalID: 472814834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_139
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 2080
+        width: 320
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c105e0048456d449b7423f39acd3df6
+      internalID: 1785613646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_141
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 2080
+        width: 320
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ca160c3f8cde149bf3b43a9757cf56
+      internalID: -349975382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_161
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1600
+        width: 800
+        height: 790
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d68e85a179f3344d94c1267b2b057ce
+      internalID: -471352058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_181
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1151
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3eb880056291b44a299235da99bb21
+      internalID: 1893353690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_184
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1120
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382d68a8005439442ad939178b8a369d
+      internalID: 610854205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_190
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 320
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba05a3acdc98aa94c952832a14c13bdf
+      internalID: 1248784367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_192
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 800
+        width: 320
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d4e06f7dc7ac5f4cb94a76f128ba133
+      internalID: 715297928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_194
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 800
+        width: 320
+        height: 316
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ff2d942f204e5c4e8c664b2e1eba4a6
+      internalID: 438830675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_202
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 320
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f23152cddf6739a43998c10c76022753
+      internalID: 2040701686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_204
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 480
+        width: 320
+        height: 316
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db85b6040e82cc349b34fce9d6208b96
+      internalID: 1490264961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_206
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 480
+        width: 320
+        height: 316
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f07cbc52bc249c540a309c77e83bbf61
+      internalID: -761508058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_214
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 320
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26838ae3fe575f148ad65f15e5be4e10
+      internalID: -1803059141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_216
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 160
+        width: 320
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fe76b3c69e3d994b97b9b6e3acf94fb
+      internalID: -1854518422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_218
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 160
+        width: 320
+        height: 316
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee4db7e541d9aeb4b81d7ccaf82d77f4
+      internalID: -1516265390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_181_2
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 1151
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e31ab62d33cdc4e9ee648fe37070d8
+      internalID: 1460088363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteractableOrAnimationObjects_181_3
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 1151
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e11087cf17fdf9b4da9e3f09b5696bff
+      internalID: 2092279093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      InteractableOrAnimationObjects_71: -209375348
+      InteractableOrAnimationObjects_49: 890728191
+      InteractableOrAnimationObjects_38: 1438324816
+      InteractableOrAnimationObjects_83: 431368773
+      InteractableOrAnimationObjects_225: -115374948
+      InteractableOrAnimationObjects_79: -1550963579
+      InteractableOrAnimationObjects_191: -1602629591
+      InteractableOrAnimationObjects_184: 610854205
+      InteractableOrAnimationObjects_144: 252281626
+      InteractableOrAnimationObjects_117: 1821457825
+      InteractableOrAnimationObjects_2: 796090952
+      InteractableOrAnimationObjects_114: 65444942
+      InteractableOrAnimationObjects_17: -1393634946
+      InteractableOrAnimationObjects_3: -71519847
+      InteractableOrAnimationObjects_116: -1933351179
+      InteractableOrAnimationObjects_150: -1881453780
+      InteractableOrAnimationObjects_188: 1133108773
+      InteractableOrAnimationObjects_123: 248178623
+      InteractableOrAnimationObjects_223: 431785875
+      InteractableOrAnimationObjects_166: 685240985
+      InteractableOrAnimationObjects_11: 737131667
+      InteractableOrAnimationObjects_75: -1380397937
+      InteractableOrAnimationObjects_61: 614582947
+      InteractableOrAnimationObjects_121: -616199760
+      InteractableOrAnimationObjects_206: -761508058
+      InteractableOrAnimationObjects_146: -1208168163
+      InteractableOrAnimationObjects_143: 1321092510
+      InteractableOrAnimationObjects_50: 1323318689
+      InteractableOrAnimationObjects_70: 1810886311
+      InteractableOrAnimationObjects_190: 1248784367
+      InteractableOrAnimationObjects_77: 416451738
+      InteractableOrAnimationObjects_10: -491326034
+      InteractableOrAnimationObjects_87: -1303439604
+      InteractableOrAnimationObjects_73: 496809918
+      InteractableOrAnimationObjects_53: 1284791986
+      InteractableOrAnimationObjects_25: 1523286703
+      InteractableOrAnimationObjects_91: 1979254344
+      InteractableOrAnimationObjects_115: -1498947678
+      InteractableOrAnimationObjects_140: -1914414151
+      InteractableOrAnimationObjects_181_1: -1864766867
+      InteractableOrAnimationObjects_137: -1240490603
+      InteractableOrAnimationObjects_154: 119539902
+      InteractableOrAnimationObjects_33: 722544952
+      InteractableOrAnimationObjects_95: -522934320
+      InteractableOrAnimationObjects_212: 2029457074
+      InteractableOrAnimationObjects_161: -471352058
+      InteractableOrAnimationObjects_124: 1869059500
+      InteractableOrAnimationObjects_199: 1166312305
+      InteractableOrAnimationObjects_183: -631721582
+      InteractableOrAnimationObjects_147: 989184699
+      InteractableOrAnimationObjects_35: 558172395
+      InteractableOrAnimationObjects_215: 1438284620
+      InteractableOrAnimationObjects_69: 1997798484
+      InteractableOrAnimationObjects_158: -148939416
+      InteractableOrAnimationObjects_42: 1776062898
+      InteractableOrAnimationObjects_22: -977619153
+      InteractableOrAnimationObjects_72: 1923147187
+      InteractableOrAnimationObjects_99: 1300685831
+      InteractableOrAnimationObjects_103: -319916038
+      InteractableOrAnimationObjects_179: -2043765552
+      InteractableOrAnimationObjects_135: 1626730786
+      InteractableOrAnimationObjects_28: -1013024192
+      InteractableOrAnimationObjects_90: -386601692
+      InteractableOrAnimationObjects_141: -349975382
+      InteractableOrAnimationObjects_7: -802185577
+      InteractableOrAnimationObjects_153: -2045465492
+      InteractableOrAnimationObjects_16: 2083220395
+      InteractableOrAnimationObjects_32: 1014094105
+      InteractableOrAnimationObjects_118: -931299682
+      InteractableOrAnimationObjects_110: -1101651016
+      InteractableOrAnimationObjects_26: 274864115
+      InteractableOrAnimationObjects_9: -1167176360
+      InteractableOrAnimationObjects_113: 1538193825
+      InteractableOrAnimationObjects_43: -1811291253
+      InteractableOrAnimationObjects_142: 1149292054
+      InteractableOrAnimationObjects_159: -724815488
+      InteractableOrAnimationObjects_8: -153757552
+      InteractableOrAnimationObjects_218: -1516265390
+      InteractableOrAnimationObjects_167: -716412447
+      InteractableOrAnimationObjects_20: 1898586041
+      InteractableOrAnimationObjects_211: 1278734940
+      InteractableOrAnimationObjects_216: -1854518422
+      InteractableOrAnimationObjects_187: -1529667085
+      InteractableOrAnimationObjects_203: 72336764
+      InteractableOrAnimationObjects_193: 1914077748
+      InteractableOrAnimationObjects_21: -1447800909
+      InteractableOrAnimationObjects_92: -984011315
+      InteractableOrAnimationObjects_106: 787983139
+      InteractableOrAnimationObjects_220: -897825096
+      InteractableOrAnimationObjects_23: 1775970627
+      InteractableOrAnimationObjects_104: 1593602604
+      InteractableOrAnimationObjects_5: -740480069
+      InteractableOrAnimationObjects_178: 762181021
+      InteractableOrAnimationObjects_13: -339938503
+      InteractableOrAnimationObjects_160: -1799993059
+      InteractableOrAnimationObjects_125: -1535609966
+      InteractableOrAnimationObjects_19: -2098189658
+      InteractableOrAnimationObjects_78: 976086301
+      InteractableOrAnimationObjects_131: 1597336054
+      InteractableOrAnimationObjects_157: 372196248
+      InteractableOrAnimationObjects_14: 879880231
+      InteractableOrAnimationObjects_1: 206371146
+      InteractableOrAnimationObjects_196: 826560147
+      InteractableOrAnimationObjects_132: -459848477
+      InteractableOrAnimationObjects_155: -1555308287
+      InteractableOrAnimationObjects_171: -1368050734
+      InteractableOrAnimationObjects_224: 1351373873
+      InteractableOrAnimationObjects_94: -185675712
+      InteractableOrAnimationObjects_12: 1565762119
+      InteractableOrAnimationObjects_44: 50981100
+      InteractableOrAnimationObjects_192: 715297928
+      InteractableOrAnimationObjects_76: -1341547275
+      InteractableOrAnimationObjects_222: 626745286
+      InteractableOrAnimationObjects_31: -12107821
+      InteractableOrAnimationObjects_136: -574551348
+      InteractableOrAnimationObjects_74: 1170947714
+      InteractableOrAnimationObjects_15: -1180648296
+      InteractableOrAnimationObjects_88: 319168691
+      InteractableOrAnimationObjects_80: -1930808326
+      InteractableOrAnimationObjects_93: 1031153424
+      InteractableOrAnimationObjects_45: -1665886263
+      InteractableOrAnimationObjects_205: 1631224582
+      InteractableOrAnimationObjects_180: 1232788224
+      InteractableOrAnimationObjects_189: -1984299969
+      InteractableOrAnimationObjects_148: -900965666
+      InteractableOrAnimationObjects_46: 1933409119
+      InteractableOrAnimationObjects_112: 1638774974
+      InteractableOrAnimationObjects_102: -2101381168
+      InteractableOrAnimationObjects_173: 1353121161
+      InteractableOrAnimationObjects_200: 68867129
+      InteractableOrAnimationObjects_210: 1738564890
+      InteractableOrAnimationObjects_165: -1122898827
+      InteractableOrAnimationObjects_0: -805303102
+      InteractableOrAnimationObjects_55: 537738747
+      InteractableOrAnimationObjects_64: -1978819608
+      InteractableOrAnimationObjects_151: -1037462216
+      InteractableOrAnimationObjects_85: -1736445313
+      InteractableOrAnimationObjects_181: 1893353690
+      InteractableOrAnimationObjects_98: -939565895
+      InteractableOrAnimationObjects_204: 1490264961
+      InteractableOrAnimationObjects_170: 1327788624
+      InteractableOrAnimationObjects_30: 956973156
+      InteractableOrAnimationObjects_41: -513971754
+      InteractableOrAnimationObjects_51: 562842008
+      InteractableOrAnimationObjects_97: -284225305
+      InteractableOrAnimationObjects_133: -1387560072
+      InteractableOrAnimationObjects_100: -1582914699
+      InteractableOrAnimationObjects_108: -1795765979
+      InteractableOrAnimationObjects_201: -1419442824
+      InteractableOrAnimationObjects_82: 279636915
+      InteractableOrAnimationObjects_195: 1586533148
+      InteractableOrAnimationObjects_214: -1803059141
+      InteractableOrAnimationObjects_89: 1707487978
+      InteractableOrAnimationObjects_194: 438830675
+      InteractableOrAnimationObjects_57: 991587697
+      InteractableOrAnimationObjects_129: -2086108623
+      InteractableOrAnimationObjects_172: -1310578794
+      InteractableOrAnimationObjects_27: 701956303
+      InteractableOrAnimationObjects_29: -701638161
+      InteractableOrAnimationObjects_208: -265657577
+      InteractableOrAnimationObjects_63: 1672768058
+      InteractableOrAnimationObjects_62: 515348157
+      InteractableOrAnimationObjects_202: 2040701686
+      InteractableOrAnimationObjects_107: -362720879
+      InteractableOrAnimationObjects_39: 1501155413
+      InteractableOrAnimationObjects_130: 472814834
+      InteractableOrAnimationObjects_149: 1992904293
+      InteractableOrAnimationObjects_175: -809947034
+      InteractableOrAnimationObjects_213: 315206492
+      InteractableOrAnimationObjects_67: -357424169
+      InteractableOrAnimationObjects_48: 1740204301
+      InteractableOrAnimationObjects_58: -1563538580
+      InteractableOrAnimationObjects_168: 690253152
+      InteractableOrAnimationObjects_134: -179314986
+      InteractableOrAnimationObjects_65: 1597574921
+      InteractableOrAnimationObjects_127: 435759767
+      InteractableOrAnimationObjects_163: -1344018735
+      InteractableOrAnimationObjects_109: 513704138
+      InteractableOrAnimationObjects_207: -22211878
+      InteractableOrAnimationObjects_128: -341481991
+      InteractableOrAnimationObjects_209: -1128275801
+      InteractableOrAnimationObjects_6: 1276138285
+      InteractableOrAnimationObjects_181_3: 2092279093
+      InteractableOrAnimationObjects_169: -1015760919
+      InteractableOrAnimationObjects_174: -598837696
+      InteractableOrAnimationObjects_198: 1950734435
+      InteractableOrAnimationObjects_185: 1212412978
+      InteractableOrAnimationObjects_126: 1567588014
+      InteractableOrAnimationObjects_197: 1808220330
+      InteractableOrAnimationObjects_122: 1529065986
+      InteractableOrAnimationObjects_186: 1824393300
+      InteractableOrAnimationObjects_56: 1047429811
+      InteractableOrAnimationObjects_156: -347838348
+      InteractableOrAnimationObjects_119: -162783925
+      InteractableOrAnimationObjects_68: -1171444245
+      InteractableOrAnimationObjects_217: -983632593
+      InteractableOrAnimationObjects_176: -1412105649
+      InteractableOrAnimationObjects_52: 1096639370
+      InteractableOrAnimationObjects_219: -806031039
+      InteractableOrAnimationObjects_24: 1473920160
+      InteractableOrAnimationObjects_81: 1418956287
+      InteractableOrAnimationObjects_96: -125701544
+      InteractableOrAnimationObjects_84: -2055975758
+      InteractableOrAnimationObjects_60: 666312987
+      InteractableOrAnimationObjects_37: -1257073779
+      InteractableOrAnimationObjects_86: -1228891225
+      InteractableOrAnimationObjects_181_2: 1460088363
+      InteractableOrAnimationObjects_182: 471596431
+      InteractableOrAnimationObjects_59: -1048877771
+      InteractableOrAnimationObjects_139: 1785613646
+      InteractableOrAnimationObjects_152: 1105694390
+      InteractableOrAnimationObjects_47: 424896305
+      InteractableOrAnimationObjects_164: -1258044733
+      InteractableOrAnimationObjects_177: 1401490146
+      InteractableOrAnimationObjects_138: 906165926
+      InteractableOrAnimationObjects_36: -1856077203
+      InteractableOrAnimationObjects_34: -750414713
+      InteractableOrAnimationObjects_54: -1564445484
+      InteractableOrAnimationObjects_101: -1605896224
+      InteractableOrAnimationObjects_145: -951744537
+      InteractableOrAnimationObjects_120: -2106146521
+      InteractableOrAnimationObjects_221: -1492563151
+      InteractableOrAnimationObjects_111: -2135862565
+      InteractableOrAnimationObjects_105: 77186181
+      InteractableOrAnimationObjects_162: 474615938
+      InteractableOrAnimationObjects_66: -546349090
+      InteractableOrAnimationObjects_40: -838025016
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

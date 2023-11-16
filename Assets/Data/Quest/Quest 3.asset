@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f06114bf79b6a418985a0fb464cfe8, type: 3}
+  m_Name: Quest 3
+  m_EditorClassIdentifier: 
+  <Level>k__BackingField: 3
+  ItemsNeed:
+  - <ItemNeed>k__BackingField: {fileID: 11400000, guid: 5f4751829dfb7f145bacb62ef468f143, type: 2}
+    <NumbersOfItemNeed>k__BackingField: 8
+  - <ItemNeed>k__BackingField: {fileID: 11400000, guid: aae8ab9ebfc9ec2449bfaf43b6f3d73b, type: 2}
+    <NumbersOfItemNeed>k__BackingField: 16
+  - <ItemNeed>k__BackingField: {fileID: 11400000, guid: 6c673a7333bf70a45b10baea6104fcd0, type: 2}
+    <NumbersOfItemNeed>k__BackingField: 24
+  <IsDone>k__BackingField: 000000

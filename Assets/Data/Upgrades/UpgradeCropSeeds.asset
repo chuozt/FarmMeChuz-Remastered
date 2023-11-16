@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b21f30025cc6e4a830921f2582179b, type: 3}
+  m_Name: UpgradeCropSeeds
+  m_EditorClassIdentifier: 
+  percentage: 6
+  cropSeeds:
+  - {fileID: 11400000, guid: 0dfcc9c631773d144a15843aeab0cfba, type: 2}
+  - {fileID: 11400000, guid: c6cf3270f7e16984ea8c417f5c4733b0, type: 2}
+  - {fileID: 11400000, guid: cb886d7b0cca89943a723302feb76599, type: 2}
+  - {fileID: 11400000, guid: 485b602fa1eb901439cb06e986d0bf3c, type: 2}
+  - {fileID: 11400000, guid: 7339f96bb61ead149b862929ee1b5217, type: 2}
+  - {fileID: 11400000, guid: 792960239036d4440a011ab1dc12bfbd, type: 2}
+  - {fileID: 11400000, guid: 2fb93f9d4a8880344972dff4829ee254, type: 2}
+  - {fileID: 11400000, guid: 68e4bbd5acf6e50468a34070f5a7f928, type: 2}
+  - {fileID: 11400000, guid: 61bfc3ccc844b804f94faf0b658a3467, type: 2}

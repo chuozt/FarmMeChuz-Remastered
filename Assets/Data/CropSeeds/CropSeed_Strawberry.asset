@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b4e7baa214b56741b07a8f7270b7fc2, type: 3}
+  m_Name: CropSeed_Strawberry
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Strawberry Seed
+  <ItemSprite>k__BackingField: {fileID: -1444877702, guid: 0849bb3b169a05c4dbfa66ae45d3edd3, type: 3}
+  <IsStackable>k__BackingField: 1
+  <MaxStackSize>k__BackingField: 16
+  <IsUnlocked>k__BackingField: 0
+  <Cost>k__BackingField: 150
+  <Value>k__BackingField: 0
+  <BuffPercentage>k__BackingField: 0
+  descriptions: 'Time to grow: 75s
+
+    Min Spawn: 1
+
+    Max Spawn: 3'
+  itemType: 1
+  Fuel:
+    <CanAddFuel>k__BackingField: 0
+    <FuelCanAdd>k__BackingField: 0
+  <MinSpawningCrops>k__BackingField: 1
+  <MaxSpawningCrops>k__BackingField: 3
+  <TimeToGrow>k__BackingField: 75
+  <GrowingCrop>k__BackingField: {fileID: 9141307097471699078, guid: a9c2151038f1fe440bf73edc0853a1ea, type: 3}

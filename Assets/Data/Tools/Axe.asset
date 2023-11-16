@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade6043de73649245a3752f5b599664a, type: 3}
+  m_Name: Axe
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Axe
+  <ItemSprite>k__BackingField: {fileID: -1148098832, guid: 7620f440e20cb34449cf112ff79e75ee, type: 3}
+  <IsStackable>k__BackingField: 0
+  <MaxStackSize>k__BackingField: 1
+  <IsUnlocked>k__BackingField: 1
+  <Cost>k__BackingField: 0
+  <Value>k__BackingField: 0
+  <BuffPercentage>k__BackingField: 0
+  descriptions: Use to chop trees
+  itemType: 4
+  Fuel:
+    <CanAddFuel>k__BackingField: 0
+    <FuelCanAdd>k__BackingField: 0
+  toolType: 2
+  <Delay>k__BackingField: 0.6
+  <Damage>k__BackingField: 14
