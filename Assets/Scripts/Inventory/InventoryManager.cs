@@ -156,7 +156,7 @@ public class InventoryManager : MonoBehaviour
         {
             if(itemInSelectedSlot != null && !player.isDead)
             {
-                switch(itemInSelectedSlot.item.itemType)
+                switch(itemInSelectedSlot.item.ItemType)
                 {
                     case ItemType.Tools:
                         HoldingTools(itemInSelectedSlot.item);
@@ -287,7 +287,7 @@ public class InventoryManager : MonoBehaviour
             toolTipsItemName.enabled = true;
             toolTipsItemName.text = item.item.Name;
             toolTipsDescription.enabled = check;
-            toolTipsDescription.text = item.item.descriptions;
+            toolTipsDescription.text = item.item.Descriptions;
         }
         else 
         {
@@ -341,7 +341,7 @@ public class InventoryManager : MonoBehaviour
     public void TrashCan()
     {
         //if currentMouseItem has any item, delete the item on the mouse
-        if(currentMouseItem != null && currentMouseItem.item.itemType != ItemType.Tools)
+        if(currentMouseItem != null && currentMouseItem.item.ItemType != ItemType.Tools)
         {
             currentMouseItem.count = 0; 
             currentMouseItem.RefreshCount();

@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 [CreateAssetMenu]
 public class Item : ScriptableObject
 {
+    [field: SerializeField]
+    public bool IsUnlocked { get; set; }
+
     [field: SerializeField]
     public string Name { get; set; }
 
@@ -18,53 +22,29 @@ public class Item : ScriptableObject
     public int MaxStackSize{ get; set; } = 1;
 
     [field: SerializeField]
-    public bool IsUnlocked { get; set; }
-
-    [field: SerializeField]
     public int Cost { get; set; }
 
     [field: SerializeField]
     public int Value { get; set; }
 
-    [field: SerializeField]
-    public float BuffPercentage { get; set; }
-
     [TextAreaAttribute]
-    public string descriptions;
+    public string Descriptions;
 
     [field: SerializeField]
-    public ItemType itemType;
+    public ItemType ItemType;
 
     [field: SerializeField]
-    public Fuel Fuel;
+    public bool IsFuelResource { get; set; }
 
-    void OnEnable()
-    {
-        if(itemType == ItemType.Point)
-        {
-            Cost = 200;
-        }
-        BuffPercentage = 0;
-    }
+    [field: SerializeField]
+    public float FuelAmount { get; set; }
 }
 
 public enum ItemType
 {
     Crop = 0,
     CropSeed,
-    Fruit,
     Mineral,
     Tools,
-    Point,
     None,
 };
-
-[System.Serializable]
-public struct Fuel
-{
-    [field: SerializeField]
-    public bool CanAddFuel { get; set; }
-
-    [field: SerializeField]
-    public float FuelCanAdd { get; set; }
-}

@@ -11,7 +11,7 @@ public class UpgradeCropSeeds : UpgradeCategoryData
     {
         foreach(var cropSeed in cropSeeds)
         {
-            cropSeed.BuffPercentage += percentage;
+            //cropSeed.BuffPercentage += percentage;
         }
     }
 }

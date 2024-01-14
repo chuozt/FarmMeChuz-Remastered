@@ -16,7 +16,7 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
-        randomNum = Random.Range(50, 100);
+        randomNum = Random.Range(200, 500);
     }
 
     // Update is called once per frame
@@ -54,7 +54,7 @@ public class SoundManager : MonoBehaviour
         {
             bgm[Random.Range(0,2)].Play();
             t2 = 0;
-            randomNum = Random.Range(60, 250);
+            randomNum = Random.Range(200, 500);
         }
     }
 }

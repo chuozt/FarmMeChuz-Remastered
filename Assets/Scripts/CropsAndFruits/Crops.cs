@@ -25,7 +25,7 @@ public class Crops : MonoBehaviour
     void Awake()
     {
         SetStage(stage1);
-        timeBetweenStages = cropSeedData.TimeToGrow - (cropSeedData.TimeToGrow * cropSeedData.BuffPercentage/100);
+        timeBetweenStages = cropSeedData.TimeToGrow;
         StartCoroutine(Growing());
     }
 

@@ -28,7 +28,7 @@ public class GrowingVineCropsBehaviours : MonoBehaviour
 
     void Awake()
     {
-        timeToGrow = cropSeedData.TimeToGrow - (cropSeedData.TimeToGrow * cropSeedData.BuffPercentage/100);
+        timeToGrow = cropSeedData.TimeToGrow;
         timeLeft = timeToGrow;
         timeBetweenStages = timeToGrow/2;
         waterBubble = Instantiate(needWaterBubble, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);

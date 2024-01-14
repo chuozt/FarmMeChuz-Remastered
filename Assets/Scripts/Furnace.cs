@@ -51,10 +51,10 @@ public class Furnace : MonoBehaviour
 
     void StartFurnace()
     {
-        if(inputSlot.itemInSlot.item.itemType == ItemType.Mineral)
+        if(inputSlot.itemInSlot.item.ItemType == ItemType.Mineral)
         {
             ItemMineral item = (ItemMineral)inputSlot.itemInSlot.item;
-            if((fuelLeft > 0 || fuelSlot.itemInSlot.item.Fuel.CanAddFuel) && item.Output != null)
+            if((fuelLeft > 0 || fuelSlot.itemInSlot.item.IsFuelResource) && item.Output != null)
             {
                 if((outputSlot.itemInSlot != null && outputSlot.itemInSlot.count < item.MaxStackSize && outputSlot.itemInSlot.item == item.Output) || outputSlot.itemInSlot == null)
                 {
@@ -64,7 +64,7 @@ public class Furnace : MonoBehaviour
                     {
                         fuelSlot.itemInSlot.count--;
                         fuelSlot.itemInSlot.RefreshCount();
-                        fuelLeft = fuelSlot.itemInSlot.item.Fuel.FuelCanAdd;
+                        fuelLeft = fuelSlot.itemInSlot.item.FuelAmount;
                         isHaveFuel = true;
                         sliderFuel.maxValue = fuelLeft;
                     }
