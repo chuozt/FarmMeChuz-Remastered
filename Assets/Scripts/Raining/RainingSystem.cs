@@ -23,7 +23,7 @@ public class RainingSystem : MonoBehaviour
     {
         sr = rainingBG.GetComponent<SpriteRenderer>();
         sr.color = clearCloud;
-        randomTimeUntilRain = Random.Range(timeBetweenRains - 30, timeBetweenRains + 30);
+        randomTimeUntilRain = Random.Range(timeBetweenRains, timeBetweenRains);
     }
 
     void Update()

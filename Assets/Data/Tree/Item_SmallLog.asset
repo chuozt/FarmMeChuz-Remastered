@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d357db25ff597d24092b6bf2f3407820, type: 3}
-  m_Name: SmallLog
+  m_Name: Item_SmallLog
   m_EditorClassIdentifier: 
-  <IsUnlocked>k__BackingField: 1
   <Name>k__BackingField: Small Log
   <ItemSprite>k__BackingField: {fileID: -1373766994, guid: 7620f440e20cb34449cf112ff79e75ee, type: 3}
-  <IsStackable>k__BackingField: 1
-  <MaxStackSize>k__BackingField: 16
   <Cost>k__BackingField: 0
   <Value>k__BackingField: 0
   Descriptions: 
+  <IsUnlocked>k__BackingField: 1
+  <IsStackable>k__BackingField: 1
+  <MaxStackSize>k__BackingField: 16
+  <IsFuelResource>k__BackingField: 1
+  <FuelAmount>k__BackingField: 1.5
   ItemType: 4
-  <IsFuelResource>k__BackingField: 0
-  <FuelAmount>k__BackingField: 0

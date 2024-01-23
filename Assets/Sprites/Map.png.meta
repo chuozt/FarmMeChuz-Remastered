@@ -3,7 +3,7 @@ guid: 621ed2df95d9103478349117f4868ec9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -47,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 158
+  spritePixelsToUnits: 160
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -63,18 +64,20 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -87,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -99,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -111,6 +116,20 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -121,9 +140,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1921
-        width: 159
-        height: 159
+        y: 1920
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,9 +161,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 1921
-        width: 159
-        height: 159
+        y: 1920
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,9 +182,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 1281
-        width: 159
-        height: 159
+        y: 1280
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,9 +203,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 1281
-        width: 159
-        height: 159
+        y: 1280
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,9 +224,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1121
-        width: 159
-        height: 159
+        y: 1120
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,9 +245,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 1121
-        width: 159
-        height: 159
+        y: 1120
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,9 +266,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 1121
-        width: 159
-        height: 159
+        y: 1120
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,10 +286,10 @@ TextureImporter:
       name: Map_17
       rect:
         serializedVersion: 2
-        x: 0
-        y: 961
-        width: 159
-        height: 159
+        x: 1
+        y: 960
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,9 +308,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 961
-        width: 159
-        height: 159
+        y: 960
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,9 +329,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 801
-        width: 159
-        height: 159
+        y: 800
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,9 +350,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 801
-        width: 159
-        height: 159
+        y: 800
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,9 +371,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 641
-        width: 159
-        height: 159
+        y: 640
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -374,8 +393,8 @@ TextureImporter:
         serializedVersion: 2
         x: 160
         y: 641
-        width: 159
-        height: 159
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -394,9 +413,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 481
-        width: 159
-        height: 158
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -415,9 +434,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 481
-        width: 159
-        height: 158
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -436,9 +455,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 481
-        width: 159
-        height: 158
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -457,9 +476,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
-        y: 481
-        width: 159
-        height: 158
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -478,9 +497,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 481
-        width: 159
-        height: 158
+        y: 480
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -499,8 +518,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 321
-        width: 159
+        y: 320
+        width: 160
         height: 159
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -520,8 +539,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
-        y: 321
-        width: 159
+        y: 320
+        width: 160
         height: 159
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -541,8 +560,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 321
-        width: 159
+        y: 320
+        width: 160
         height: 159
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -562,9 +581,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 161
-        width: 159
-        height: 158
+        y: 160
+        width: 160
+        height: 159
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -583,9 +602,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
-        y: 161
-        width: 159
-        height: 158
+        y: 160
+        width: 160
+        height: 159
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -605,7 +624,7 @@ TextureImporter:
         serializedVersion: 2
         x: 160
         y: 0
-        width: 159
+        width: 160
         height: 159
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -626,7 +645,7 @@ TextureImporter:
         serializedVersion: 2
         x: 320
         y: 0
-        width: 159
+        width: 160
         height: 159
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -647,7 +666,7 @@ TextureImporter:
         serializedVersion: 2
         x: 480
         y: 0
-        width: 159
+        width: 160
         height: 159
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -667,8 +686,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 1
-        width: 159
+        y: 0
+        width: 160
         height: 159
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -688,9 +707,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1601
-        width: 159
-        height: 159
+        y: 1600
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -709,9 +728,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 1601
-        width: 159
-        height: 159
+        y: 1600
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -730,9 +749,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 1601
-        width: 159
-        height: 159
+        y: 1600
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -751,9 +770,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
-        y: 1601
-        width: 159
-        height: 159
+        y: 1600
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -772,9 +791,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 1601
-        width: 159
-        height: 159
+        y: 1600
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -793,9 +812,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 800
-        y: 1601
-        width: 159
-        height: 159
+        y: 1600
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -814,9 +833,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1441
-        width: 159
-        height: 159
+        y: 1440
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -835,9 +854,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 1441
-        width: 159
-        height: 159
+        y: 1440
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -856,9 +875,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 1441
-        width: 159
-        height: 159
+        y: 1440
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -877,9 +896,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1281
-        width: 159
-        height: 159
+        y: 1280
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -898,8 +917,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 321
-        width: 159
+        y: 320
+        width: 160
         height: 159
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -919,8 +938,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 321
-        width: 159
+        y: 320
+        width: 160
         height: 159
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -940,9 +959,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 161
-        width: 159
-        height: 158
+        y: 160
+        width: 160
+        height: 159
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -961,9 +980,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 161
-        width: 159
-        height: 158
+        y: 160
+        width: 160
+        height: 159
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -982,9 +1001,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 161
-        width: 159
-        height: 158
+        y: 160
+        width: 160
+        height: 159
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1004,7 +1023,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 159
+        width: 160
         height: 159
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1030,52 +1049,51 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Map_10: -250859406
-      Map_2: -958526192
-      Map_34: -979866943
-      Map_42: 471347658
-      Map_41: 1029110552
-      Map_9: 372176273
-      Map_30: 283720113
+      Map_0: 1257200594
       Map_1: 875855844
-      Map_27: 1560522710
-      Map_18: -668093584
+      Map_10: -250859406
       Map_11: 1966582408
-      Map_21: -1514551027
-      Map_26: 1719132966
-      Map_35: 987869905
-      Map_15: 119319925
-      Map_37: -408072091
-      Map_22: -1122419486
-      Map_25: -1606619988
-      Map_32: -457741064
-      Map_17: -1420171170
+      Map_12: -782619362
       Map_13: -1915935830
+      Map_14: -1864211374
+      Map_15: 119319925
+      Map_16: 1225939004
+      Map_17: -1420171170
+      Map_18: -668093584
+      Map_19: -1220272022
+      Map_2: -958526192
+      Map_20: -346047488
+      Map_21: -1514551027
+      Map_22: -1122419486
+      Map_23: 1386313125
+      Map_24: 259087426
+      Map_25: -1606619988
+      Map_26: 1719132966
+      Map_27: 1560522710
+      Map_28: -1573527483
       Map_29: -487596177
       Map_3: 2062433091
-      Map_7: 821276890
-      Map_4: 2003326292
-      Map_16: 1225939004
-      Map_23: 1386313125
-      Map_12: -782619362
-      Map_33: 534442464
-      Map_36: 1689182885
-      Map_14: -1864211374
-      Map_24: 259087426
-      Map_0: 1257200594
-      Map_28: -1573527483
-      Map_6: 1951692329
-      Map_20: -346047488
-      Map_5: 323472999
-      Map_40: -905659435
-      Map_38: -286218518
+      Map_30: 283720113
       Map_31: 78416922
-      Map_8: -609775388
+      Map_32: -457741064
+      Map_33: 534442464
+      Map_34: -979866943
+      Map_35: 987869905
+      Map_36: 1689182885
+      Map_37: -408072091
+      Map_38: -286218518
       Map_39: 1124716455
-      Map_19: -1220272022
-  spritePackingTag: 
+      Map_4: 2003326292
+      Map_40: -905659435
+      Map_41: 1029110552
+      Map_42: 471347658
+      Map_5: 323472999
+      Map_6: 1951692329
+      Map_7: 821276890
+      Map_8: -609775388
+      Map_9: 372176273
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

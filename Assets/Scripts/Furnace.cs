@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Furnace : MonoBehaviour
 {
-    [SerializeField] private InventoryManager inventoryManager;
+    InventoryManager inventoryManager;
     [SerializeField] private GameObject furnaceUI;
     [SerializeField] private InventorySlot fuelSlot;
     [SerializeField] private InventorySlot inputSlot;
@@ -23,6 +23,8 @@ public class Furnace : MonoBehaviour
 
     void Start()
     {
+        inventoryManager = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();
+
         furnaceUI.SetActive(false);
         mineralBubble.SetActive(true);
         sliderProgress.maxValue = 3;
@@ -36,9 +38,7 @@ public class Furnace : MonoBehaviour
         OpenAndCloseFurnace();
 
         if((fuelSlot.itemInSlot != null || fuelLeft > 0) && inputSlot.itemInSlot != null)
-        {
             StartFurnace();
-        }
         else
         {
             mineralBubble.SetActive(false);
@@ -53,13 +53,15 @@ public class Furnace : MonoBehaviour
     {
         if(inputSlot.itemInSlot.item.ItemType == ItemType.Mineral)
         {
-            ItemMineral item = (ItemMineral)inputSlot.itemInSlot.item;
-            if((fuelLeft > 0 || fuelSlot.itemInSlot.item.IsFuelResource) && item.Output != null)
+            ItemMineral itemMineral = (ItemMineral)inputSlot.itemInSlot.item;
+            if((fuelLeft > 0 || fuelSlot.itemInSlot.item.IsFuelResource) && itemMineral.Output != null)
             {
-                if((outputSlot.itemInSlot != null && outputSlot.itemInSlot.count < item.MaxStackSize && outputSlot.itemInSlot.item == item.Output) || outputSlot.itemInSlot == null)
+                if((outputSlot.itemInSlot != null && outputSlot.itemInSlot.count < itemMineral.MaxStackSize && outputSlot.itemInSlot.item == itemMineral.Output) || outputSlot.itemInSlot == null)
                 {
+                    //Update the current melting mineral
                     mineralBubble.SetActive(true);
                     mineralBubble.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite = inputSlot.itemInSlot.item.ItemSprite;
+
                     if(!isHaveFuel)
                     {
                         fuelSlot.itemInSlot.count--;
@@ -70,20 +72,23 @@ public class Furnace : MonoBehaviour
                     }
 
                     if(fuelLeft < 0)
-                    {
                         isHaveFuel = false;
-                    }
                     
+                    //After finishing 1 melting session
                     if(time > 3)
                     {
+                        //Decrease the input's number
                         time = 0;
                         inputSlot.itemInSlot.count--;
                         inputSlot.itemInSlot.RefreshCount();
-                        outputSlot.AddItemToSlot(outputSlot.itemInSlot, item.Output, 2);
+
+                        //Increase the output's number
+                        outputSlot.AddItemToSlot(outputSlot.itemInSlot, itemMineral.Output, 2);
+                        outputSlot.UpdateTheInventoryItemInfo();
+
+                        //If the outputs > MaxStackSize, then set the number to MaxStackSize
                         if(outputSlot.itemInSlot != null && outputSlot.itemInSlot.count > outputSlot.itemInSlot.item.MaxStackSize)
-                        {
                             outputSlot.itemInSlot.count = outputSlot.itemInSlot.item.MaxStackSize;
-                        }
                     }
 
                     time += Time.deltaTime;
@@ -108,16 +113,13 @@ public class Furnace : MonoBehaviour
             {
                 furnaceUI.SetActive(true);
                 isOpeningTheFurnace = true;
-                inventoryManager.inventoryGroup.SetActive(true);
-                inventoryManager.isOpeningTheInventory = true;
-                inventoryManager.EnableInventoryPage(inventoryManager.inventory, inventoryManager.inventoryButton);
+                inventoryManager.ToggleTheInventory();
             }
             else
             {
                 furnaceUI.SetActive(false);
                 isOpeningTheFurnace = false;
-                inventoryManager.inventoryGroup.SetActive(false);
-                inventoryManager.isOpeningTheInventory = false;
+                inventoryManager.ToggleTheInventory();
             }
             
         }

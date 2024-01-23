@@ -9,16 +9,12 @@ public class ShoppingArea : MonoBehaviour
     void OnTriggerStay2D(Collider2D col)
     {
         if(col.gameObject.name == "Player")
-        {
             isInShoppingArea = true;
-        }
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
         if(col.gameObject.name == "Player")
-        {
             isInShoppingArea = false;
-        }
     }
 }

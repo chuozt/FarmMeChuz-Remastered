@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ItemChildren/ItemCropSeed")]
 public class ItemCropSeed : Item
 {
-    [field: SerializeField]
+    [field: SerializeField, Header("Item Crop Seed")]
     public int MinSpawningCrops { get; set; }
 
     [field: SerializeField]
@@ -16,4 +16,7 @@ public class ItemCropSeed : Item
 
     [field: SerializeField]
     public GameObject GrowingCrop{ get; set; }
+
+    [field: SerializeField]
+    public GameObject DropCrop { get; set; }
 }

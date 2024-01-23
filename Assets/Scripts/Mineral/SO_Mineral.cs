@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class Mineral : ScriptableObject
+public class SO_Mineral : ScriptableObject
 {
     [field: SerializeField]
     public float Health { get; set; }

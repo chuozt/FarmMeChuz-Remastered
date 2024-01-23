@@ -4,28 +4,26 @@ using UnityEngine;
 
 public class RainDrop : MonoBehaviour
 {
-    public LayerMask groundLayer;
     private Animator anim;
     private Rigidbody2D rb;
 
     void Awake()
     {
-        anim = this.GetComponent<Animator>();
-        rb = this.GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter2D(Collider2D col)
     {
-        if(Physics2D.OverlapBox(transform.position, new Vector2(0.04227556f, 0.2355783f), 0, groundLayer))
+        if(col.gameObject.CompareTag("Ground"))
         {
             rb.gravityScale = 0;
             rb.mass = 0;
             rb.velocity = new Vector2(0,0);
+            rb.isKinematic = true;
+            rb.simulated = false;
             anim.enabled = true;
-            Destroy(this.gameObject, 0.25f);
+            Destroy(gameObject, 0.25f);
         }
-        
-        Destroy(this.gameObject, 3);
     }
 }

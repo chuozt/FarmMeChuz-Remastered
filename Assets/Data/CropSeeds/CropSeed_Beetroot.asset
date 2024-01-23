@@ -12,18 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4e7baa214b56741b07a8f7270b7fc2, type: 3}
   m_Name: CropSeed_Beetroot
   m_EditorClassIdentifier: 
-  <IsUnlocked>k__BackingField: 1
   <Name>k__BackingField: Beetroot Seed
   <ItemSprite>k__BackingField: {fileID: 701965921, guid: 0849bb3b169a05c4dbfa66ae45d3edd3, type: 3}
-  <IsStackable>k__BackingField: 1
-  <MaxStackSize>k__BackingField: 16
   <Cost>k__BackingField: 10
   <Value>k__BackingField: 0
   Descriptions: 
-  ItemType: 1
+  <IsUnlocked>k__BackingField: 1
+  <IsStackable>k__BackingField: 1
+  <MaxStackSize>k__BackingField: 16
   <IsFuelResource>k__BackingField: 0
   <FuelAmount>k__BackingField: 0
+  ItemType: 1
   <MinSpawningCrops>k__BackingField: 1
   <MaxSpawningCrops>k__BackingField: 3
   <TimeToGrow>k__BackingField: 30
   <GrowingCrop>k__BackingField: {fileID: 2406703726438035734, guid: 3cee333ba3f0fbe4295f90c867ab39d9, type: 3}
+  <DropCrop>k__BackingField: {fileID: 6446465418384507245, guid: 2783f55c6e58f8948b64b2e2928d6161, type: 3}

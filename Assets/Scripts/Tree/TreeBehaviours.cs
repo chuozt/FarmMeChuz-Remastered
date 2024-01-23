@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class TreeBehaviours : MonoBehaviour
 {
-    [SerializeField] private Tree treeData;
+    AudioManager audioManager;
+    private float health;
+    [SerializeField] private SO_Tree treeData;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Animator anim;
-    private float health;
     [SerializeField] private float addLogForce = 1;
     [SerializeField] private GameObject nextTreeGen;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask treeZoneLayer;
-    [SerializeField] private List<AudioClip> sfx;
+    [SerializeField] private List<AudioClip> sfxList_BeingChopped;
 
-    void Awake()
+    void OnEnable()
     {
         health = treeData.Health;
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
     }
 
     public void TreeGrowUp()
@@ -29,14 +31,9 @@ public class TreeBehaviours : MonoBehaviour
                 GameObject tree = Instantiate(nextTreeGen, transform.position, Quaternion.identity);
                 GameObject treeZone = tree.transform.GetChild(0).gameObject;
                 if(CheckCollisionWithGround(treeZone) && CheckCollisionWithOtherTrees(treeZone))
-                {
                     Destroy(gameObject);
-                }
                 else if(!CheckCollisionWithGround(treeZone) || !CheckCollisionWithOtherTrees(treeZone))
-                {
                     Destroy(tree);
-                }
-                
             }
         }
     }
@@ -45,33 +42,25 @@ public class TreeBehaviours : MonoBehaviour
     {
         Collider2D col = Physics2D.OverlapBox(new Vector2(treeZone.transform.position.x, treeZone.transform.position.y + 0.1f), treeZone.transform.localScale, 0, groundLayer);
         if(col == null)
-        {
             return true;
-        }
         else
-        {
             return false;
-        }
     }
 
     bool CheckCollisionWithOtherTrees(GameObject treeZone)
     {
         Collider2D[] col = Physics2D.OverlapBoxAll(new Vector2(treeZone.transform.position.x, treeZone.transform.position.y + 0.1f), treeZone.transform.localScale, 0, treeZoneLayer);
         if(col.Length <= 2)
-        {
             return true;
-        }
         else
-        {
             return false;
-        }
     }
 
     public void TakeDamage(float damage)
     {
         health -= damage;
         anim.SetTrigger("isChopped");
-        AudioSource.PlayClipAtPoint(sfx[Random.Range(0, sfx.Count)], transform.position);
+        audioManager.PlaySFX(sfxList_BeingChopped[Random.Range(0, sfxList_BeingChopped.Count)]);
 
         if(health <= 0)
         {

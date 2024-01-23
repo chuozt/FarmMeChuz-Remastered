@@ -32,7 +32,7 @@ public class QuestManager : MonoBehaviour
                 AudioSource.PlayClipAtPoint(sfxOpenQuest, transform.position);
                 questUI.SetActive(true);
                 inventoryGroup.SetActive(true);
-                inventoryManagerScript.EnableInventoryPage(inventoryManagerScript.inventory, inventoryManagerScript.inventoryButton);
+                inventoryManagerScript.EnablePage(inventoryManagerScript.inventory, inventoryManagerScript.inventoryButton);
                 upgradeGroup.SetActive(false);
                 isOpeningTheQuestUI = true;
                 inventoryManagerScript.isOpeningTheInventory = true;

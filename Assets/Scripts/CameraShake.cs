@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
+using Unity.Cinemachine;
 
 public class CameraShake : MonoBehaviour
 {
-    private CinemachineVirtualCamera cinemachineVirtualCamera;
+    private CinemachineCamera cinemachineCamera;
     [SerializeField] private float intensity = 0.75f;
-    [SerializeField] private float duration;
+    [SerializeField] private float duration = 0.5f;
 
     private float timer;
     private CinemachineBasicMultiChannelPerlin _cbmcp;
@@ -17,18 +17,17 @@ public class CameraShake : MonoBehaviour
     void Start()
     {
         StopShake();
-        _cbmcp = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
     void Awake()
     {
-        cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();    
+        cinemachineCamera = GetComponent<CinemachineCamera>();   
+        _cbmcp = cinemachineCamera.GetComponent<CinemachineBasicMultiChannelPerlin>(); 
     }
 
     public void ShakeCamera()
     {
-        _cbmcp = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        _cbmcp.m_AmplitudeGain = intensity;
+        _cbmcp.AmplitudeGain = intensity;
         AudioSource.PlayClipAtPoint(sfxError, this.transform.position);
 
         timer = duration;
@@ -36,8 +35,7 @@ public class CameraShake : MonoBehaviour
 
     void StopShake()
     {
-        _cbmcp = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        _cbmcp.m_AmplitudeGain = 0;
+        _cbmcp.AmplitudeGain = 0;
         timer = 0;
     }
     
@@ -46,11 +44,8 @@ public class CameraShake : MonoBehaviour
         if(timer > 0)
         {
             timer -= Time.deltaTime;
-
             if(timer <= 0)
-            {
                 StopShake();
-            }
         }
     }
 }

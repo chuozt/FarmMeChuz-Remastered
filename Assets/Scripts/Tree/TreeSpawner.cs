@@ -42,22 +42,16 @@ public class TreeSpawner : MonoBehaviour
 
                         Collider2D col1 = Physics2D.OverlapBox(new Vector2(treeZone.transform.position.x, treeZone.transform.position.y + 0.1f), treeZone.transform.localScale, 0, groundLayer);
                         if(col1 != null)
-                        {
                             Destroy(tree);
-                        }
 
                         Collider2D[] col2 = Physics2D.OverlapBoxAll(new Vector2(treeZone.transform.position.x, treeZone.transform.position.y + 0.1f), treeZone.transform.localScale, 0, layersTreeAffect);
                         if(col2.Length > 2)
-                        {
                             Destroy(tree);
-                        }
                     }
                 }
             }
             else
-            {
                 continue;
-            }
         }
     }
 
@@ -68,20 +62,14 @@ public class TreeSpawner : MonoBehaviour
         float total = 0;
 
         for(int i = 0; i < percentages.Count; i++)
-        {
             total += percentages[i];
-        }
 
         for(int i = 0; i < treesToSpawn.Count; i++)
         {
             if(percentages[i] / total + numForAdding >= random)
-            {
                 return i;
-            }
             else
-            {
                 numForAdding += percentages[i]/total;
-            }
         }
 
         return 0;

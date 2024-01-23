@@ -6,27 +6,33 @@ using UnityEngine.EventSystems;
 
 public class QuestButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public InventoryManager inventoryManagerScript;
-    public Item item;
-    public int num;
-    public int count = 0;
+    
+    [HideInInspector] public Item item;
+    [HideInInspector] public int num;
+    [HideInInspector] public int count = 0;
     public Text countText;
-    public bool isDone = false;
+    [HideInInspector] public bool isDone = false;
     public Image blurImage;
-    public QuestLevel questLevelScript;
+    
     public int questIndex;
-    private Feedback feedback;
-    private CameraShake cameraShake;
+
+    //Managers
+    QuestLevel questLevelScript;
+    InventoryManager inventoryManager;
+    Feedback feedback;
+    CameraShake cameraShake;
+    AudioManager audioManager;
 
     [Space(20)]
     public AudioClip sfx;
 
     void Start()
     {
-        questLevelScript = this.transform.parent.parent.GetComponent<QuestLevel>();
-        inventoryManagerScript = GameObject.Find("_InventoryManager").GetComponent<InventoryManager>();  
-        feedback = GameObject.Find("Feedback").GetComponent<Feedback>();
-        cameraShake = GameObject.Find("CM vcam1").GetComponent<CameraShake>();
+        questLevelScript = transform.parent.parent.GetComponent<QuestLevel>();
+        inventoryManager = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();  
+        feedback = GameObject.FindGameObjectWithTag("FeedbackText").GetComponent<Feedback>();
+        cameraShake = GameObject.FindGameObjectWithTag("CinemachineCamera").GetComponent<CameraShake>();
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         blurImage.enabled = false;
     }
 
@@ -36,9 +42,9 @@ public class QuestButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         {
             bool isHaveCrop = false;
 
-            for(int i = 0; i < inventoryManagerScript.inventorySlots.Length; i++)
+            for(int i = 0; i < inventoryManager.inventorySlots.Length; i++)
             {
-                InventorySlot slot = inventoryManagerScript.inventorySlots[i];
+                InventorySlot slot = inventoryManager.inventorySlots[i];
                 InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
                 if(itemInSlot != null && itemInSlot.item == item && count < num)
                 {
@@ -70,10 +76,11 @@ public class QuestButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         if(isDone)
         {
             blurImage.enabled = true;
-            AudioSource.PlayClipAtPoint(sfx, GameObject.Find("Player").transform.position, 3);
-            for(int i = 0; i < inventoryManagerScript.inventorySlots.Length; i++)
+            audioManager.PlaySFX(sfx);
+            
+            for(int i = 0; i < inventoryManager.inventorySlots.Length; i++)
             {
-                InventorySlot slot = inventoryManagerScript.inventorySlots[i];
+                InventorySlot slot = inventoryManager.inventorySlots[i];
                 InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
                 if(itemInSlot != null && itemInSlot.item == item && itemInSlot.count < count)
                 {
@@ -101,12 +108,12 @@ public class QuestButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        inventoryManagerScript.UpdateTooltips(item, true);
+        inventoryManager.UpdateTooltips(item);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        inventoryManagerScript.UpdateTooltips(item, false);
+        inventoryManager.UpdateTooltips(item);
     }
 
 }

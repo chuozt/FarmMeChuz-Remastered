@@ -15,8 +15,6 @@ MonoBehaviour:
   <IsUnlocked>k__BackingField: 1
   <Name>k__BackingField: Axe
   <ItemSprite>k__BackingField: {fileID: -1148098832, guid: 7620f440e20cb34449cf112ff79e75ee, type: 3}
-  <IsStackable>k__BackingField: 0
-  <MaxStackSize>k__BackingField: 1
   <Cost>k__BackingField: 0
   <Value>k__BackingField: 0
   Descriptions: 

@@ -3,7 +3,7 @@ guid: 927e32f0d5940094fa3fa35a72802dc4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -33,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -63,6 +64,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -75,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -87,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -99,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -111,6 +116,20 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -2395,272 +2414,271 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GUI_Inner_4x_69: -602404854
-      GUI_Inner_4x_48: 2102721348
-      GUI_Inner_4x_199: 748748084
-      GUI_Inner_4x_15: -53555739
-      GUI_Inner_4x_260: -103594637
-      GUI_Inner_4x_253: 1752705434
-      GUI_Inner_4x_19: -1444828879
-      GUI_Inner_4x_47: -222006795
-      GUI_Inner_4x_7: 1673944056
-      GUI_Inner_4x_102: 2146423645
-      GUI_Inner_4x_149: -11569126
-      GUI_Inner_4x_120: 336221681
-      GUI_Inner_4x_154: 1368319179
-      GUI_Inner_4x_206: 770291448
-      GUI_Inner_4x_54: 1983514596
-      GUI_Inner_4x_128: 504732626
-      GUI_Inner_4x_212: 2058985533
-      GUI_Inner_4x_26: -586559638
-      GUI_Inner_4x_66: -1633102420
-      GUI_Inner_4x_105: 1276315931
-      GUI_Inner_4x_215: 2051986983
       GUI_Inner_4x_0: 159036482
-      GUI_Inner_4x_159: -982812486
-      GUI_Inner_4x_178: 288021024
-      GUI_Inner_4x_117: 187848996
-      GUI_Inner_4x_4: 687984899
-      GUI_Inner_4x_174: -481693239
-      GUI_Inner_4x_50: -1481366072
-      GUI_Inner_4x_169: 651786478
-      GUI_Inner_4x_12: 2050365284
-      GUI_Inner_4x_77: 1369310801
-      GUI_Inner_4x_124: 1218817638
-      GUI_Inner_4x_139: 205576190
-      GUI_Inner_4x_189: 138382635
-      GUI_Inner_4x_204: -1725935636
-      GUI_Inner_4x_195: -606553931
-      GUI_Inner_4x_70: 941069791
-      GUI_Inner_4x_147: -1408176567
-      GUI_Inner_4x_223: 546684243
-      GUI_Inner_4x_188: 1691362197
-      GUI_Inner_4x_129: 1835024258
-      GUI_Inner_4x_190: -457664436
-      GUI_Inner_4x_140: -2108982994
-      GUI_Inner_4x_23: 590858290
-      GUI_Inner_4x_157: -983722359
-      GUI_Inner_4x_232: -1742479665
-      GUI_Inner_4x_186: 1274904077
-      GUI_Inner_4x_60: 1997497727
-      GUI_Inner_4x_130: -160042501
-      GUI_Inner_4x_79: 764233532
-      GUI_Inner_4x_256: -882157904
-      GUI_Inner_4x_162: 881218737
-      GUI_Inner_4x_252: 1152381603
-      GUI_Inner_4x_24: 1639466755
-      GUI_Inner_4x_131: -1171877678
-      GUI_Inner_4x_211: -1312218421
-      GUI_Inner_4x_222: -207189656
-      GUI_Inner_4x_224: 578226615
-      GUI_Inner_4x_193: 1671840093
-      GUI_Inner_4x_187: 786234192
-      GUI_Inner_4x_158: -600691650
-      GUI_Inner_4x_114: 1843882191
-      GUI_Inner_4x_31: -277499524
-      GUI_Inner_4x_203: -65948300
-      GUI_Inner_4x_146: 243663985
-      GUI_Inner_4x_156: 732499601
-      GUI_Inner_4x_45: -1612851266
-      GUI_Inner_4x_14: 260111688
-      GUI_Inner_4x_141: -1023939158
-      GUI_Inner_4x_181: 1726698533
-      GUI_Inner_4x_133: 462882550
-      GUI_Inner_4x_58: -770005085
-      GUI_Inner_4x_247: -2134729416
-      GUI_Inner_4x_216: -1684161233
-      GUI_Inner_4x_179: 2064974085
-      GUI_Inner_4x_205: 68127700
-      GUI_Inner_4x_5: -17741566
-      GUI_Inner_4x_116: -489476610
-      GUI_Inner_4x_207: 935905560
-      GUI_Inner_4x_78: 1257413368
-      GUI_Inner_4x_213: -223815331
-      GUI_Inner_4x_242: 958147052
-      GUI_Inner_4x_46: -633375734
-      GUI_Inner_4x_44: 622228380
-      GUI_Inner_4x_65: 84050662
-      GUI_Inner_4x_175: 1559874053
-      GUI_Inner_4x_25: 2081148226
-      GUI_Inner_4x_57: 1528252645
-      GUI_Inner_4x_145: 61150734
-      GUI_Inner_4x_110: 1177273077
-      GUI_Inner_4x_201: -1683880521
-      GUI_Inner_4x_21: -434003462
       GUI_Inner_4x_1: -482431809
+      GUI_Inner_4x_10: -160250719
+      GUI_Inner_4x_100: 763443516
+      GUI_Inner_4x_101: -736844020
+      GUI_Inner_4x_102: 2146423645
+      GUI_Inner_4x_103: -2145276979
+      GUI_Inner_4x_104: -1118011593
+      GUI_Inner_4x_105: 1276315931
+      GUI_Inner_4x_106: 613011407
+      GUI_Inner_4x_107: 26764788
+      GUI_Inner_4x_108: 214020297
       GUI_Inner_4x_109: -1815798805
-      GUI_Inner_4x_217: 1586405884
-      GUI_Inner_4x_208: -982490589
-      GUI_Inner_4x_257: -617393598
-      GUI_Inner_4x_84: 1801383760
-      GUI_Inner_4x_238: 1234518779
-      GUI_Inner_4x_194: -2138703736
-      GUI_Inner_4x_198: 1123314376
-      GUI_Inner_4x_39: 406233246
-      GUI_Inner_4x_74: 351435875
+      GUI_Inner_4x_11: 108220482
+      GUI_Inner_4x_110: 1177273077
+      GUI_Inner_4x_111: 1891229854
+      GUI_Inner_4x_112: 1276567953
+      GUI_Inner_4x_113: 1463165723
+      GUI_Inner_4x_114: 1843882191
+      GUI_Inner_4x_115: -1722764660
+      GUI_Inner_4x_116: -489476610
+      GUI_Inner_4x_117: 187848996
+      GUI_Inner_4x_118: -69140368
+      GUI_Inner_4x_119: -1421477831
+      GUI_Inner_4x_12: 2050365284
+      GUI_Inner_4x_120: 336221681
+      GUI_Inner_4x_121: 1225120507
+      GUI_Inner_4x_122: -1880766920
+      GUI_Inner_4x_123: -1978644255
+      GUI_Inner_4x_124: 1218817638
+      GUI_Inner_4x_125: -43872444
+      GUI_Inner_4x_126: -1807960488
+      GUI_Inner_4x_127: -1679686689
+      GUI_Inner_4x_128: 504732626
+      GUI_Inner_4x_129: 1835024258
+      GUI_Inner_4x_13: 245916334
+      GUI_Inner_4x_130: -160042501
+      GUI_Inner_4x_131: -1171877678
+      GUI_Inner_4x_132: -1158272631
+      GUI_Inner_4x_133: 462882550
+      GUI_Inner_4x_134: -638667785
+      GUI_Inner_4x_135: 531487427
+      GUI_Inner_4x_136: -2086098872
+      GUI_Inner_4x_137: -552367075
+      GUI_Inner_4x_138: 1031355887
+      GUI_Inner_4x_139: 205576190
+      GUI_Inner_4x_14: 260111688
+      GUI_Inner_4x_140: -2108982994
+      GUI_Inner_4x_141: -1023939158
+      GUI_Inner_4x_142: 412075382
+      GUI_Inner_4x_143: -231822647
       GUI_Inner_4x_144: 989010689
-      GUI_Inner_4x_233: -694765663
+      GUI_Inner_4x_145: 61150734
+      GUI_Inner_4x_146: 243663985
+      GUI_Inner_4x_147: -1408176567
+      GUI_Inner_4x_148: -508069887
+      GUI_Inner_4x_149: -11569126
+      GUI_Inner_4x_15: -53555739
+      GUI_Inner_4x_150: 185573653
+      GUI_Inner_4x_151: -1896468947
+      GUI_Inner_4x_152: -1440437184
+      GUI_Inner_4x_153: -1591337745
+      GUI_Inner_4x_154: 1368319179
+      GUI_Inner_4x_155: -292352427
+      GUI_Inner_4x_156: 732499601
+      GUI_Inner_4x_157: -983722359
+      GUI_Inner_4x_158: -600691650
+      GUI_Inner_4x_159: -982812486
+      GUI_Inner_4x_16: -1243441883
+      GUI_Inner_4x_160: 1086227055
+      GUI_Inner_4x_161: 1128416642
+      GUI_Inner_4x_162: 881218737
+      GUI_Inner_4x_163: -307638272
+      GUI_Inner_4x_164: 990621321
+      GUI_Inner_4x_165: -1510314385
       GUI_Inner_4x_166: 1933261007
       GUI_Inner_4x_167: -792197816
+      GUI_Inner_4x_168: -1986902795
+      GUI_Inner_4x_169: 651786478
+      GUI_Inner_4x_17: -1602143546
       GUI_Inner_4x_170: -2114119287
       GUI_Inner_4x_171: 1093398372
-      GUI_Inner_4x_127: -1679686689
-      GUI_Inner_4x_218: -40650229
-      GUI_Inner_4x_255: -835811294
-      GUI_Inner_4x_148: -508069887
-      GUI_Inner_4x_51: 791069746
-      GUI_Inner_4x_92: -1588779889
-      GUI_Inner_4x_103: -2145276979
-      GUI_Inner_4x_160: 1086227055
-      GUI_Inner_4x_184: -1523799718
-      GUI_Inner_4x_90: 381822939
-      GUI_Inner_4x_101: -736844020
-      GUI_Inner_4x_152: -1440437184
-      GUI_Inner_4x_112: 1276567953
-      GUI_Inner_4x_262: -1364885266
-      GUI_Inner_4x_35: 534488401
-      GUI_Inner_4x_168: -1986902795
-      GUI_Inner_4x_182: 1482268354
-      GUI_Inner_4x_196: -892738733
-      GUI_Inner_4x_136: -2086098872
-      GUI_Inner_4x_134: -638667785
-      GUI_Inner_4x_87: -1790986336
-      GUI_Inner_4x_138: 1031355887
-      GUI_Inner_4x_75: -140404587
-      GUI_Inner_4x_81: 848913753
-      GUI_Inner_4x_85: 1165173349
-      GUI_Inner_4x_106: 613011407
-      GUI_Inner_4x_121: 1225120507
-      GUI_Inner_4x_259: 1801274703
-      GUI_Inner_4x_151: -1896468947
-      GUI_Inner_4x_27: -838914430
-      GUI_Inner_4x_161: 1128416642
-      GUI_Inner_4x_210: 1369836387
-      GUI_Inner_4x_183: -783711478
-      GUI_Inner_4x_95: -1835705900
-      GUI_Inner_4x_76: -245613577
-      GUI_Inner_4x_11: 108220482
-      GUI_Inner_4x_13: 245916334
-      GUI_Inner_4x_237: -1340162685
-      GUI_Inner_4x_150: 185573653
-      GUI_Inner_4x_137: -552367075
-      GUI_Inner_4x_29: -1086672223
-      GUI_Inner_4x_132: -1158272631
-      GUI_Inner_4x_40: -1812948610
-      GUI_Inner_4x_86: -2037467764
-      GUI_Inner_4x_235: -1119418979
-      GUI_Inner_4x_202: 1345256534
-      GUI_Inner_4x_165: -1510314385
-      GUI_Inner_4x_83: -2123535032
-      GUI_Inner_4x_38: 187757336
-      GUI_Inner_4x_41: 550031441
-      GUI_Inner_4x_225: 743298669
-      GUI_Inner_4x_219: -501234702
-      GUI_Inner_4x_163: -307638272
-      GUI_Inner_4x_248: -1588602707
-      GUI_Inner_4x_99: 700651289
-      GUI_Inner_4x_244: 556556358
-      GUI_Inner_4x_22: 1397070281
-      GUI_Inner_4x_107: 26764788
-      GUI_Inner_4x_42: 1410998693
-      GUI_Inner_4x_173: 340637802
-      GUI_Inner_4x_249: 478382426
-      GUI_Inner_4x_2: 1373001674
-      GUI_Inner_4x_251: 608666316
-      GUI_Inner_4x_221: -86879460
-      GUI_Inner_4x_177: -1798258452
-      GUI_Inner_4x_59: 931293129
-      GUI_Inner_4x_104: -1118011593
-      GUI_Inner_4x_153: -1591337745
-      GUI_Inner_4x_17: -1602143546
-      GUI_Inner_4x_3: 805040416
-      GUI_Inner_4x_126: -1807960488
-      GUI_Inner_4x_111: 1891229854
-      GUI_Inner_4x_55: 7683415
-      GUI_Inner_4x_10: -160250719
-      GUI_Inner_4x_33: 129248808
-      GUI_Inner_4x_53: -586045936
-      GUI_Inner_4x_94: 2052009373
-      GUI_Inner_4x_258: 1598014835
-      GUI_Inner_4x_93: -1141399929
-      GUI_Inner_4x_96: -289054816
-      GUI_Inner_4x_80: -436241659
-      GUI_Inner_4x_180: 1347068107
-      GUI_Inner_4x_209: -294908860
-      GUI_Inner_4x_240: -2058938747
-      GUI_Inner_4x_97: -1280455312
-      GUI_Inner_4x_227: -1237683501
-      GUI_Inner_4x_176: -1350806120
-      GUI_Inner_4x_32: 461686462
-      GUI_Inner_4x_119: -1421477831
-      GUI_Inner_4x_220: 1688994904
-      GUI_Inner_4x_108: 214020297
-      GUI_Inner_4x_236: 416360591
-      GUI_Inner_4x_43: -1048182894
-      GUI_Inner_4x_245: -943733645
-      GUI_Inner_4x_28: -467376421
-      GUI_Inner_4x_261: 586300848
-      GUI_Inner_4x_91: -954749228
-      GUI_Inner_4x_200: 604537314
-      GUI_Inner_4x_142: 412075382
-      GUI_Inner_4x_118: -69140368
-      GUI_Inner_4x_34: 1568535331
-      GUI_Inner_4x_73: 1742570382
-      GUI_Inner_4x_36: 1315272280
-      GUI_Inner_4x_192: 1428347467
-      GUI_Inner_4x_88: -1531105383
-      GUI_Inner_4x_250: 718472961
-      GUI_Inner_4x_56: 1024950084
-      GUI_Inner_4x_197: -1854261339
-      GUI_Inner_4x_155: -292352427
-      GUI_Inner_4x_68: 1711153920
-      GUI_Inner_4x_143: -231822647
-      GUI_Inner_4x_122: -1880766920
-      GUI_Inner_4x_30: -632601605
-      GUI_Inner_4x_231: -559644060
-      GUI_Inner_4x_89: -1834458418
       GUI_Inner_4x_172: 1621661329
-      GUI_Inner_4x_16: -1243441883
-      GUI_Inner_4x_67: 1022228109
-      GUI_Inner_4x_82: 345481746
-      GUI_Inner_4x_239: 1856915952
-      GUI_Inner_4x_228: 1421013638
-      GUI_Inner_4x_20: -398693091
-      GUI_Inner_4x_52: 2099858989
-      GUI_Inner_4x_115: -1722764660
-      GUI_Inner_4x_71: -1366553701
-      GUI_Inner_4x_64: -1126434721
-      GUI_Inner_4x_241: -1894141719
-      GUI_Inner_4x_72: 41920854
-      GUI_Inner_4x_113: 1463165723
-      GUI_Inner_4x_214: 183878214
-      GUI_Inner_4x_49: 1950894556
-      GUI_Inner_4x_254: -1698135490
-      GUI_Inner_4x_246: -1215837267
-      GUI_Inner_4x_37: 1763631860
-      GUI_Inner_4x_9: -648239857
-      GUI_Inner_4x_243: -1316236954
-      GUI_Inner_4x_123: -1978644255
-      GUI_Inner_4x_125: -43872444
-      GUI_Inner_4x_62: 1937337742
-      GUI_Inner_4x_191: -1889916361
-      GUI_Inner_4x_8: -1531288332
-      GUI_Inner_4x_6: -1628723437
-      GUI_Inner_4x_100: 763443516
-      GUI_Inner_4x_63: 892940267
-      GUI_Inner_4x_98: -94878183
-      GUI_Inner_4x_230: -1710082317
-      GUI_Inner_4x_185: 1496922552
-      GUI_Inner_4x_234: -221594460
+      GUI_Inner_4x_173: 340637802
+      GUI_Inner_4x_174: -481693239
+      GUI_Inner_4x_175: 1559874053
+      GUI_Inner_4x_176: -1350806120
+      GUI_Inner_4x_177: -1798258452
+      GUI_Inner_4x_178: 288021024
+      GUI_Inner_4x_179: 2064974085
       GUI_Inner_4x_18: -1109209575
-      GUI_Inner_4x_61: -1168804876
-      GUI_Inner_4x_229: -1804836418
+      GUI_Inner_4x_180: 1347068107
+      GUI_Inner_4x_181: 1726698533
+      GUI_Inner_4x_182: 1482268354
+      GUI_Inner_4x_183: -783711478
+      GUI_Inner_4x_184: -1523799718
+      GUI_Inner_4x_185: 1496922552
+      GUI_Inner_4x_186: 1274904077
+      GUI_Inner_4x_187: 786234192
+      GUI_Inner_4x_188: 1691362197
+      GUI_Inner_4x_189: 138382635
+      GUI_Inner_4x_19: -1444828879
+      GUI_Inner_4x_190: -457664436
+      GUI_Inner_4x_191: -1889916361
+      GUI_Inner_4x_192: 1428347467
+      GUI_Inner_4x_193: 1671840093
+      GUI_Inner_4x_194: -2138703736
+      GUI_Inner_4x_195: -606553931
+      GUI_Inner_4x_196: -892738733
+      GUI_Inner_4x_197: -1854261339
+      GUI_Inner_4x_198: 1123314376
+      GUI_Inner_4x_199: 748748084
+      GUI_Inner_4x_2: 1373001674
+      GUI_Inner_4x_20: -398693091
+      GUI_Inner_4x_200: 604537314
+      GUI_Inner_4x_201: -1683880521
+      GUI_Inner_4x_202: 1345256534
+      GUI_Inner_4x_203: -65948300
+      GUI_Inner_4x_204: -1725935636
+      GUI_Inner_4x_205: 68127700
+      GUI_Inner_4x_206: 770291448
+      GUI_Inner_4x_207: 935905560
+      GUI_Inner_4x_208: -982490589
+      GUI_Inner_4x_209: -294908860
+      GUI_Inner_4x_21: -434003462
+      GUI_Inner_4x_210: 1369836387
+      GUI_Inner_4x_211: -1312218421
+      GUI_Inner_4x_212: 2058985533
+      GUI_Inner_4x_213: -223815331
+      GUI_Inner_4x_214: 183878214
+      GUI_Inner_4x_215: 2051986983
+      GUI_Inner_4x_216: -1684161233
+      GUI_Inner_4x_217: 1586405884
+      GUI_Inner_4x_218: -40650229
+      GUI_Inner_4x_219: -501234702
+      GUI_Inner_4x_22: 1397070281
+      GUI_Inner_4x_220: 1688994904
+      GUI_Inner_4x_221: -86879460
+      GUI_Inner_4x_222: -207189656
+      GUI_Inner_4x_223: 546684243
+      GUI_Inner_4x_224: 578226615
+      GUI_Inner_4x_225: 743298669
       GUI_Inner_4x_226: -1583267943
-      GUI_Inner_4x_135: 531487427
-      GUI_Inner_4x_164: 990621321
-  spritePackingTag: 
+      GUI_Inner_4x_227: -1237683501
+      GUI_Inner_4x_228: 1421013638
+      GUI_Inner_4x_229: -1804836418
+      GUI_Inner_4x_23: 590858290
+      GUI_Inner_4x_230: -1710082317
+      GUI_Inner_4x_231: -559644060
+      GUI_Inner_4x_232: -1742479665
+      GUI_Inner_4x_233: -694765663
+      GUI_Inner_4x_234: -221594460
+      GUI_Inner_4x_235: -1119418979
+      GUI_Inner_4x_236: 416360591
+      GUI_Inner_4x_237: -1340162685
+      GUI_Inner_4x_238: 1234518779
+      GUI_Inner_4x_239: 1856915952
+      GUI_Inner_4x_24: 1639466755
+      GUI_Inner_4x_240: -2058938747
+      GUI_Inner_4x_241: -1894141719
+      GUI_Inner_4x_242: 958147052
+      GUI_Inner_4x_243: -1316236954
+      GUI_Inner_4x_244: 556556358
+      GUI_Inner_4x_245: -943733645
+      GUI_Inner_4x_246: -1215837267
+      GUI_Inner_4x_247: -2134729416
+      GUI_Inner_4x_248: -1588602707
+      GUI_Inner_4x_249: 478382426
+      GUI_Inner_4x_25: 2081148226
+      GUI_Inner_4x_250: 718472961
+      GUI_Inner_4x_251: 608666316
+      GUI_Inner_4x_252: 1152381603
+      GUI_Inner_4x_253: 1752705434
+      GUI_Inner_4x_254: -1698135490
+      GUI_Inner_4x_255: -835811294
+      GUI_Inner_4x_256: -882157904
+      GUI_Inner_4x_257: -617393598
+      GUI_Inner_4x_258: 1598014835
+      GUI_Inner_4x_259: 1801274703
+      GUI_Inner_4x_26: -586559638
+      GUI_Inner_4x_260: -103594637
+      GUI_Inner_4x_261: 586300848
+      GUI_Inner_4x_262: -1364885266
+      GUI_Inner_4x_27: -838914430
+      GUI_Inner_4x_28: -467376421
+      GUI_Inner_4x_29: -1086672223
+      GUI_Inner_4x_3: 805040416
+      GUI_Inner_4x_30: -632601605
+      GUI_Inner_4x_31: -277499524
+      GUI_Inner_4x_32: 461686462
+      GUI_Inner_4x_33: 129248808
+      GUI_Inner_4x_34: 1568535331
+      GUI_Inner_4x_35: 534488401
+      GUI_Inner_4x_36: 1315272280
+      GUI_Inner_4x_37: 1763631860
+      GUI_Inner_4x_38: 187757336
+      GUI_Inner_4x_39: 406233246
+      GUI_Inner_4x_4: 687984899
+      GUI_Inner_4x_40: -1812948610
+      GUI_Inner_4x_41: 550031441
+      GUI_Inner_4x_42: 1410998693
+      GUI_Inner_4x_43: -1048182894
+      GUI_Inner_4x_44: 622228380
+      GUI_Inner_4x_45: -1612851266
+      GUI_Inner_4x_46: -633375734
+      GUI_Inner_4x_47: -222006795
+      GUI_Inner_4x_48: 2102721348
+      GUI_Inner_4x_49: 1950894556
+      GUI_Inner_4x_5: -17741566
+      GUI_Inner_4x_50: -1481366072
+      GUI_Inner_4x_51: 791069746
+      GUI_Inner_4x_52: 2099858989
+      GUI_Inner_4x_53: -586045936
+      GUI_Inner_4x_54: 1983514596
+      GUI_Inner_4x_55: 7683415
+      GUI_Inner_4x_56: 1024950084
+      GUI_Inner_4x_57: 1528252645
+      GUI_Inner_4x_58: -770005085
+      GUI_Inner_4x_59: 931293129
+      GUI_Inner_4x_6: -1628723437
+      GUI_Inner_4x_60: 1997497727
+      GUI_Inner_4x_61: -1168804876
+      GUI_Inner_4x_62: 1937337742
+      GUI_Inner_4x_63: 892940267
+      GUI_Inner_4x_64: -1126434721
+      GUI_Inner_4x_65: 84050662
+      GUI_Inner_4x_66: -1633102420
+      GUI_Inner_4x_67: 1022228109
+      GUI_Inner_4x_68: 1711153920
+      GUI_Inner_4x_69: -602404854
+      GUI_Inner_4x_7: 1673944056
+      GUI_Inner_4x_70: 941069791
+      GUI_Inner_4x_71: -1366553701
+      GUI_Inner_4x_72: 41920854
+      GUI_Inner_4x_73: 1742570382
+      GUI_Inner_4x_74: 351435875
+      GUI_Inner_4x_75: -140404587
+      GUI_Inner_4x_76: -245613577
+      GUI_Inner_4x_77: 1369310801
+      GUI_Inner_4x_78: 1257413368
+      GUI_Inner_4x_79: 764233532
+      GUI_Inner_4x_8: -1531288332
+      GUI_Inner_4x_80: -436241659
+      GUI_Inner_4x_81: 848913753
+      GUI_Inner_4x_82: 345481746
+      GUI_Inner_4x_83: -2123535032
+      GUI_Inner_4x_84: 1801383760
+      GUI_Inner_4x_85: 1165173349
+      GUI_Inner_4x_86: -2037467764
+      GUI_Inner_4x_87: -1790986336
+      GUI_Inner_4x_88: -1531105383
+      GUI_Inner_4x_89: -1834458418
+      GUI_Inner_4x_9: -648239857
+      GUI_Inner_4x_90: 381822939
+      GUI_Inner_4x_91: -954749228
+      GUI_Inner_4x_92: -1588779889
+      GUI_Inner_4x_93: -1141399929
+      GUI_Inner_4x_94: 2052009373
+      GUI_Inner_4x_95: -1835705900
+      GUI_Inner_4x_96: -289054816
+      GUI_Inner_4x_97: -1280455312
+      GUI_Inner_4x_98: -94878183
+      GUI_Inner_4x_99: 700651289
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

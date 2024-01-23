@@ -3,7 +3,7 @@ guid: 4c4f26237bd6428439a2eedc5161ed34
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,6 +64,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -75,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -87,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -99,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -111,6 +116,20 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -126,7 +145,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 16, y: 16, z: 16, w: 16}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -147,7 +166,7 @@ TextureImporter:
         height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 4, y: 4, z: 4, w: 4}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -168,7 +187,7 @@ TextureImporter:
         height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 12, y: 4, z: 12, w: 4}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -189,7 +208,7 @@ TextureImporter:
         height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 8, y: 4, z: 8, w: 4}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -210,7 +229,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 12, y: 12, z: 12, w: 12}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -231,7 +250,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 16, y: 16, z: 16, w: 16}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -252,7 +271,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 12, y: 12, z: 12, w: 12}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -273,7 +292,7 @@ TextureImporter:
         height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 13, y: 4, z: 12, w: 4}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -294,7 +313,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 16, y: 16, z: 16, w: 16}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -315,7 +334,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 12, y: 12, z: 12, w: 12}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -336,7 +355,7 @@ TextureImporter:
         height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 20, y: 4, z: 20, w: 4}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -357,7 +376,7 @@ TextureImporter:
         height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 12, y: 4, z: 12, w: 4}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -673,35 +692,34 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bars_4x_6: -1076198437
       Bars_4x_0: -762547515
-      Bars_4x_16: -182992246
-      Bars_4x_15: 1992251913
-      Bars_4x_3: 1002879398
-      Bars_4x_19: 2002212855
-      Bars_4x_22: 1497030605
-      Bars_4x_25: 746728623
-      Bars_4x_13: 1057323077
-      Bars_4x_11: -2066220799
-      Bars_4x_20: -1709408683
-      Bars_4x_23: 328847804
-      Bars_4x_12: 1677859478
-      Bars_4x_8: -1324877788
-      Bars_4x_7: 356660007
-      Bars_4x_4: 1967903317
       Bars_4x_1: -1612832999
-      Bars_4x_9: -976620682
       Bars_4x_10: -505129951
+      Bars_4x_11: -2066220799
+      Bars_4x_12: 1677859478
+      Bars_4x_13: 1057323077
       Bars_4x_14: 1953170444
-      Bars_4x_2: 1824560999
+      Bars_4x_15: 1992251913
+      Bars_4x_16: -182992246
       Bars_4x_17: 1968610297
-      Bars_4x_21: 1124218207
-      Bars_4x_24: 2138369677
-      Bars_4x_5: -1715329374
       Bars_4x_18: -85728419
-  spritePackingTag: 
+      Bars_4x_19: 2002212855
+      Bars_4x_2: 1824560999
+      Bars_4x_20: -1709408683
+      Bars_4x_21: 1124218207
+      Bars_4x_22: 1497030605
+      Bars_4x_23: 328847804
+      Bars_4x_24: 2138369677
+      Bars_4x_25: 746728623
+      Bars_4x_3: 1002879398
+      Bars_4x_4: 1967903317
+      Bars_4x_5: -1715329374
+      Bars_4x_6: -1076198437
+      Bars_4x_7: 356660007
+      Bars_4x_8: -1324877788
+      Bars_4x_9: -976620682
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

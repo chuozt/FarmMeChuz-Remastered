@@ -9,26 +9,20 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public Image image;
     public Color selectedColor, notSelectedColor;
     public InventoryItem itemInSlot;
-    public InventoryManager inventoryManager;
+    InventoryManager inventoryManager;
     public GameObject inventoryItemPrefab;
 
     private void Awake()
     {
+        inventoryManager = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();
         Deselect();
     }
 
     void Update()
     {
-        //Get InventoryItemInfo
-        if(transform.childCount != 0)
-        {
-            itemInSlot = GetComponentInChildren<InventoryItem>();
-        }
-        else
-        {
-            itemInSlot = null;
-        }
+        UpdateTheInventoryItemInfo();
 
+        //Re-add the holding items to the inventory if toggle it off
         if(!inventoryManager.isOpeningTheInventory)
         {
             if(inventoryManager.currentMouseItem != null)
@@ -51,6 +45,15 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public void Deselect()
     {
         image.color = notSelectedColor;
+    }
+
+    public void UpdateTheInventoryItemInfo()
+    {
+        //Get InventoryItemInfo
+        if(transform.childCount != 0)
+            itemInSlot = GetComponentInChildren<InventoryItem>();
+        else
+            itemInSlot = null;
     }
 
     public void PickingUpItem(InventoryItem item)
@@ -108,7 +111,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public void OnPointerEnter(PointerEventData eventData)
     {
         Select();
-        inventoryManager.UpdateTooltips(itemInSlot, true);
+        inventoryManager.UpdateTooltips(itemInSlot);
 
         if(inventoryManager.currentMouseItem != null)
         {
@@ -119,7 +122,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public void OnPointerExit(PointerEventData eventData)
     {
         Deselect(); 
-        inventoryManager.UpdateTooltips((InventoryItem)null, false);
+        inventoryManager.UpdateTooltips((InventoryItem)null);
     }
 
     public void OnPointerDown(PointerEventData eventData)

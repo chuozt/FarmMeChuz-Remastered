@@ -6,6 +6,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class QuestLevel : MonoBehaviour
 {
+    [Header("- Datas -")]
     public Quest quest;
     public Reward reward;
 
@@ -23,9 +24,19 @@ public class QuestLevel : MonoBehaviour
     [Space(10)]
     public bool levelIsDone = false;
     public Image blurImage;
-    public Text playerCoinText;
-    public Text pointNumberText;
+
+    Text playerCoinText;
+    Text pointNumberText;
+    AudioManager audioManager;
+
     [SerializeField] private AudioClip sfxQuestLevelComplete;
+
+    void Start()
+    {
+        playerCoinText = GameObject.Find("PlayerCoinText").GetComponent<Text>();
+        pointNumberText = GameObject.Find("PointNumberText").GetComponent<Text>();
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+    }
     
     void Awake()
     {
@@ -58,8 +69,8 @@ public class QuestLevel : MonoBehaviour
             child.GetComponentInChildren<Image>().sprite = reward.ItemsUnlock[i].ItemSprite;
         }
 
-        coinRewardText.text = reward.coin.ToString();
-        pointRewardText.text = "+ " + reward.point.ToString() + " point(s)";
+        coinRewardText.text = reward.Coin.ToString();
+        pointRewardText.text = "+ " + reward.Point.ToString() + " point(s)";
     }
 
     public void CheckIfQuestLevelIsDone()
@@ -82,14 +93,12 @@ public class QuestLevel : MonoBehaviour
         if(levelIsDone)
         {
             for(int i = 0; i < reward.ItemsUnlock.Count; i++)
-            {
                 reward.ItemsUnlock[i].IsUnlocked = true;
-            }
 
             blurImage.enabled = true;
-            playerCoinText.text = (int.Parse(playerCoinText.text) + reward.coin).ToString();
-            pointNumberText.text = (int.Parse(pointNumberText.text) + reward.point).ToString();
-            AudioSource.PlayClipAtPoint(sfxQuestLevelComplete, GameObject.Find("Main Camera").transform.position, 0.5f);
+            playerCoinText.text = (int.Parse(playerCoinText.text) + reward.Coin).ToString();
+            pointNumberText.text = (int.Parse(pointNumberText.text) + reward.Point).ToString();
+            audioManager.PlaySFX(sfxQuestLevelComplete);
         }
     }
 }

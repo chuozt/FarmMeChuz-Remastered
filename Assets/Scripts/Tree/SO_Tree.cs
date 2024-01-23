@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class Tree : ScriptableObject
+public class SO_Tree : ScriptableObject
 {
     [field: SerializeField]
     public float Health { get; set; }

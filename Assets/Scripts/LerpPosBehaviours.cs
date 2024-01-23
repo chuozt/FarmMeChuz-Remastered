@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class LerpPosBehaviours : MonoBehaviour
 {
-    public InventoryManager inventoryManager;
-    private Item item;
-
-    [Space(20)]
     public List<AudioClip> sfx;
+    AudioManager audioManager;
+    InventoryManager inventoryManager;
+    private Item item;
+    
+    void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+        inventoryManager = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();
+    }
 
     void OnTriggerStay2D(Collider2D col)
     {
@@ -20,7 +25,8 @@ public class LerpPosBehaviours : MonoBehaviour
             {
                 item = col.gameObject.GetComponent<ObjectsDatas>().item;
                 inventoryManager.AddItem(item);
-                AudioSource.PlayClipAtPoint(sfx[(int)Random.Range(0,5)], transform.position, 1.2f);
+                audioManager.PlaySFX(sfx[Random.Range(0, sfx.Count)]);
+
                 Destroy(col.gameObject);
             }
         }

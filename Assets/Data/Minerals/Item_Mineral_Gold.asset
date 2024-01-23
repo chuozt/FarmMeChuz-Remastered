@@ -9,17 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d357db25ff597d24092b6bf2f3407820, type: 3}
-  m_Name: BigLog
+  m_Script: {fileID: 11500000, guid: e25701f7ded57044d91b0843dc10bc38, type: 3}
+  m_Name: Item_Mineral_Gold
   m_EditorClassIdentifier: 
-  <IsUnlocked>k__BackingField: 1
-  <Name>k__BackingField: Big Log
-  <ItemSprite>k__BackingField: {fileID: 1091117729, guid: 7620f440e20cb34449cf112ff79e75ee, type: 3}
-  <IsStackable>k__BackingField: 1
-  <MaxStackSize>k__BackingField: 16
+  <Name>k__BackingField: Gold
+  <ItemSprite>k__BackingField: {fileID: 1889322534, guid: 7620f440e20cb34449cf112ff79e75ee, type: 3}
   <Cost>k__BackingField: 0
   <Value>k__BackingField: 0
   Descriptions: 
-  ItemType: 4
+  <IsUnlocked>k__BackingField: 1
+  <IsStackable>k__BackingField: 1
+  <MaxStackSize>k__BackingField: 16
   <IsFuelResource>k__BackingField: 0
   <FuelAmount>k__BackingField: 0
+  ItemType: 2
+  <Output>k__BackingField: {fileID: 11400000}

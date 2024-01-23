@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ItemChildren/ItemTool")]
 public class ItemTool : Item
 {
-    [field: SerializeField]
+    [field: SerializeField, Header("Item Tool")]
     public ToolType toolType;
 
     [field: SerializeField]

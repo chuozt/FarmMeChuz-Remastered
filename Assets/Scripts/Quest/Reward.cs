@@ -7,12 +7,7 @@ using UnityEngine.UI;
 [CreateAssetMenu]
 public class Reward : ScriptableObject
 {
-    [field:SerializeField]
-    public int coin;
-
-    [field:SerializeField]
-    public int point;
-
-    [field:SerializeField]
-    public List<Item> ItemsUnlock { get; set; }
+    [field:SerializeField] public int Coin { get; set; }
+    [field:SerializeField] public int Point { get; set; }
+    [field:SerializeField] public List<Item> ItemsUnlock { get; set; }
 }

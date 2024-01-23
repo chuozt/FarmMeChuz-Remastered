@@ -5,6 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ItemChildren/ItemMineral")]
 public class ItemMineral : Item
 {
-    [field: SerializeField]
+    [field: SerializeField, Header("Item Mineral")]
     public ItemMineral Output { get; set; }
 }

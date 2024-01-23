@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797509342666646288}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3870908491582729882}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6388223693438939261
 SpriteRenderer:
@@ -49,6 +49,8 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -94,7 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3870908491582729882}
   - component: {fileID: 5904531646877361066}
-  - component: {fileID: 4973047639403144196}
+  - component: {fileID: 889995927628647926}
   m_Layer: 9
   m_Name: GrowingCrop_Eggplant
   m_TagString: GrowingCrops
@@ -109,6 +111,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3731629921276526799}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.002996779}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -118,7 +121,6 @@ Transform:
   - {fileID: 7547486521684977504}
   - {fileID: 5931444077037387865}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &5904531646877361066
 BoxCollider2D:
@@ -128,11 +130,32 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3731629921276526799}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,10 +166,9 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4973047639403144196
+--- !u!114 &889995927628647926
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,16 +177,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 3731629921276526799}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51701d0a186580b4baab8c380724f8a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 26d6b9b20236ca74ab8f3772edafa9f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cropSeedData: {fileID: 11400000, guid: 792960239036d4440a011ab1dc12bfbd, type: 2}
-  stage1: {fileID: 4538925573655689088}
-  stage2: {fileID: 6388223693438939261}
-  stage3: {fileID: 4355375675767835387}
-  cropToSpawn: {fileID: 1502045577703463028, guid: e7ebc1335fbbd7f478749ae3a7b96df7, type: 3}
-  needWaterBubble: {fileID: 7476576937879114010, guid: 4bd6350b70d26c548bb1dc339b6efe63, type: 3}
-  sfx:
+  stagesList:
+  - {fileID: 4538925573655689088}
+  - {fileID: 6388223693438939261}
+  - {fileID: 4355375675767835387}
+  waterBubblePrefab: {fileID: 7476576937879114010, guid: 4bd6350b70d26c548bb1dc339b6efe63, type: 3}
+  sfxList:
   - {fileID: 8300000, guid: ecc26f1a97bbeb2499a0d20a964e6c8d, type: 3}
   - {fileID: 8300000, guid: aa743b92276c9764ab282ceccc181f34, type: 3}
   - {fileID: 8300000, guid: 9c28000c30bd37a45aea7022cfb2378d, type: 3}
@@ -194,13 +216,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4717435224482341630}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3870908491582729882}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4355375675767835387
 SpriteRenderer:
@@ -219,6 +241,8 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -278,13 +302,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7361187114097359583}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3870908491582729882}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4538925573655689088
 SpriteRenderer:
@@ -303,6 +327,8 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

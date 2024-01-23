@@ -7,32 +7,33 @@ public class DayNightManager : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer srDayNightBackGround;
     [SerializeField] private Gradient gradientDayNight;
-
     [SerializeField] private float cycleTime;
-    private float currentTime = 0;
-    [HideInInspector] public bool isDay = true;
-
     [SerializeField] private Text dayNightText;
     [SerializeField] private Text timeInDayText;
 
-    [SerializeField] private Player player;
+    
     [SerializeField] private GameObject thinkingBubble;
     [SerializeField] private SpriteRenderer bedBorder;
 
-    [Space(10)]
-    [SerializeField] private Feedback feedback;
-    [SerializeField] private CameraShake cameraShake;
-
+    private int currentDay = 1;
+    private float currentTime = 0;
+    [HideInInspector] public bool isDay = true;
     int hour, startHour = 6, totalHourInADay = 18;
     float minute;
+    bool canSleep = false;
     bool enemyIsSpawned = false;
 
-    private int currentDay = 1;
-
-    bool canSleep = false;
+    //Managers
+    Player player;
+    Feedback feedback;
+    CameraShake cameraShake;
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        feedback = GameObject.FindGameObjectWithTag("FeedbackText").GetComponent<Feedback>();
+        cameraShake = GameObject.FindGameObjectWithTag("CinemachineCamera").GetComponent<CameraShake>();
+
         hour = startHour;
         isDay = true;
     }
@@ -40,14 +41,10 @@ public class DayNightManager : MonoBehaviour
     void Update()
     {
         if(currentTime <= cycleTime)
-        {
             currentTime += Time.deltaTime; 
-        }
 
         if(hour < 24)
-        {
             minute += (Time.deltaTime / cycleTime * totalHourInADay * 10);
-        }
 
         if(minute >= 10)
         {
@@ -56,13 +53,9 @@ public class DayNightManager : MonoBehaviour
         }
 
         if(hour < 22)
-        {
             thinkingBubble.SetActive(false);
-        }
         else
-        {
             thinkingBubble.SetActive(true);
-        }
 
         if(hour == 24)
         {
@@ -105,8 +98,8 @@ public class DayNightManager : MonoBehaviour
         }
         else if(canSleep && Input.GetKeyDown(KeyCode.F) && !isDay)
         {
-            player.CurrentHealth = 100;
-            player.CurrentMana = 100;
+            player.SetCurrentHealth = 100;
+            player.SetCurrentMana = 100;
             HitTheSack();
         } 
     }
@@ -119,17 +112,10 @@ public class DayNightManager : MonoBehaviour
         GameObject[] growingCrops = GameObject.FindGameObjectsWithTag("GrowingCrops");
         foreach(var crop in growingCrops)
         {
-            crop.TryGetComponent<GrowingCropBehaviours>(out GrowingCropBehaviours gcb);
+            crop.TryGetComponent<GrowingCrop_ParentClass>(out GrowingCrop_ParentClass growingCrop);
 
-            if(gcb != null)
-            {
-                gcb.DecreaseTime(cycleTime - currentTime);
-            }
-            else
-            {
-                crop.TryGetComponent<GrowingVineCropsBehaviours>(out GrowingVineCropsBehaviours gvcb);
-                gvcb.DecreaseTime(cycleTime - currentTime);
-            }
+            if(growingCrop != null)
+                growingCrop.DecreaseTimeAfterDay(cycleTime - currentTime);
         }
 
         GameObject[] mineralSpawners = GameObject.FindGameObjectsWithTag("MineralSpawners");

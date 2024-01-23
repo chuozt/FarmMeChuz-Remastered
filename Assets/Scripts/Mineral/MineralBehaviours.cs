@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class MineralBehaviours : MonoBehaviour
 {
-    [HideInInspector] public Mineral mineralData;
-    [SerializeField] private SpriteRenderer sr;
-    [SerializeField] private Animator anim;
     private float health;
+    private SpriteRenderer sr;
+    private Animator anim;
+    private AudioManager audioManager;
+
+    [HideInInspector] public SO_Mineral mineralData;
     [SerializeField] private float addMineralForce = 1;
     [SerializeField] private List<AudioClip> sfx;
 
     public void UpdateMineral()
     {
+        sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+
         health = mineralData.Health;
         sr.sprite = mineralData.ItemSprite;
     }
@@ -21,7 +27,7 @@ public class MineralBehaviours : MonoBehaviour
     {
         health -= damage;
         anim.SetTrigger("isBroken");
-        AudioSource.PlayClipAtPoint(sfx[Random.Range(0, sfx.Count)], transform.position);
+        audioManager.PlaySFX(sfx[Random.Range(0, sfx.Count)]);
 
         if(health <= 0)
         {

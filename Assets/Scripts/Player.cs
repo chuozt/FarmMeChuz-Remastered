@@ -12,11 +12,11 @@ public class Player : MonoBehaviour
     private Animator anim;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private Transform checkGroundPoint;
-
-    [Header("LayerMasks")]
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private LayerMask plantGroundLayer;
     
+    [Space(10)]
+    [SerializeField] private InventoryManager inventoryManager;
+    AudioManager audioManager;
     public GameObject inventoryGroup;
     public GameObject inventory;
     public GameObject upgrade;
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float jumpForce;
     private float moveX;
 
-    [Header("Stats")]
+    [Header("- Stats -")]
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private ManaBar manaBar;
     [SerializeField] private int maxHealth = 100;
@@ -35,56 +35,53 @@ public class Player : MonoBehaviour
     [SerializeField] private int maxMana = 100;
     private int currentMana;
     
-    // Boolean
+    // Booleans
     bool isGrounded;
     [HideInInspector] public bool canPlant = false;
     bool isFacingLeft = false;
     bool isFacingRight = true;
     bool isTakingDamage = false;
-    [HideInInspector] public bool isDead = false;
-
-    [Space(10)]
-    [SerializeField] private InventoryManager inventoryManager;
+    [HideInInspector] public bool isDead = false;    
 
     [Space(10)]
     [SerializeField] private Transform toolsPoint;
 
-    [Header("Pickaxe components")]
+    [Header("- Pickaxe components -")]
     [SerializeField] private LayerMask layersPickaxeAffect;
     bool canMine = true;
     [HideInInspector] public bool isMining = false;
     float delayMiningTime = 0;
     [SerializeField] private float pickaxePointRadius = 0.25f;
 
-    [Header("Sword components")]
+    [Header("- Sword components -")]
     [SerializeField] private LayerMask layersSwordAffect;
     bool canFight = true;
     [HideInInspector] public bool isFighting = false;
     float delayFightingTime = 0;
     [SerializeField] private float swordPointRadius = 0.2f;
 
-    [Header("Axe components")]
+    [Header("- Axe components -")]
     [SerializeField] private LayerMask layersAxeAffect;
     bool canChop = true;
     [HideInInspector] public bool isChopping = false;
     float delayChoppingTime = 0;
     [SerializeField] private float axePointRadius = 0.2f;
 
-    [Header("Shovel components")]
+    [Header("- Shovel components -")]
     [SerializeField] private Tilemap grassTilemap;
     [SerializeField] private Tilemap groundTilemap;
     [SerializeField] private RuleTile grassTileRule;
     [SerializeField] private Transform growingPlantCheckPoint;
-    [SerializeField] private LayerMask growingPlantLayer;
+    [SerializeField] private LayerMask growingCropLayer;
     
     float currentAnimationTime = 0;
     float eatingTime = 0;
     bool isEating = false;
 
-    [Header("AudioClips")]
-    [SerializeField] private AudioClip tools_whoosh;
-    [SerializeField] private List<AudioClip> dirtSFX;
-    [SerializeField] private AudioSource eatingSFX;
+    [Header("- AudioClips -")]
+    [SerializeField] private AudioClip tools_whooshSFX;
+    [SerializeField] private List<AudioClip> dirtSFXList;
+    [SerializeField] private AudioClip eatingSFX;
     [SerializeField] private AudioClip waterBucketSFX;
 
     Vector3 tempBoxPosition;
@@ -98,6 +95,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         inventoryGroup.SetActive(false);
 
         currentHealth = maxHealth;
@@ -184,7 +182,6 @@ public class Player : MonoBehaviour
         SetTempBox(false);
         if(Input.GetMouseButtonDown(0) && canMine && currentMana > 0)
         {
-            AudioSource.PlayClipAtPoint(tools_whoosh, transform.position, 0.5f);
             anim.SetTrigger("isMining");
             canMine = false;
             isMining = true;
@@ -203,8 +200,10 @@ public class Player : MonoBehaviour
             }
 
             DecreaseMana(1);
+            audioManager.PlaySFX(tools_whooshSFX);
         }
         
+        //Cooldown
         if(isMining)
         {
             delayMiningTime = Mathf.MoveTowards(delayMiningTime, inventoryManager.tool.Delay + 1, Time.deltaTime);
@@ -222,7 +221,6 @@ public class Player : MonoBehaviour
         SetTempBox(false);
         if(Input.GetMouseButtonDown(0) && canFight && currentMana > 0)
         {
-            AudioSource.PlayClipAtPoint(tools_whoosh, transform.position);
             anim.SetTrigger("isFighting");
             canFight = false;
             isFighting = true;
@@ -238,8 +236,10 @@ public class Player : MonoBehaviour
             }
 
             DecreaseMana(1);
+            audioManager.PlaySFX(tools_whooshSFX);
         }
 
+        //Cooldown
         if(isFighting)
         {
             delayFightingTime = Mathf.MoveTowards(delayFightingTime, inventoryManager.tool.Delay + 1, Time.deltaTime);
@@ -257,7 +257,6 @@ public class Player : MonoBehaviour
         SetTempBox(false);
         if(Input.GetMouseButtonDown(0) && canChop && currentMana > 0)
         {
-            AudioSource.PlayClipAtPoint(tools_whoosh, transform.position);
             anim.SetTrigger("isChopping");
             canChop = false;
             isChopping = true;
@@ -266,18 +265,16 @@ public class Player : MonoBehaviour
             if(col != null)
             {
                 if(col.CompareTag("Tree"))
-                {
                     col.GetComponent<TreeBehaviours>().TakeDamage((int)Random.Range(inventoryManager.tool.Damage - 1, inventoryManager.tool.Damage + 4));
-                }
                 else if(col.CompareTag("Enemy"))
-                {
                     col.GetComponent<EnemyStats>().TakeDamage((int)Random.Range(inventoryManager.tool.Damage - 3, inventoryManager.tool.Damage + 4));
-                }
             }
 
             DecreaseMana(1);
+            audioManager.PlaySFX(tools_whooshSFX);
         }
 
+        //Cooldown
         if(isChopping)
         {
             delayChoppingTime = Mathf.MoveTowards(delayChoppingTime, inventoryManager.tool.Delay + 1, Time.deltaTime);
@@ -293,7 +290,7 @@ public class Player : MonoBehaviour
     public void ShovelAction()
     {
         RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector2.down, 1f, groundLayer);
-        RaycastHit2D ray2 = Physics2D.Raycast(transform.position, Vector2.down, 1f, growingPlantLayer);
+        RaycastHit2D ray2 = Physics2D.Raycast(transform.position, Vector2.down, 1f, growingCropLayer);
 
         if(ray.collider != null && ray2.collider == null)
         {
@@ -309,18 +306,15 @@ public class Player : MonoBehaviour
             if(Input.GetMouseButtonDown(0))
             {
                 if(grassTile != null)
-                {
                     grassTilemap.SetTile(pos, null);
-                }
                 else
                 {
                     TileBase dirtTile = groundTilemap.GetTile(pos);
                     if(dirtTile != null)
-                    {
                         grassTilemap.SetTile(pos, grassTileRule);
-                    }
                 }
-                AudioSource.PlayClipAtPoint(dirtSFX[Random.Range(0, dirtSFX.Count)], transform.position);
+
+                audioManager.PlaySFX(dirtSFXList[Random.Range(0, dirtSFXList.Count)]);
             }
         }
         else if(ray.collider == null && ray2.collider == null)
@@ -334,15 +328,13 @@ public class Player : MonoBehaviour
             SetTempBox(true);
             tempBoxPosition = ray2.collider.transform.position;
             if(Input.GetMouseButtonDown(0))
-            {
                 Destroy(ray2.collider.gameObject);
-            }
         }
     }
 
     public void BucketAction()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector2.down, 0.5f, growingPlantLayer);
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector2.down, 0.5f, growingCropLayer);
 
         if(ray.collider != null)
         {
@@ -352,25 +344,19 @@ public class Player : MonoBehaviour
 
             if(Input.GetMouseButtonDown(0))
             {
-                if(ray.collider.gameObject.TryGetComponent<GrowingCropBehaviours>(out GrowingCropBehaviours gcb))
-                {
-                    gcb.IsWatered = true;
-                }
-                else if(ray.collider.gameObject.TryGetComponent<GrowingVineCropsBehaviours>(out GrowingVineCropsBehaviours gvcb))
-                {
-                    gvcb.IsWatered = true;
-                }
-                AudioSource.PlayClipAtPoint(waterBucketSFX, transform.position);
+                if(ray.collider.gameObject.TryGetComponent<GrowingCrop_ParentClass>(out GrowingCrop_ParentClass growingCrop))
+                    growingCrop.WaterTheCrop();
+                
+                audioManager.PlaySFX(waterBucketSFX);
                 ParticleSystem particle = Instantiate(waterParticle, ray.collider.transform.position, Quaternion.identity);
                 particle.transform.position += new Vector3(0,-0.25f,0);
                 particle.Play();
+                
                 Destroy(particle.gameObject, 1);
             }
         }
         else
-        {
             SetTempBox(false);
-        }
     }
 
     public void CropAction()
@@ -392,7 +378,7 @@ public class Player : MonoBehaviour
             {
                 if(!isEating)
                 {
-                    eatingSFX.Play();
+                    audioManager.PlaySFX(eatingSFX);
                     isEating = true;
                 }
             }
@@ -401,52 +387,50 @@ public class Player : MonoBehaviour
         {
             eatingTime = 0;
             isEating = false;
-            eatingSFX.Stop();
+            audioManager.StopSFX();
         }
     }
 
     public void CropSeedAction()
     {
         RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector2.down, 1f, groundLayer);
-        if(ray.collider != null)
+        Debug.DrawRay(transform.position, Vector3.down, Color.green);
+        if(ray.collider == null)
+            return; 
+
+        Vector3Int pos = grassTilemap.WorldToCell(new Vector3Int((int)(ray.point.x - 1f), (int)(ray.point.y - 1f), 0));
+        TileBase grassTile = grassTilemap.GetTile(pos);
+
+        if(grassTile == null)
         {
-            Vector3Int pos = grassTilemap.WorldToCell(new Vector3Int((int)(ray.point.x - 1f), (int)(ray.point.y - 1f), -1));
-            TileBase grassTile = grassTilemap.GetTile(pos);
-            if(grassTile == null)
+            Debug.DrawRay(transform.position, Vector3.down, Color.green);
+            if(Physics2D.OverlapCircle(growingPlantCheckPoint.position, 0.25f, growingCropLayer) == null)
             {
+                canPlant = true;
+                TileBase dirtTile = groundTilemap.GetTile(pos);
+                tempBoxPosition = groundTilemap.CellToWorld(pos);
+                tempBoxPosition.x += 0.5f;
+                tempBoxPosition.y += 0.5f;
                 SetTempBox(true);
-                Debug.DrawRay(transform.position, Vector3.down, Color.green);
-                if(Physics2D.OverlapCircle(growingPlantCheckPoint.position, 0.25f, growingPlantLayer) == null)
-                {
-                    canPlant = true;
-                    TileBase dirtTile = groundTilemap.GetTile(pos);
-                    tempBoxPosition = groundTilemap.CellToWorld(pos);
-                    tempBoxPosition.x += 0.5f;
-                    tempBoxPosition.y += 0.5f;
 
-                    if(dirtTile != null)
+                if(dirtTile != null)
+                {
+                    if(Input.GetMouseButtonDown(1))
                     {
-                        if(Input.GetMouseButtonDown(1))
-                        {
-                            Vector3 plantPos = groundTilemap.CellToWorld(pos);
+                        Vector3 plantPos = groundTilemap.CellToWorld(pos);
 
-                            //The center of the growing crop takes the bottom-left position of the tile, so I change the spawn position
-                            plantPos.y += 1.5f;
-                            plantPos.x += 0.5f;
-                            plantPos.z = 0;
+                        //The center of the growing crop takes the bottom-left position of the tile, so I change the spawn position
+                        plantPos.y += 1.5f;
+                        plantPos.x += 0.5f;
+                        plantPos.z = 0;
 
-                            Instantiate(inventoryManager.cropSeed.GrowingCrop, plantPos, Quaternion.identity);
-                            inventoryManager.DecreaseItem(inventoryManager.cropSeed);
-                            anim.SetTrigger("isPlanting");
-                            AudioSource.PlayClipAtPoint(dirtSFX[Random.Range(0, dirtSFX.Count)], transform.position);
-                            
-                            DecreaseMana(1);
-                        }
+                        Instantiate(inventoryManager.cropSeed.GrowingCrop, plantPos, Quaternion.identity);
+                        inventoryManager.DecreaseItem(inventoryManager.cropSeed);
+                        anim.SetTrigger("isPlanting");
+                        
+                        DecreaseMana(1);
+                        audioManager.PlaySFX(dirtSFXList[Random.Range(0, dirtSFXList.Count)]);
                     }
-                }
-                else
-                {
-                    canPlant = false;
                 }
             }
             else
@@ -454,6 +438,11 @@ public class Player : MonoBehaviour
                 canPlant = false;
                 SetTempBox(false);
             }
+        }
+        else
+        {
+            canPlant = false;
+            SetTempBox(false);
         }
     }
 
@@ -486,13 +475,9 @@ public class Player : MonoBehaviour
             anim.SetTrigger("isTakingDamage");
 
             if(transform.position.x >= enemyPos.position.x)
-            {
                 rb.AddForce(new Vector2(knockbackForce, 1.5f), ForceMode2D.Impulse);
-            }
             else
-            {
                 rb.AddForce(new Vector2(-knockbackForce, 1.5f), ForceMode2D.Impulse);
-            }
         }
         else if(currentHealth <= 0)
         {
@@ -555,27 +540,15 @@ public class Player : MonoBehaviour
         inventoryManager.isOpeningTheInventory = false;
     }
 
-    public int CurrentHealth
-    {
-        set
-        {
-            currentHealth = value;
-        }
-    }
+    public int SetCurrentHealth { set { currentHealth = value; }}
+    public int SetCurrentMana { set { currentMana = value; }}
 
-    public int CurrentMana 
-    {
-        set 
-        {
-            currentMana = value;
-        }
-    }
+    // void OnDrawGizmos()
+    // {
+    //     if(toolsPoint == null)
+    //         return;
 
-    void OnDrawGizmos()
-    {
-        if(toolsPoint == null)
-        return;
-        Gizmos.DrawWireSphere(toolsPoint.position, pickaxePointRadius);
-        Gizmos.DrawWireSphere(toolsPoint.position, swordPointRadius);
-    }
+    //     Gizmos.DrawWireSphere(toolsPoint.position, pickaxePointRadius);
+    //     Gizmos.DrawWireSphere(toolsPoint.position, swordPointRadius);
+    // }
 }

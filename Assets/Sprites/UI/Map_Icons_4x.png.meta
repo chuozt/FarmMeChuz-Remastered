@@ -3,7 +3,7 @@ guid: 7a6c0421f2b60434d9e9063f2795e757
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -33,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -63,6 +64,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -75,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -87,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -99,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -111,6 +116,20 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -1471,73 +1490,72 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Map_Icons_4x_16: -376173003
-      Map_Icons_4x_32: 1037904182
-      Map_Icons_4x_60: -1889256573
-      Map_Icons_4x_1: 550980716
-      Map_Icons_4x_13: -762168655
-      Map_Icons_4x_15: -30226900
-      Map_Icons_4x_31: -381354205
-      Map_Icons_4x_45: -1749277491
-      Map_Icons_4x_4: -995298359
-      Map_Icons_4x_55: 841860017
-      Map_Icons_4x_8: 1240558224
-      Map_Icons_4x_46: -202946960
-      Map_Icons_4x_28: -639122121
-      Map_Icons_4x_56: -407338733
-      Map_Icons_4x_41: -1001077253
-      Map_Icons_4x_58: -157354984
-      Map_Icons_4x_23: -1645636175
-      Map_Icons_4x_35: -743711036
-      Map_Icons_4x_49: -1662406315
-      Map_Icons_4x_12: 1192293475
-      Map_Icons_4x_40: -59107282
-      Map_Icons_4x_24: 2085967945
-      Map_Icons_4x_39: 530897267
-      Map_Icons_4x_25: -1838342905
-      Map_Icons_4x_37: 1105445297
-      Map_Icons_4x_50: -184540150
-      Map_Icons_4x_53: 1433284210
-      Map_Icons_4x_21: 611521856
-      Map_Icons_4x_11: -700284921
-      Map_Icons_4x_57: 749236557
-      Map_Icons_4x_9: -403098494
-      Map_Icons_4x_34: 574438219
-      Map_Icons_4x_43: 1557795149
-      Map_Icons_4x_6: 1181942547
-      Map_Icons_4x_62: 1732840883
-      Map_Icons_4x_52: 1275415605
-      Map_Icons_4x_42: -893263878
-      Map_Icons_4x_54: -720037915
-      Map_Icons_4x_51: 2041523810
-      Map_Icons_4x_48: -1159982124
-      Map_Icons_4x_61: 484410940
-      Map_Icons_4x_30: 596170208
-      Map_Icons_4x_18: -1070562698
-      Map_Icons_4x_17: 1636531622
-      Map_Icons_4x_33: -1474354874
-      Map_Icons_4x_19: 714374413
-      Map_Icons_4x_47: -1306967547
-      Map_Icons_4x_22: -946223004
-      Map_Icons_4x_2: -1555657778
-      Map_Icons_4x_26: 1819807483
-      Map_Icons_4x_59: -986394664
-      Map_Icons_4x_63: 1520093610
-      Map_Icons_4x_14: 394289527
-      Map_Icons_4x_5: 311956220
-      Map_Icons_4x_7: 963211230
       Map_Icons_4x_0: 1157945686
+      Map_Icons_4x_1: 550980716
+      Map_Icons_4x_10: -1806332951
+      Map_Icons_4x_11: -700284921
+      Map_Icons_4x_12: 1192293475
+      Map_Icons_4x_13: -762168655
+      Map_Icons_4x_14: 394289527
+      Map_Icons_4x_15: -30226900
+      Map_Icons_4x_16: -376173003
+      Map_Icons_4x_17: 1636531622
+      Map_Icons_4x_18: -1070562698
+      Map_Icons_4x_19: 714374413
+      Map_Icons_4x_2: -1555657778
       Map_Icons_4x_20: 1776025040
+      Map_Icons_4x_21: 611521856
+      Map_Icons_4x_22: -946223004
+      Map_Icons_4x_23: -1645636175
+      Map_Icons_4x_24: 2085967945
+      Map_Icons_4x_25: -1838342905
+      Map_Icons_4x_26: 1819807483
       Map_Icons_4x_27: 1531419143
-      Map_Icons_4x_44: 1565688511
+      Map_Icons_4x_28: -639122121
       Map_Icons_4x_29: -1968989206
       Map_Icons_4x_3: 460244599
-      Map_Icons_4x_10: -1806332951
-      Map_Icons_4x_38: 2109189927
+      Map_Icons_4x_30: 596170208
+      Map_Icons_4x_31: -381354205
+      Map_Icons_4x_32: 1037904182
+      Map_Icons_4x_33: -1474354874
+      Map_Icons_4x_34: 574438219
+      Map_Icons_4x_35: -743711036
       Map_Icons_4x_36: 914635635
-  spritePackingTag: 
+      Map_Icons_4x_37: 1105445297
+      Map_Icons_4x_38: 2109189927
+      Map_Icons_4x_39: 530897267
+      Map_Icons_4x_4: -995298359
+      Map_Icons_4x_40: -59107282
+      Map_Icons_4x_41: -1001077253
+      Map_Icons_4x_42: -893263878
+      Map_Icons_4x_43: 1557795149
+      Map_Icons_4x_44: 1565688511
+      Map_Icons_4x_45: -1749277491
+      Map_Icons_4x_46: -202946960
+      Map_Icons_4x_47: -1306967547
+      Map_Icons_4x_48: -1159982124
+      Map_Icons_4x_49: -1662406315
+      Map_Icons_4x_5: 311956220
+      Map_Icons_4x_50: -184540150
+      Map_Icons_4x_51: 2041523810
+      Map_Icons_4x_52: 1275415605
+      Map_Icons_4x_53: 1433284210
+      Map_Icons_4x_54: -720037915
+      Map_Icons_4x_55: 841860017
+      Map_Icons_4x_56: -407338733
+      Map_Icons_4x_57: 749236557
+      Map_Icons_4x_58: -157354984
+      Map_Icons_4x_59: -986394664
+      Map_Icons_4x_6: 1181942547
+      Map_Icons_4x_60: -1889256573
+      Map_Icons_4x_61: 484410940
+      Map_Icons_4x_62: 1732840883
+      Map_Icons_4x_63: 1520093610
+      Map_Icons_4x_7: 963211230
+      Map_Icons_4x_8: 1240558224
+      Map_Icons_4x_9: -403098494
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

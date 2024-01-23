@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MineralSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject mineralToSpawn;
-    [SerializeField] private List<Mineral> mineralDatas;
+    [SerializeField] private GameObject mineralPrefab;
+    [SerializeField] private List<SO_Mineral> mineralDatas;
     [SerializeField] private float padding;
     [SerializeField] private LayerMask mineralLayer;
     [SerializeField] private LayerMask groundLayer;
@@ -37,16 +37,14 @@ public class MineralSpawner : MonoBehaviour
                     {
                         Vector3 pos = ray.point;
                         pos.y += 0.45f;
-                        GameObject mineral = Instantiate(mineralToSpawn, pos, Quaternion.identity);
+                        GameObject mineral = Instantiate(mineralPrefab, pos, Quaternion.identity);
                         mineral.GetComponent<MineralBehaviours>().mineralData = mineralDatas[GetRandomSpawn()];
                         mineral.GetComponent<MineralBehaviours>().UpdateMineral();
                     }
                 }
             }
             else
-            {
                 continue;
-            }
         }
     }
 
