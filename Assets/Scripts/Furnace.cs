@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Furnace : MonoBehaviour
+public class Furnace : Singleton<Furnace>
 {
-    InventoryManager inventoryManager;
     [SerializeField] private GameObject furnaceUI;
     [SerializeField] private InventorySlot fuelSlot;
     [SerializeField] private InventorySlot inputSlot;
@@ -23,8 +22,6 @@ public class Furnace : MonoBehaviour
 
     void Start()
     {
-        inventoryManager = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();
-
         furnaceUI.SetActive(false);
         mineralBubble.SetActive(true);
         sliderProgress.maxValue = 3;
@@ -113,13 +110,13 @@ public class Furnace : MonoBehaviour
             {
                 furnaceUI.SetActive(true);
                 isOpeningTheFurnace = true;
-                inventoryManager.ToggleTheInventory();
+                InventoryManager.Instance.ToggleOnTheInventory();
             }
             else
             {
                 furnaceUI.SetActive(false);
                 isOpeningTheFurnace = false;
-                inventoryManager.ToggleTheInventory();
+                InventoryManager.Instance.ToggleOffTheInventory();
             }
             
         }
@@ -141,8 +138,8 @@ public class Furnace : MonoBehaviour
             canFurnace = false;
             isOpeningTheFurnace = false;
             furnaceUI.SetActive(false);
-            inventoryManager.inventoryGroup.SetActive(false);
-            inventoryManager.isOpeningTheInventory = false;
+            InventoryManager.Instance.inventoryGroup.SetActive(false);
+            InventoryManager.Instance.isOpeningTheInventory = false;
             furnaceWhiteBorder.SetActive(false);
         }
     }

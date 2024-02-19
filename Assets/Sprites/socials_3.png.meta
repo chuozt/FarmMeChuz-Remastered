@@ -3,7 +3,7 @@ guid: c826a8b83e87f25438451eeb9302345f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -47,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 160
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -63,6 +64,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -75,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -87,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -99,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -111,6 +116,20 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -799,41 +818,40 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      socials_3_23: -1642793758
+      socials_3_0: -724164067
       socials_3_1: 2124045630
+      socials_3_10: 1414949362
+      socials_3_11: -1327513855
+      socials_3_12: 280778514
+      socials_3_13: 244251159
       socials_3_14: 356800153
+      socials_3_15: 1183592686
       socials_3_16: 1422476001
       socials_3_17: -942674279
-      socials_3_2: -2007977878
-      socials_3_15: 1183592686
-      socials_3_8: 1903474897
-      socials_3_12: 280778514
       socials_3_18: -1094672855
-      socials_3_29: -1643504147
-      socials_3_0: -724164067
-      socials_3_6: 44248535
-      socials_3_20: -973259239
-      socials_3_11: -1327513855
-      socials_3_21: -403512191
-      socials_3_28: -1155753230
-      socials_3_9: -1892951171
-      socials_3_25: 1891588952
-      socials_3_5: 818342733
-      socials_3_3: 236987607
       socials_3_19: -472730972
+      socials_3_2: -2007977878
+      socials_3_20: -973259239
+      socials_3_21: -403512191
       socials_3_22: -1461339160
-      socials_3_27: -2056203627
-      socials_3_30: 1634411633
+      socials_3_23: -1642793758
       socials_3_24: 1614559591
-      socials_3_7: -1542853177
-      socials_3_4: 1324909277
-      socials_3_10: 1414949362
-      socials_3_13: 244251159
+      socials_3_25: 1891588952
       socials_3_26: -675546309
+      socials_3_27: -2056203627
+      socials_3_28: -1155753230
+      socials_3_29: -1643504147
+      socials_3_3: 236987607
+      socials_3_30: 1634411633
       socials_3_31: 615514182
-  spritePackingTag: 
+      socials_3_4: 1324909277
+      socials_3_5: 818342733
+      socials_3_6: 44248535
+      socials_3_7: -1542853177
+      socials_3_8: 1903474897
+      socials_3_9: -1892951171
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

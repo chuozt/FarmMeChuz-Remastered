@@ -112,9 +112,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1835072
   percentages:
+  - 27
   - 25
   - 20
-  - 16
-  - 13
   - 10
   - 6
+  - 2

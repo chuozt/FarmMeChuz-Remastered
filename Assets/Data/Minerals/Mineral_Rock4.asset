@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6706bf4cdc1c21344a9c2c0b7d9a73bb, type: 3}
   m_Name: Mineral_Rock4
   m_EditorClassIdentifier: 
-  <Health>k__BackingField: 0
-  <ItemSprite>k__BackingField: {fileID: 0}
-  <DropMineral>k__BackingField: {fileID: 0}
-  <MinimumSpawnNumber>k__BackingField: 0
-  <MaximumSpawnNumber>k__BackingField: 0
+  <Health>k__BackingField: 45
+  <ItemSprite>k__BackingField: {fileID: -1447800909, guid: 54ea5659c7f59d3428324c9985820c5c, type: 3}
+  <DropMineral>k__BackingField: {fileID: 5282432310339478956, guid: 8c6c94ccd334dd24b986abb545023fcb, type: 3}
+  <MinimumSpawnNumber>k__BackingField: 4
+  <MaximumSpawnNumber>k__BackingField: 5

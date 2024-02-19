@@ -10,8 +10,6 @@ public class UpgradeCategory : MonoBehaviour
     public List<Image> lvImage;
     public UpgradeCategoryData upgradeCategoryData;
 
-    [SerializeField] private CameraShake cameraShake;
-    [SerializeField] private Feedback feedback;
     [SerializeField] private AudioClip sfx;
 
     public void UpgradeButton()
@@ -28,13 +26,13 @@ public class UpgradeCategory : MonoBehaviour
         {
             if(currentLv >= 9)
             {
-                feedback.StartCoroutine(feedback.FeedbackTrigger("Max level reached!"));
+                Feedback.Instance.StartCoroutine(Feedback.Instance.FeedbackTrigger("Max level reached!"));
             }
             else if(int.Parse(pointNumberText.text) <= 0)
             {
-                feedback.StartCoroutine(feedback.FeedbackTrigger("You have no point!"));
+                Feedback.Instance.StartCoroutine(Feedback.Instance.FeedbackTrigger("You have no point!"));
             }
-            cameraShake.ShakeCamera();
+            CameraShake.Instance.ShakeCamera();
         }
     }
 }

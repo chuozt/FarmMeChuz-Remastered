@@ -18,13 +18,7 @@ TagManager:
   - MineralSpawners
   - TreeSpawners
   - EnemySpawners
-  - AudioManager
-  - InventoryManager
-  - DayNightManager
-  - ShopManager
-  - QuestManager
   - CinemachineCamera
-  - FeedbackText
   layers:
   - Default
   - TransparentFX

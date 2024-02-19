@@ -7,7 +7,6 @@ public class MineralBehaviours : MonoBehaviour
     private float health;
     private SpriteRenderer sr;
     private Animator anim;
-    private AudioManager audioManager;
 
     [HideInInspector] public SO_Mineral mineralData;
     [SerializeField] private float addMineralForce = 1;
@@ -17,7 +16,6 @@ public class MineralBehaviours : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
 
         health = mineralData.Health;
         sr.sprite = mineralData.ItemSprite;
@@ -27,7 +25,7 @@ public class MineralBehaviours : MonoBehaviour
     {
         health -= damage;
         anim.SetTrigger("isBroken");
-        audioManager.PlaySFX(sfx[Random.Range(0, sfx.Count)]);
+        AudioManager.Instance.PlaySFX(sfx[Random.Range(0, sfx.Count)]);
 
         if(health <= 0)
         {

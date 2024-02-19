@@ -13,26 +13,17 @@ public class QuestButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public Text countText;
     [HideInInspector] public bool isDone = false;
     public Image blurImage;
-    
     public int questIndex;
 
     //Managers
-    QuestLevel questLevelScript;
-    InventoryManager inventoryManager;
-    Feedback feedback;
-    CameraShake cameraShake;
-    AudioManager audioManager;
+    QuestLevel questLevel;
 
     [Space(20)]
     public AudioClip sfx;
 
     void Start()
     {
-        questLevelScript = transform.parent.parent.GetComponent<QuestLevel>();
-        inventoryManager = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();  
-        feedback = GameObject.FindGameObjectWithTag("FeedbackText").GetComponent<Feedback>();
-        cameraShake = GameObject.FindGameObjectWithTag("CinemachineCamera").GetComponent<CameraShake>();
-        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+        questLevel = transform.parent.parent.GetComponent<QuestLevel>();
         blurImage.enabled = false;
     }
 
@@ -42,9 +33,9 @@ public class QuestButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         {
             bool isHaveCrop = false;
 
-            for(int i = 0; i < inventoryManager.inventorySlots.Length; i++)
+            for(int i = 0; i < InventoryManager.Instance.inventorySlots.Length; i++)
             {
-                InventorySlot slot = inventoryManager.inventorySlots[i];
+                InventorySlot slot = InventoryManager.Instance.inventorySlots[i];
                 InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
                 if(itemInSlot != null && itemInSlot.item == item && count < num)
                 {
@@ -60,27 +51,27 @@ public class QuestButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
                     }
                     else
                     {
-                        feedback.StartCoroutine(feedback.FeedbackTrigger("You don't have enough crops to put in the storage!"));
-                        cameraShake.ShakeCamera();
+                        Feedback.Instance.StartCoroutine(Feedback.Instance.FeedbackTrigger("You don't have enough crops to put in the storage!"));
+                        CameraShake.Instance.ShakeCamera();
                     }
                 }
             }
 
             if(!isHaveCrop)
             {
-                feedback.StartCoroutine(feedback.FeedbackTrigger("You don't have enough crops to put in the storage!"));
-                cameraShake.ShakeCamera();
+                Feedback.Instance.StartCoroutine(Feedback.Instance.FeedbackTrigger("You don't have enough crops to put in the storage!"));
+                CameraShake.Instance.ShakeCamera();
             }
         }
         
         if(isDone)
         {
             blurImage.enabled = true;
-            audioManager.PlaySFX(sfx);
+            AudioManager.Instance.PlaySFX(sfx);
             
-            for(int i = 0; i < inventoryManager.inventorySlots.Length; i++)
+            for(int i = 0; i < InventoryManager.Instance.inventorySlots.Length; i++)
             {
-                InventorySlot slot = inventoryManager.inventorySlots[i];
+                InventorySlot slot = InventoryManager.Instance.inventorySlots[i];
                 InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
                 if(itemInSlot != null && itemInSlot.item == item && itemInSlot.count < count)
                 {
@@ -96,8 +87,8 @@ public class QuestButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
                     break;
                 }
             }
-            questLevelScript.quest.IsDone[questIndex] = true;
-            questLevelScript.CheckIfQuestLevelIsDone();
+            questLevel.quest.IsDone[questIndex] = true;
+            questLevel.CheckIfQuestLevelIsDone();
             count = 0;
             item = null;
             this.gameObject.GetComponent<Button>().enabled = false;
@@ -108,12 +99,12 @@ public class QuestButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        inventoryManager.UpdateTooltips(item);
+        InventoryManager.Instance.UpdateTooltips(item);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        inventoryManager.UpdateTooltips(item);
+        InventoryManager.Instance.UpdateTooltips(item);
     }
 
 }

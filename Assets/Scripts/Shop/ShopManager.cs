@@ -1,17 +1,14 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShopManager : MonoBehaviour
+public class ShopManager : Singleton<ShopManager>
 {
     [HideInInspector] public bool canShopNow = false;
     [HideInInspector] public bool isOpeningTheShop = false;
 
     public GameObject shopGroup;
-    public GameObject inventoryGroup;
-    public GameObject inventory;
-    public InventoryManager inventoryManagerScript;
     [SerializeField] private Button buyButton;
     [SerializeField] private Button sellButton;
     [SerializeField] private Color enableButtonColor;
@@ -20,6 +17,7 @@ public class ShopManager : MonoBehaviour
     [Space(10)]
     public GameObject buyShop;
     public GameObject sellShop;
+    [SerializeField] private Scrollbar shopScrollbar;
 
     [Space(10)]
     public GameObject shopWhiteBorder;
@@ -37,37 +35,29 @@ public class ShopManager : MonoBehaviour
 
     void Update()
     {
-        if(canShopNow && Input.GetKeyDown(KeyCode.F) && !isOpeningTheShop && !inventoryManagerScript.isOpeningTheInventory)
+        if(canShopNow && Input.GetKeyDown(KeyCode.F) && !isOpeningTheShop && !InventoryManager.Instance.isOpeningTheInventory)
         {
-            ToggleOnUI();
+            InventoryManager.Instance.ToggleOnTheInventory();
+            ToggleOnShopUI();
             EnableShopPage(buyShop, buyButton);
-
-            //Deselect all the slots, except the selected one
-            for(int i = 0; i < inventoryManagerScript.inventorySlots.Length; i++)
-            {
-                if(inventoryManagerScript.inventorySlots[i] != inventoryManagerScript.inventorySlots[inventoryManagerScript.selectedSlot])
-                    inventoryManagerScript.inventorySlots[i].Deselect();
-            }
-
-            AudioSource.PlayClipAtPoint(openSFX, transform.position);
         }
         else if(canShopNow && Input.GetKeyDown(KeyCode.F) && isOpeningTheShop)
         {
-            ToggleOffUI();
-            AudioSource.PlayClipAtPoint(closeSFX, transform.position);
+            InventoryManager.Instance.ToggleOffTheInventory();
+            ToggleOffShopUI();
         }
     }
 
     public void BuyButton()
     {
         EnableShopPage(buyShop, buyButton);
-        AudioSource.PlayClipAtPoint(clickSFX, GameObject.Find("Main Camera").transform.position, 2);
+        AudioManager.Instance.PlaySFX(clickSFX);
     }
 
     public void SellButton()
     {
         EnableShopPage(sellShop, sellButton);
-        AudioSource.PlayClipAtPoint(clickSFX, GameObject.Find("Main Camera").transform.position, 2);
+        AudioManager.Instance.PlaySFX(clickSFX);
     }
 
     void EnableShopPage(GameObject shop, Button button)
@@ -94,28 +84,24 @@ public class ShopManager : MonoBehaviour
     {
         if(col.gameObject.name == "Player")
         {
-            ToggleOffUI();
+            ToggleOffShopUI();
             canShopNow = false;
             shopWhiteBorder.GetComponent<SpriteRenderer>().enabled = false;
         }        
     }
 
-    void ToggleOnUI()
+    void ToggleOnShopUI()
     {
         shopGroup.SetActive(true);
-        inventoryGroup.SetActive(true);
-        inventory.SetActive(true);
-        inventoryManagerScript.EnablePage(inventoryManagerScript.inventory, inventoryManagerScript.inventoryButton);
-        inventoryManagerScript.isOpeningTheInventory = true;
         isOpeningTheShop = true;
+        shopScrollbar.value = 1;
+        AudioManager.Instance.PlaySFX(openSFX);
     }
 
-    void ToggleOffUI()
+    void ToggleOffShopUI()
     {
         shopGroup.SetActive(false);
-        inventoryGroup.SetActive(false);
-        inventory.SetActive(false);
-        inventoryManagerScript.isOpeningTheInventory = false;
         isOpeningTheShop = false;
+        AudioManager.Instance.PlaySFX(closeSFX);
     }
 }

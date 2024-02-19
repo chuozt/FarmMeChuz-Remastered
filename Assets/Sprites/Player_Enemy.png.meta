@@ -3,7 +3,7 @@ guid: 3959e74a351520c48a2f9af8feb5f502
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -47,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 160
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -63,6 +64,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -75,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -87,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -99,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -111,6 +116,20 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -120,10 +139,10 @@ TextureImporter:
       name: Player_Enemy_1
       rect:
         serializedVersion: 2
-        x: 160
-        y: 2240
-        width: 160
-        height: 160
+        x: 48
+        y: 224
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,10 +160,10 @@ TextureImporter:
       name: Player_Enemy_2
       rect:
         serializedVersion: 2
-        x: 480
-        y: 2240
-        width: 320
-        height: 160
+        x: 80
+        y: 224
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +181,10 @@ TextureImporter:
       name: Player_Enemy_3
       rect:
         serializedVersion: 2
-        x: 800
-        y: 2240
-        width: 320
-        height: 160
+        x: 112
+        y: 224
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,10 +202,10 @@ TextureImporter:
       name: Player_Enemy_4
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 2240
-        width: 320
-        height: 160
+        x: 144
+        y: 224
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,10 +223,10 @@ TextureImporter:
       name: Player_Enemy_5
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 2240
-        width: 320
-        height: 160
+        x: 48
+        y: 208
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,10 +244,10 @@ TextureImporter:
       name: Player_Enemy_7
       rect:
         serializedVersion: 2
-        x: 480
-        y: 2080
-        width: 320
-        height: 158
+        x: 112
+        y: 208
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,10 +265,10 @@ TextureImporter:
       name: Player_Enemy_8
       rect:
         serializedVersion: 2
-        x: 800
-        y: 2080
-        width: 320
-        height: 158
+        x: 144
+        y: 208
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,10 +286,10 @@ TextureImporter:
       name: Player_Enemy_9
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 2080
-        width: 320
-        height: 158
+        x: 48
+        y: 192
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,10 +307,10 @@ TextureImporter:
       name: Player_Enemy_10
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 2080
-        width: 320
-        height: 158
+        x: 80
+        y: 192
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,10 +328,10 @@ TextureImporter:
       name: Player_Enemy_11
       rect:
         serializedVersion: 2
-        x: 480
-        y: 1920
-        width: 320
-        height: 158
+        x: 112
+        y: 192
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -330,10 +349,10 @@ TextureImporter:
       name: Player_Enemy_12
       rect:
         serializedVersion: 2
-        x: 800
-        y: 1920
-        width: 320
-        height: 158
+        x: 144
+        y: 192
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -351,10 +370,10 @@ TextureImporter:
       name: Player_Enemy_13
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 1920
-        width: 320
-        height: 158
+        x: 48
+        y: 176
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -372,10 +391,10 @@ TextureImporter:
       name: Player_Enemy_14
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 1920
-        width: 320
-        height: 158
+        x: 80
+        y: 176
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -393,10 +412,10 @@ TextureImporter:
       name: Player_Enemy_15
       rect:
         serializedVersion: 2
-        x: 480
-        y: 1760
-        width: 320
-        height: 158
+        x: 112
+        y: 176
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -414,10 +433,10 @@ TextureImporter:
       name: Player_Enemy_16
       rect:
         serializedVersion: 2
-        x: 800
-        y: 1760
-        width: 320
-        height: 158
+        x: 144
+        y: 176
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -435,10 +454,10 @@ TextureImporter:
       name: Player_Enemy_17
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 1760
-        width: 320
-        height: 158
+        x: 48
+        y: 160
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -456,10 +475,10 @@ TextureImporter:
       name: Player_Enemy_18
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 1760
-        width: 320
-        height: 158
+        x: 80
+        y: 160
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -477,10 +496,10 @@ TextureImporter:
       name: Player_Enemy_19
       rect:
         serializedVersion: 2
-        x: 480
-        y: 1600
-        width: 320
-        height: 158
+        x: 112
+        y: 160
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -498,10 +517,10 @@ TextureImporter:
       name: Player_Enemy_20
       rect:
         serializedVersion: 2
-        x: 800
-        y: 1600
-        width: 320
-        height: 158
+        x: 144
+        y: 160
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -519,10 +538,10 @@ TextureImporter:
       name: Player_Enemy_21
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 1600
-        width: 320
-        height: 158
+        x: 48
+        y: 144
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -540,10 +559,10 @@ TextureImporter:
       name: Player_Enemy_22
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 1600
-        width: 320
-        height: 158
+        x: 80
+        y: 144
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -561,10 +580,10 @@ TextureImporter:
       name: Player_Enemy_23
       rect:
         serializedVersion: 2
-        x: 480
-        y: 1440
-        width: 320
-        height: 158
+        x: 112
+        y: 144
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -582,10 +601,10 @@ TextureImporter:
       name: Player_Enemy_24
       rect:
         serializedVersion: 2
-        x: 800
-        y: 1440
-        width: 320
-        height: 158
+        x: 144
+        y: 144
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -603,10 +622,10 @@ TextureImporter:
       name: Player_Enemy_25
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 1440
-        width: 320
-        height: 158
+        x: 48
+        y: 128
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -624,10 +643,10 @@ TextureImporter:
       name: Player_Enemy_26
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 1440
-        width: 320
-        height: 158
+        x: 80
+        y: 128
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -645,10 +664,10 @@ TextureImporter:
       name: Player_Enemy_27
       rect:
         serializedVersion: 2
-        x: 480
-        y: 1280
-        width: 320
-        height: 158
+        x: 112
+        y: 128
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -666,10 +685,10 @@ TextureImporter:
       name: Player_Enemy_28
       rect:
         serializedVersion: 2
-        x: 800
-        y: 1280
-        width: 320
-        height: 158
+        x: 144
+        y: 128
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -687,10 +706,10 @@ TextureImporter:
       name: Player_Enemy_29
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 1280
-        width: 320
-        height: 158
+        x: 16
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -708,10 +727,10 @@ TextureImporter:
       name: Player_Enemy_30
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 1280
-        width: 320
-        height: 158
+        x: 48
+        y: 96
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -729,10 +748,10 @@ TextureImporter:
       name: Player_Enemy_35
       rect:
         serializedVersion: 2
-        x: 160
-        y: 960
-        width: 160
-        height: 160
+        x: 80
+        y: 80
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -750,10 +769,10 @@ TextureImporter:
       name: Player_Enemy_36
       rect:
         serializedVersion: 2
-        x: 480
-        y: 960
-        width: 320
-        height: 160
+        x: 112
+        y: 80
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -771,10 +790,10 @@ TextureImporter:
       name: Player_Enemy_37
       rect:
         serializedVersion: 2
-        x: 800
-        y: 960
-        width: 320
-        height: 160
+        x: 144
+        y: 80
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -792,10 +811,10 @@ TextureImporter:
       name: Player_Enemy_38
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 960
-        width: 320
-        height: 160
+        x: 48
+        y: 64
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -813,10 +832,10 @@ TextureImporter:
       name: Player_Enemy_39
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 960
-        width: 320
-        height: 160
+        x: 80
+        y: 64
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -834,10 +853,10 @@ TextureImporter:
       name: Player_Enemy_41
       rect:
         serializedVersion: 2
-        x: 480
-        y: 800
-        width: 320
-        height: 158
+        x: 144
+        y: 64
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -855,10 +874,10 @@ TextureImporter:
       name: Player_Enemy_42
       rect:
         serializedVersion: 2
-        x: 800
-        y: 800
-        width: 320
-        height: 158
+        x: 48
+        y: 48
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -876,10 +895,10 @@ TextureImporter:
       name: Player_Enemy_43
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 800
-        width: 320
-        height: 158
+        x: 80
+        y: 48
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -897,10 +916,10 @@ TextureImporter:
       name: Player_Enemy_44
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 800
-        width: 320
-        height: 158
+        x: 112
+        y: 48
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -918,10 +937,10 @@ TextureImporter:
       name: Player_Enemy_45
       rect:
         serializedVersion: 2
-        x: 480
-        y: 640
-        width: 320
-        height: 158
+        x: 144
+        y: 48
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -939,10 +958,10 @@ TextureImporter:
       name: Player_Enemy_46
       rect:
         serializedVersion: 2
-        x: 800
-        y: 640
-        width: 320
-        height: 158
+        x: 16
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -957,34 +976,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Enemy_49
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 480
-        width: 320
-        height: 158
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6469869515dccc46ab34a1e9c62278e
-      internalID: -342739507
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Player_Enemy_47
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 640
-        width: 320
-        height: 158
+        x: 48
+        y: 16
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -999,13 +997,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Enemy_48
+      name: Player_Enemy_0
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 640
-        width: 320
-        height: 158
+        x: 16
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1013,20 +1011,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aba9544e5971b434c8094e6c263b0089
-      internalID: -1661083340
+      spriteID: e751388750178b84290294aeb8987e84
+      internalID: 381688414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Enemy_50
+      name: Player_Enemy_6
       rect:
         serializedVersion: 2
-        x: 800
-        y: 480
-        width: 320
-        height: 158
+        x: 80
+        y: 208
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1034,20 +1032,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 673cb852ed848964fb4a487b4062a6eb
-      internalID: -88700382
+      spriteID: 0172d4d4517d29d47a5d61777298d226
+      internalID: 1068360973
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Enemy_51
+      name: Player_Enemy_31
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 480
-        width: 320
-        height: 158
+        x: 80
+        y: 96
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1055,20 +1053,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd4e78633953f7b4c9faf9ef81dddac0
-      internalID: 1041523764
+      spriteID: 07526a97621540d4086306771b70a132
+      internalID: 1514895497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Enemy_52
+      name: Player_Enemy_32
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 480
-        width: 320
-        height: 158
+        x: 112
+        y: 96
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1076,20 +1074,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c37c8749c51755848b376d6667638e77
-      internalID: 1218816254
+      spriteID: 3c3a6c6d7d644d241bb7d453dab6310f
+      internalID: -1688063075
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Enemy_57
+      name: Player_Enemy_33
       rect:
         serializedVersion: 2
-        x: 160
-        y: 160
-        width: 160
-        height: 160
+        x: 144
+        y: 96
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1097,20 +1095,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e99f5baaf1c71ff40b3dae63d1c66ee7
-      internalID: 1361411180
+      spriteID: 2b5bec27ef17b3c47bad78ef735d98ce
+      internalID: -1841274355
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Enemy_58
+      name: Player_Enemy_34
       rect:
         serializedVersion: 2
-        x: 480
-        y: 160
-        width: 320
-        height: 160
+        x: 48
+        y: 80
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1118,8 +1116,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a9411b747e754a42ac407646a40a299
-      internalID: 145384598
+      spriteID: b7be330e2bc6d24449f3737049b153f8
+      internalID: 1257496211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Enemy_40
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 64
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d6dd2a954202744db612c33af76af79
+      internalID: -29363295
       vertices: []
       indices: 
       edges: []
@@ -1135,69 +1154,56 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_Enemy_58: 145384598
-      Player_Enemy_23: 435032510
-      Player_Enemy_12: 1428611127
-      Player_Enemy_15: 745156643
-      Player_Enemy_25: 1138502386
-      Player_Enemy_47: -99065471
-      Player_Enemy_33: -1841274355
-      Player_Enemy_54: 1984188948
-      Player_Enemy_55: 859195116
-      Player_Enemy_17: -323228978
       Player_Enemy_0: 381688414
-      Player_Enemy_7: 1110111265
-      Player_Enemy_44: 741135355
-      Player_Enemy_31: 1514895497
-      Player_Enemy_45: -855459350
-      Player_Enemy_16: 8798023
-      Player_Enemy_27: -1411640141
-      Player_Enemy_21: 100086638
-      Player_Enemy_24: 768235469
-      Player_Enemy_38: 695004825
-      Player_Enemy_57: 1361411180
-      Player_Enemy_50: -88700382
-      Player_Enemy_40: -29363295
-      Player_Enemy_18: 1580252365
-      Player_Enemy_35: -2079282417
-      Player_Enemy_28: 1228389320
-      Player_Enemy_34: 1257496211
-      Player_Enemy_6: 1068360973
-      Player_Enemy_3: 745870339
-      Player_Enemy_10: -680049941
-      Player_Enemy_4: -1257507083
-      Player_Enemy_59: -425773081
       Player_Enemy_1: 1762903472
-      Player_Enemy_9: 1972581350
-      Player_Enemy_46: 729222095
-      Player_Enemy_22: -1085612581
-      Player_Enemy_19: 532794614
-      Player_Enemy_39: -86642683
-      Player_Enemy_56: -2087099546
+      Player_Enemy_10: -680049941
       Player_Enemy_11: 339743309
-      Player_Enemy_30: -1161427921
-      Player_Enemy_32: -1688063075
-      Player_Enemy_37: -399112267
-      Player_Enemy_43: -899798733
+      Player_Enemy_12: 1428611127
       Player_Enemy_13: 67984110
-      Player_Enemy_26: -2046738538
-      Player_Enemy_41: 1799543424
-      Player_Enemy_29: 774053409
-      Player_Enemy_42: -1189188860
-      Player_Enemy_51: 1041523764
       Player_Enemy_14: -1860264912
-      Player_Enemy_20: 1063855259
-      Player_Enemy_48: -1661083340
-      Player_Enemy_36: -1378378180
-      Player_Enemy_52: 1218816254
-      Player_Enemy_8: 1746554728
+      Player_Enemy_15: 745156643
+      Player_Enemy_16: 8798023
+      Player_Enemy_17: -323228978
+      Player_Enemy_18: 1580252365
+      Player_Enemy_19: 532794614
       Player_Enemy_2: 802740423
+      Player_Enemy_20: 1063855259
+      Player_Enemy_21: 100086638
+      Player_Enemy_22: -1085612581
+      Player_Enemy_23: 435032510
+      Player_Enemy_24: 768235469
+      Player_Enemy_25: 1138502386
+      Player_Enemy_26: -2046738538
+      Player_Enemy_27: -1411640141
+      Player_Enemy_28: 1228389320
+      Player_Enemy_29: 774053409
+      Player_Enemy_3: 745870339
+      Player_Enemy_30: -1161427921
+      Player_Enemy_31: 1514895497
+      Player_Enemy_32: -1688063075
+      Player_Enemy_33: -1841274355
+      Player_Enemy_34: 1257496211
+      Player_Enemy_35: -2079282417
+      Player_Enemy_36: -1378378180
+      Player_Enemy_37: -399112267
+      Player_Enemy_38: 695004825
+      Player_Enemy_39: -86642683
+      Player_Enemy_4: -1257507083
+      Player_Enemy_40: -29363295
+      Player_Enemy_41: 1799543424
+      Player_Enemy_42: -1189188860
+      Player_Enemy_43: -899798733
+      Player_Enemy_44: 741135355
+      Player_Enemy_45: -855459350
+      Player_Enemy_46: 729222095
+      Player_Enemy_47: -99065471
       Player_Enemy_5: -54985865
-      Player_Enemy_49: -342739507
-      Player_Enemy_53: -344289505
-  spritePackingTag: 
+      Player_Enemy_6: 1068360973
+      Player_Enemy_7: 1110111265
+      Player_Enemy_8: 1746554728
+      Player_Enemy_9: 1972581350
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

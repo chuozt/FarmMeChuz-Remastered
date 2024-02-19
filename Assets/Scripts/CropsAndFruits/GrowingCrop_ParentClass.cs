@@ -8,7 +8,6 @@ public class GrowingCrop_ParentClass : MonoBehaviour
     [SerializeField] protected List<Renderer> stagesList = new List<Renderer>();
     [SerializeField] protected GameObject waterBubblePrefab;
     [SerializeField] protected List<AudioClip> sfxList;
-    protected AudioManager audioManager;
 
     protected GameObject waterBubble;
     protected bool isWatered = false;
@@ -19,7 +18,6 @@ public class GrowingCrop_ParentClass : MonoBehaviour
 
     void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         timeLeft = cropSeedData.TimeToGrow;
         waterBubble = Instantiate(waterBubblePrefab, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
         waterBubble.transform.SetParent(transform);
@@ -28,8 +26,6 @@ public class GrowingCrop_ParentClass : MonoBehaviour
 
     void Update()
     {
-        Debug.Log((int)timeLeft);
-
         if(!isWatered)
             return;
 
@@ -72,7 +68,7 @@ public class GrowingCrop_ParentClass : MonoBehaviour
             Destroy(crop, 300);
         }
         
-        audioManager.PlaySFX(sfxList[Random.Range(0, sfxList.Count)]);
+        AudioManager.Instance.PlaySFX(sfxList[Random.Range(0, sfxList.Count)]);
     }
 
     public void DecreaseTimeAfterDay(float time)

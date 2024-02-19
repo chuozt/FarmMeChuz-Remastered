@@ -25,18 +25,7 @@ public class QuestLevel : MonoBehaviour
     public bool levelIsDone = false;
     public Image blurImage;
 
-    Text playerCoinText;
-    Text pointNumberText;
-    AudioManager audioManager;
-
     [SerializeField] private AudioClip sfxQuestLevelComplete;
-
-    void Start()
-    {
-        playerCoinText = GameObject.Find("PlayerCoinText").GetComponent<Text>();
-        pointNumberText = GameObject.Find("PointNumberText").GetComponent<Text>();
-        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
-    }
     
     void Awake()
     {
@@ -45,7 +34,7 @@ public class QuestLevel : MonoBehaviour
         
         for(int i = 0; i < quest.ItemsNeed.Count; i++)
         {
-            quest.IsDone[i] = false;
+            // quest.IsDone[i] = false;
 
             GameObject obj = Instantiate(questPrefab, this.transform.position, Quaternion.identity);
             obj.transform.parent = questArea;
@@ -96,9 +85,9 @@ public class QuestLevel : MonoBehaviour
                 reward.ItemsUnlock[i].IsUnlocked = true;
 
             blurImage.enabled = true;
-            playerCoinText.text = (int.Parse(playerCoinText.text) + reward.Coin).ToString();
-            pointNumberText.text = (int.Parse(pointNumberText.text) + reward.Point).ToString();
-            audioManager.PlaySFX(sfxQuestLevelComplete);
+            PlayerCoin.Instance.PlayerCoinText.text = (int.Parse(PlayerCoin.Instance.PlayerCoinText.text) + reward.Coin).ToString();
+            PlayerCoin.Instance.PlayerCoinText.text = (int.Parse(PlayerCoin.Instance.PlayerCoinText.text) + reward.Point).ToString();
+            AudioManager.Instance.PlaySFX(sfxQuestLevelComplete);
         }
     }
 }

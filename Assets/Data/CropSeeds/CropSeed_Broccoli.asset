@@ -12,18 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4e7baa214b56741b07a8f7270b7fc2, type: 3}
   m_Name: CropSeed_Broccoli
   m_EditorClassIdentifier: 
-  <IsUnlocked>k__BackingField: 1
   <Name>k__BackingField: Broccoli Seed
   <ItemSprite>k__BackingField: {fileID: 2008812617, guid: 0849bb3b169a05c4dbfa66ae45d3edd3, type: 3}
-  <IsStackable>k__BackingField: 1
-  <MaxStackSize>k__BackingField: 16
   <Cost>k__BackingField: 20
   <Value>k__BackingField: 0
   Descriptions: 
-  ItemType: 1
+  <IsUnlocked>k__BackingField: 1
+  <IsStackable>k__BackingField: 1
+  <MaxStackSize>k__BackingField: 16
   <IsFuelResource>k__BackingField: 0
   <FuelAmount>k__BackingField: 0
+  ItemType: 1
   <MinSpawningCrops>k__BackingField: 1
   <MaxSpawningCrops>k__BackingField: 3
-  <TimeToGrow>k__BackingField: 30
+  <TimeToGrow>k__BackingField: 8
   <GrowingCrop>k__BackingField: {fileID: 3309711089956732987, guid: d870c1ddc443435438bef74742d279a9, type: 3}
+  <DropCrop>k__BackingField: {fileID: 4014897554770521674, guid: 4d1c6ad8c1df1c243a0c649fae7844bf, type: 3}

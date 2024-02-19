@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Feedback : MonoBehaviour
+public class Feedback : Singleton<Feedback>
 {
     [SerializeField] private Color feedbackColor;
     [SerializeField] private float duration;

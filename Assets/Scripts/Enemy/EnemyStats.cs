@@ -46,13 +46,9 @@ public class EnemyStats : MonoBehaviour
             isTakingDamage = true;
             
             if(transform.position.x - GameObject.Find("Player").transform.position.x >= 0)
-            {
                 rb.AddForce(new Vector2(knockbackForce, 1), ForceMode2D.Impulse);
-            }
             else 
-            {
                 rb.AddForce(new Vector2(-knockbackForce, 1), ForceMode2D.Impulse);
-            }
             
             //AudioSource.PlayClipAtPoint(sfx[Random.Range(0, sfx.Count)], transform.position);
         }

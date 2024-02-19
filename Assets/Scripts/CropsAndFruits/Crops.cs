@@ -32,9 +32,7 @@ public class Crops : MonoBehaviour
     void Update()
     {
         if(checkCropFinalStage)
-        {
             HandleObject();
-        }
     }
 
     void SetStage(Renderer currentStage)

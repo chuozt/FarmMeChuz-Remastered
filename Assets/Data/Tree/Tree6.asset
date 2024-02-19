@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 010ac9b3eaaf1e74284f842f2ea8b005, type: 3}
   m_Name: Tree6
   m_EditorClassIdentifier: 
-  <Health>k__BackingField: 130
-  <DropLog>k__BackingField:
-  - {fileID: 2663618756790312542, guid: 854c399b6b5708241874f5411714a8d6, type: 3}
-  - {fileID: 1022411026463347003, guid: e4d8d99c20e13354dace377dcc9c2002, type: 3}
-  <MinimumSpawnNumber>k__BackingField: 4
-  <MaximumSpawnNumber>k__BackingField: 8
+  <Health>k__BackingField: 145
+  <Log>k__BackingField:
+  - <DropLog>k__BackingField: {fileID: 2663618756790312542, guid: 854c399b6b5708241874f5411714a8d6, type: 3}
+    <MinimumSpawnNumber>k__BackingField: 4
+    <MaximumSpawnNumber>k__BackingField: 6
+  - <DropLog>k__BackingField: {fileID: 1022411026463347003, guid: e4d8d99c20e13354dace377dcc9c2002, type: 3}
+    <MinimumSpawnNumber>k__BackingField: 2
+    <MaximumSpawnNumber>k__BackingField: 4

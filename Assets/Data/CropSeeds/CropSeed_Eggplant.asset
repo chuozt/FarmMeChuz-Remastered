@@ -12,18 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4e7baa214b56741b07a8f7270b7fc2, type: 3}
   m_Name: CropSeed_Eggplant
   m_EditorClassIdentifier: 
-  <IsUnlocked>k__BackingField: 0
   <Name>k__BackingField: Eggplant Seed
   <ItemSprite>k__BackingField: {fileID: -1572852529, guid: 0849bb3b169a05c4dbfa66ae45d3edd3, type: 3}
-  <IsStackable>k__BackingField: 1
-  <MaxStackSize>k__BackingField: 16
   <Cost>k__BackingField: 90
   <Value>k__BackingField: 0
   Descriptions: 
-  ItemType: 1
+  <IsUnlocked>k__BackingField: 0
+  <IsStackable>k__BackingField: 1
+  <MaxStackSize>k__BackingField: 16
   <IsFuelResource>k__BackingField: 0
   <FuelAmount>k__BackingField: 0
+  ItemType: 1
   <MinSpawningCrops>k__BackingField: 1
   <MaxSpawningCrops>k__BackingField: 3
-  <TimeToGrow>k__BackingField: 60
+  <TimeToGrow>k__BackingField: 8
   <GrowingCrop>k__BackingField: {fileID: 3731629921276526799, guid: 1af70697bc7dde0438c05e84a7eeff67, type: 3}
+  <DropCrop>k__BackingField: {fileID: 1502045577703463028, guid: e7ebc1335fbbd7f478749ae3a7b96df7, type: 3}

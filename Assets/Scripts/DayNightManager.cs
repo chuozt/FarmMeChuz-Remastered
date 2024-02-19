@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DayNightManager : MonoBehaviour
+public class DayNightManager : Singleton<DayNightManager>
 {
     [SerializeField] private SpriteRenderer srDayNightBackGround;
     [SerializeField] private Gradient gradientDayNight;
@@ -11,7 +11,6 @@ public class DayNightManager : MonoBehaviour
     [SerializeField] private Text dayNightText;
     [SerializeField] private Text timeInDayText;
 
-    
     [SerializeField] private GameObject thinkingBubble;
     [SerializeField] private SpriteRenderer bedBorder;
 
@@ -23,17 +22,8 @@ public class DayNightManager : MonoBehaviour
     bool canSleep = false;
     bool enemyIsSpawned = false;
 
-    //Managers
-    Player player;
-    Feedback feedback;
-    CameraShake cameraShake;
-
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        feedback = GameObject.FindGameObjectWithTag("FeedbackText").GetComponent<Feedback>();
-        cameraShake = GameObject.FindGameObjectWithTag("CinemachineCamera").GetComponent<CameraShake>();
-
         hour = startHour;
         isDay = true;
     }
@@ -59,7 +49,7 @@ public class DayNightManager : MonoBehaviour
 
         if(hour == 24)
         {
-            player.TakeDamage(1000);
+            Player.Instance.TakeDamage(1000);
             HitTheSack();
         }
 
@@ -93,13 +83,13 @@ public class DayNightManager : MonoBehaviour
 
         if(canSleep && Input.GetKeyDown(KeyCode.F) && isDay)
         {
-            feedback.StartCoroutine(feedback.FeedbackTrigger("You can only sleep at night!"));
-            cameraShake.ShakeCamera();
+            Feedback.Instance.StartCoroutine(Feedback.Instance.FeedbackTrigger("You can only sleep at night!"));
+            CameraShake.Instance.ShakeCamera();
         }
         else if(canSleep && Input.GetKeyDown(KeyCode.F) && !isDay)
         {
-            player.SetCurrentHealth = 100;
-            player.SetCurrentMana = 100;
+            Player.Instance.SetCurrentHealth = 100;
+            Player.Instance.SetCurrentMana = 100;
             HitTheSack();
         } 
     }

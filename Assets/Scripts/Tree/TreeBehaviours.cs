@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TreeBehaviours : MonoBehaviour
 {
-    AudioManager audioManager;
     private float health;
     [SerializeField] private SO_Tree treeData;
     [SerializeField] private SpriteRenderer sr;
@@ -18,7 +17,6 @@ public class TreeBehaviours : MonoBehaviour
     void OnEnable()
     {
         health = treeData.Health;
-        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
     }
 
     public void TreeGrowUp()
@@ -60,18 +58,21 @@ public class TreeBehaviours : MonoBehaviour
     {
         health -= damage;
         anim.SetTrigger("isChopped");
-        audioManager.PlaySFX(sfxList_BeingChopped[Random.Range(0, sfxList_BeingChopped.Count)]);
+        AudioManager.Instance.PlaySFX(sfxList_BeingChopped[Random.Range(0, sfxList_BeingChopped.Count)]);
 
         if(health <= 0)
         {
-            int randomNumber = Random.Range(treeData.MinimumSpawnNumber, treeData.MaximumSpawnNumber + 1);
-            for(int i = 0; i < randomNumber; i++)
+            for(int i = 0; i < treeData.Log.Count; i++)
             {
-                GameObject obj = Instantiate(treeData.DropLog[Random.Range(0, treeData.DropLog.Count)], new Vector3(transform.position.x, transform.position.y + 0.75f, transform.position.z), Quaternion.identity);
-                obj.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(1f, 1f)) * addLogForce, ForceMode2D.Impulse);
+                int randomNumber = Random.Range(treeData.Log[i].MinimumSpawnNumber, treeData.Log[i].MaximumSpawnNumber + 1);
+                for(int j = 0; j < randomNumber; j++)
+                {
+                    GameObject obj = Instantiate(treeData.Log[i].DropLog, new Vector3(transform.position.x, transform.position.y + 0.75f, transform.position.z), Quaternion.identity);
+                    obj.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(1f, 1f)) * addLogForce, ForceMode2D.Impulse);
 
-                //Destroy object after an amount of time if it is not collected
-                Destroy(obj, 180);
+                    //Destroy object after an amount of time if it is not collected
+                    Destroy(obj, 180);
+                }
             }
             
             Destroy(gameObject);

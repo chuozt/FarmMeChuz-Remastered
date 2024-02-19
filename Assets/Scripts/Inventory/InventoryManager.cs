@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryManager : Singleton<InventoryManager>
 {
     public InventorySlot[] inventorySlots;
     [SerializeField] private GameObject inventoryItemPrefab;
@@ -16,13 +16,6 @@ public class InventoryManager : MonoBehaviour
     [Space(10)]
     [HideInInspector] public int selectedSlot = -1;
     [HideInInspector] public bool isOpeningTheInventory = false;
-
-    //Managers
-    Player player;
-    ShopManager shopManager;
-    QuestManager questManager;
-    AudioManager audioManager;
-    public Furnace furnace;
     
     [Space(20), Header("- Tooltips Components -")]
     public Image toolTips;
@@ -45,11 +38,6 @@ public class InventoryManager : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        shopManager = GameObject.FindGameObjectWithTag("ShopManager").GetComponent<ShopManager>();
-        questManager = GameObject.FindGameObjectWithTag("QuestManager").GetComponent<QuestManager>();
-        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
-
         ChangeSelectedSlot(0);
         DisableTooltips();
         EnablePage(inventory, inventoryButton);
@@ -65,43 +53,45 @@ public class InventoryManager : MonoBehaviour
         UseHoldingItem();
 
         if(CheckCanOpenTheInventory())
-            ToggleTheInventory();
+        {
+            if(!isOpeningTheInventory)
+                ToggleOnTheInventory();
+            else
+                ToggleOffTheInventory();
+        }
     }
 
     bool CheckCanOpenTheInventory()
     {
+        //if none of these is opened, then can open inventory by pressing E key
+        if(pauseMenu.activeInHierarchy || ShopManager.Instance.isOpeningTheShop || QuestManager.Instance.isOpeningTheQuestUI || Furnace.Instance.isOpeningTheFurnace)
+            return false;
+
         if(Input.GetKeyDown(KeyCode.E))
             return true;
-
-        //if none of these is opened, then can open inventory by pressing E key
-        if(pauseMenu.activeInHierarchy && shopManager.isOpeningTheShop && questManager.isOpeningTheQuestUI && furnace.isOpeningTheFurnace)
-            return false;
 
         return false;
     }
 
-    public void ToggleTheInventory()
+    public void ToggleOnTheInventory()
     {
-        if(!isOpeningTheInventory)
+        //Change the color of all slots to deselected color before closing the inventory, except the selectedSlot
+        for(int i = 0; i< inventorySlots.Length; i++)
         {
-            //Change the color of all slots to deselected color before closing the inventory, except the selectedSlot
-            for(int i = 0; i< inventorySlots.Length; i++)
-            {
-                if(inventorySlots[i] != inventorySlots[selectedSlot])
-                {
-                    inventorySlots[i].Deselect();
-                }
-            }
-            inventoryGroup.SetActive(true);
-            EnablePage(inventory, inventoryButton);
-            isOpeningTheInventory = true;
+            if(inventorySlots[i] != inventorySlots[selectedSlot])
+                inventorySlots[i].Deselect();
         }
-        else
-        {
-            inventoryGroup.SetActive(false);
-            EnablePage(inventory, inventoryButton);
-            isOpeningTheInventory = false;
-        }
+
+        inventoryGroup.SetActive(true);
+        EnablePage(inventory, inventoryButton);
+        isOpeningTheInventory = true;
+    }
+
+    public void ToggleOffTheInventory()
+    {
+        inventoryGroup.SetActive(false);
+        EnablePage(inventory, inventoryButton);
+        isOpeningTheInventory = false;
     }
 
     void HighlightCurrentSlot()
@@ -112,7 +102,7 @@ public class InventoryManager : MonoBehaviour
             currentMouseItem.transform.position = Input.mousePosition;
 
         //Choosing slots by scrolling mouse
-        if(!isOpeningTheInventory || !pauseMenu.activeInHierarchy)
+        if(!isOpeningTheInventory && !pauseMenu.activeInHierarchy)
         {
             Vector2 mouseScroll = Input.mouseScrollDelta;
             if(mouseScroll.y < 0)
@@ -158,7 +148,7 @@ public class InventoryManager : MonoBehaviour
     {
         if(!pauseMenu.activeInHierarchy && !isOpeningTheInventory)
         {
-            if(itemInSelectedSlot != null && !player.isDead)
+            if(itemInSelectedSlot != null && !Player.Instance.isDead)
             {
                 switch(itemInSelectedSlot.item.ItemType)
                 {
@@ -172,12 +162,12 @@ public class InventoryManager : MonoBehaviour
                         HoldingCropSeeds(itemInSelectedSlot.item);
                         break;
                     default:
-                        player.SetTempBox(false);
+                        Player.Instance.SetTempBox(false);
                         break;
                 }
             }
             else if(itemInSelectedSlot == null)
-                player.SetTempBox(false);
+                Player.Instance.SetTempBox(false);
         }
     }
 
@@ -188,19 +178,19 @@ public class InventoryManager : MonoBehaviour
         switch(tool.toolType)
         {
             case ToolType.Pickaxe:
-                player.PickaxeAction();
+                Player.Instance.PickaxeAction();
                 break;
             case ToolType.Sword:
-                player.SwordAction();
+                Player.Instance.SwordAction();
                 break;
             case ToolType.Axe:
-                player.AxeAction();
+                Player.Instance.AxeAction();
                 break;
             case ToolType.Shovel:
-                player.ShovelAction();
+                Player.Instance.ShovelAction();
                 break;
             case ToolType.Bucket:
-                player.BucketAction();
+                Player.Instance.BucketAction();
                 break;
         }
     }
@@ -208,13 +198,13 @@ public class InventoryManager : MonoBehaviour
     void HoldingCrops(Item item)
     {
         crop = (ItemCrop)item;
-        player.CropAction();
+        Player.Instance.CropAction();
     }
 
     void HoldingCropSeeds(Item item)
     {
         cropSeed = (ItemCropSeed)item;
-        player.CropSeedAction();
+        Player.Instance.CropSeedAction();
     }
 
     public bool AddItem(Item item)
@@ -272,7 +262,7 @@ public class InventoryManager : MonoBehaviour
         inventoryItem.InitialiseItem(item);
     }
 
-    //Update the tooltips infor when the player points at the items in the inventory
+    //Update the tooltips infor when the Player.Instance points at the items in the inventory
     public void UpdateTooltips(InventoryItem item)
     {
         if(item != null)
@@ -286,7 +276,7 @@ public class InventoryManager : MonoBehaviour
             DisableTooltips();
     }
 
-    //Update tooltips infor when the player points at quest
+    //Update tooltips infor when the Player.Instance points at quest
     public void UpdateTooltips(Item item)
     {
         //Update info inside tooltips
@@ -320,13 +310,13 @@ public class InventoryManager : MonoBehaviour
     public void OpenInventoryButton()
     {
         EnablePage(inventory, inventoryButton);
-        audioManager.PlaySFX(clickSFX);
+        AudioManager.Instance.PlaySFX(clickSFX);
     }
 
     public void OpenUpgradeGroupButton()
     {
         EnablePage(upgradeGroup, upgradeButton);
-        audioManager.PlaySFX(clickSFX);
+        AudioManager.Instance.PlaySFX(clickSFX);
     }
 
     public void EnablePage(GameObject inventoryPage, Button button)

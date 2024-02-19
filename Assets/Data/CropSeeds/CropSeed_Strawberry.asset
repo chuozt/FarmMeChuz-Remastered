@@ -12,18 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4e7baa214b56741b07a8f7270b7fc2, type: 3}
   m_Name: CropSeed_Strawberry
   m_EditorClassIdentifier: 
-  <IsUnlocked>k__BackingField: 0
   <Name>k__BackingField: Strawberry Seed
   <ItemSprite>k__BackingField: {fileID: -1444877702, guid: 0849bb3b169a05c4dbfa66ae45d3edd3, type: 3}
-  <IsStackable>k__BackingField: 1
-  <MaxStackSize>k__BackingField: 16
   <Cost>k__BackingField: 150
   <Value>k__BackingField: 0
   Descriptions: 
-  ItemType: 1
+  <IsUnlocked>k__BackingField: 0
+  <IsStackable>k__BackingField: 1
+  <MaxStackSize>k__BackingField: 16
   <IsFuelResource>k__BackingField: 0
   <FuelAmount>k__BackingField: 0
+  ItemType: 1
   <MinSpawningCrops>k__BackingField: 1
   <MaxSpawningCrops>k__BackingField: 3
-  <TimeToGrow>k__BackingField: 75
+  <TimeToGrow>k__BackingField: 8
   <GrowingCrop>k__BackingField: {fileID: 9141307097471699078, guid: a9c2151038f1fe440bf73edc0853a1ea, type: 3}
+  <DropCrop>k__BackingField: {fileID: 683971783515472778, guid: 6d8813a2069b2424cabbc55ed0f2cf9a, type: 3}

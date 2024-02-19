@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class Player : MonoBehaviour
+public class Player : Singleton<Player>
 {
     // Components
     [Space(10)]
@@ -15,8 +15,6 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     
     [Space(10)]
-    [SerializeField] private InventoryManager inventoryManager;
-    AudioManager audioManager;
     public GameObject inventoryGroup;
     public GameObject inventory;
     public GameObject upgrade;
@@ -95,7 +93,6 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
-        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         inventoryGroup.SetActive(false);
 
         currentHealth = maxHealth;
@@ -121,6 +118,7 @@ public class Player : MonoBehaviour
                     isTakingDamage = false;
                     currentAnimationTime = 0;
                 }
+                CameraShake.Instance.ShakeCamera(0.15f, 0.1f);
             }
             if(isGrounded)
             {
@@ -131,9 +129,7 @@ public class Player : MonoBehaviour
             }
         }
         else
-        {
             ResetToSpawnPoint();
-        }
     }
 
     void FixedUpdate()
@@ -146,10 +142,8 @@ public class Player : MonoBehaviour
     {
         moveX = Input.GetAxisRaw("Horizontal");
 
-        if(!inventoryManager.isOpeningTheInventory)
-        {
+        if(!InventoryManager.Instance.isOpeningTheInventory)
             rb.position += new Vector2(moveX, 0) * speed * Time.fixedDeltaTime;
-        }
     }
 
     void Jump()
@@ -190,24 +184,20 @@ public class Player : MonoBehaviour
             if(col != null)
             {
                 if(col.CompareTag("Mineral"))
-                {
-                    col.GetComponent<MineralBehaviours>().TakeDamage((int)Random.Range(inventoryManager.tool.Damage - 1, inventoryManager.tool.Damage + 4));
-                }
+                    col.GetComponent<MineralBehaviours>().TakeDamage((int)Random.Range(InventoryManager.Instance.tool.Damage - 1, InventoryManager.Instance.tool.Damage + 4));
                 else if(col.CompareTag("Enemy"))
-                {
-                    col.GetComponent<EnemyStats>().TakeDamage((int)Random.Range(inventoryManager.tool.Damage - 3, inventoryManager.tool.Damage + 4));
-                }
+                    col.GetComponent<EnemyStats>().TakeDamage((int)Random.Range(InventoryManager.Instance.tool.Damage - 3, InventoryManager.Instance.tool.Damage + 4));
             }
 
             DecreaseMana(1);
-            audioManager.PlaySFX(tools_whooshSFX);
+            AudioManager.Instance.PlaySFX(tools_whooshSFX);
         }
         
         //Cooldown
         if(isMining)
         {
-            delayMiningTime = Mathf.MoveTowards(delayMiningTime, inventoryManager.tool.Delay + 1, Time.deltaTime);
-            if(delayMiningTime >= inventoryManager.tool.Delay)
+            delayMiningTime = Mathf.MoveTowards(delayMiningTime, InventoryManager.Instance.tool.Delay + 1, Time.deltaTime);
+            if(delayMiningTime >= InventoryManager.Instance.tool.Delay)
             {
                 canMine = true;
                 isMining = false;
@@ -230,20 +220,18 @@ public class Player : MonoBehaviour
             if(col != null)
             {
                 for(int i = 0; i < col.Length; i++)
-                {
-                    col[i].GetComponent<EnemyStats>().TakeDamage((int)Random.Range(inventoryManager.tool.Damage - col.Length, inventoryManager.tool.Damage + 4 - col.Length));
-                }
+                    col[i].GetComponent<EnemyStats>().TakeDamage((int)Random.Range(InventoryManager.Instance.tool.Damage - col.Length, InventoryManager.Instance.tool.Damage + 4 - col.Length));
             }
 
             DecreaseMana(1);
-            audioManager.PlaySFX(tools_whooshSFX);
+            AudioManager.Instance.PlaySFX(tools_whooshSFX);
         }
 
         //Cooldown
         if(isFighting)
         {
-            delayFightingTime = Mathf.MoveTowards(delayFightingTime, inventoryManager.tool.Delay + 1, Time.deltaTime);
-            if(delayFightingTime >= inventoryManager.tool.Delay)
+            delayFightingTime = Mathf.MoveTowards(delayFightingTime, InventoryManager.Instance.tool.Delay + 1, Time.deltaTime);
+            if(delayFightingTime >= InventoryManager.Instance.tool.Delay)
             {
                 canFight = true;
                 isFighting = false;
@@ -265,20 +253,20 @@ public class Player : MonoBehaviour
             if(col != null)
             {
                 if(col.CompareTag("Tree"))
-                    col.GetComponent<TreeBehaviours>().TakeDamage((int)Random.Range(inventoryManager.tool.Damage - 1, inventoryManager.tool.Damage + 4));
+                    col.GetComponent<TreeBehaviours>().TakeDamage((int)Random.Range(InventoryManager.Instance.tool.Damage - 1, InventoryManager.Instance.tool.Damage + 4));
                 else if(col.CompareTag("Enemy"))
-                    col.GetComponent<EnemyStats>().TakeDamage((int)Random.Range(inventoryManager.tool.Damage - 3, inventoryManager.tool.Damage + 4));
+                    col.GetComponent<EnemyStats>().TakeDamage((int)Random.Range(InventoryManager.Instance.tool.Damage - 3, InventoryManager.Instance.tool.Damage + 4));
             }
 
             DecreaseMana(1);
-            audioManager.PlaySFX(tools_whooshSFX);
+            AudioManager.Instance.PlaySFX(tools_whooshSFX);
         }
 
         //Cooldown
         if(isChopping)
         {
-            delayChoppingTime = Mathf.MoveTowards(delayChoppingTime, inventoryManager.tool.Delay + 1, Time.deltaTime);
-            if(delayChoppingTime >= inventoryManager.tool.Delay)
+            delayChoppingTime = Mathf.MoveTowards(delayChoppingTime, InventoryManager.Instance.tool.Delay + 1, Time.deltaTime);
+            if(delayChoppingTime >= InventoryManager.Instance.tool.Delay)
             {
                 canChop = true;
                 isChopping = false;
@@ -294,9 +282,11 @@ public class Player : MonoBehaviour
 
         if(ray.collider != null && ray2.collider == null)
         {
-            SetTempBox(true);
+            if(isGrounded)
+                SetTempBox(true);
+                
             Debug.DrawRay(transform.position, Vector3.down, Color.red);
-            Vector3Int pos = grassTilemap.WorldToCell(new Vector3Int((int)(ray.point.x - 1f), (int)(ray.point.y - 1f), -1));
+            Vector3Int pos = grassTilemap.WorldToCell(new Vector3Int((int)(ray.point.x - 1f), (int)(ray.point.y - 2f), -1));
             TileBase grassTile = grassTilemap.GetTile(pos);
 
             tempBoxPosition = grassTilemap.CellToWorld(pos);
@@ -314,7 +304,7 @@ public class Player : MonoBehaviour
                         grassTilemap.SetTile(pos, grassTileRule);
                 }
 
-                audioManager.PlaySFX(dirtSFXList[Random.Range(0, dirtSFXList.Count)]);
+                AudioManager.Instance.PlaySFX(dirtSFXList[Random.Range(0, dirtSFXList.Count)]);
             }
         }
         else if(ray.collider == null && ray2.collider == null)
@@ -347,7 +337,7 @@ public class Player : MonoBehaviour
                 if(ray.collider.gameObject.TryGetComponent<GrowingCrop_ParentClass>(out GrowingCrop_ParentClass growingCrop))
                     growingCrop.WaterTheCrop();
                 
-                audioManager.PlaySFX(waterBucketSFX);
+                AudioManager.Instance.PlaySFX(waterBucketSFX);
                 ParticleSystem particle = Instantiate(waterParticle, ray.collider.transform.position, Quaternion.identity);
                 particle.transform.position += new Vector3(0,-0.25f,0);
                 particle.Play();
@@ -367,10 +357,10 @@ public class Player : MonoBehaviour
             eatingTime += Time.deltaTime;
             if(eatingTime >= 1)
             {
-                IncreaseHealth(inventoryManager.crop.HealthIncreaseAmount);
-                IncreaseMana(inventoryManager.crop.ManaIncreaseAmount);
+                IncreaseHealth(InventoryManager.Instance.crop.HealthIncreaseAmount);
+                IncreaseMana(InventoryManager.Instance.crop.ManaIncreaseAmount);
 
-                inventoryManager.DecreaseItem(inventoryManager.itemInSelectedSlot.item);
+                InventoryManager.Instance.DecreaseItem(InventoryManager.Instance.itemInSelectedSlot.item);
                 isEating = false;
                 eatingTime =  0;
             }
@@ -378,7 +368,7 @@ public class Player : MonoBehaviour
             {
                 if(!isEating)
                 {
-                    audioManager.PlaySFX(eatingSFX);
+                    AudioManager.Instance.PlaySFX(eatingSFX);
                     isEating = true;
                 }
             }
@@ -387,7 +377,7 @@ public class Player : MonoBehaviour
         {
             eatingTime = 0;
             isEating = false;
-            audioManager.StopSFX();
+            AudioManager.Instance.StopSFX();
         }
     }
 
@@ -398,7 +388,7 @@ public class Player : MonoBehaviour
         if(ray.collider == null)
             return; 
 
-        Vector3Int pos = grassTilemap.WorldToCell(new Vector3Int((int)(ray.point.x - 1f), (int)(ray.point.y - 1f), 0));
+        Vector3Int pos = grassTilemap.WorldToCell(new Vector3Int((int)(ray.point.x - 1f), (int)(ray.point.y - 2f), 0));
         TileBase grassTile = grassTilemap.GetTile(pos);
 
         if(grassTile == null)
@@ -424,12 +414,12 @@ public class Player : MonoBehaviour
                         plantPos.x += 0.5f;
                         plantPos.z = 0;
 
-                        Instantiate(inventoryManager.cropSeed.GrowingCrop, plantPos, Quaternion.identity);
-                        inventoryManager.DecreaseItem(inventoryManager.cropSeed);
+                        Instantiate(InventoryManager.Instance.cropSeed.GrowingCrop, plantPos, Quaternion.identity);
+                        InventoryManager.Instance.DecreaseItem(InventoryManager.Instance.cropSeed);
                         anim.SetTrigger("isPlanting");
                         
                         DecreaseMana(1);
-                        audioManager.PlaySFX(dirtSFXList[Random.Range(0, dirtSFXList.Count)]);
+                        AudioManager.Instance.PlaySFX(dirtSFXList[Random.Range(0, dirtSFXList.Count)]);
                     }
                 }
             }
@@ -537,11 +527,11 @@ public class Player : MonoBehaviour
     public void ShutDownUI()
     {
         inventoryGroup.SetActive(false);
-        inventoryManager.isOpeningTheInventory = false;
+        InventoryManager.Instance.isOpeningTheInventory = false;
     }
 
-    public int SetCurrentHealth { set { currentHealth = value; }}
-    public int SetCurrentMana { set { currentMana = value; }}
+    public int SetCurrentHealth { set { currentHealth = value; healthBar.SetHealth(currentHealth); }}
+    public int SetCurrentMana { set { currentMana = value; manaBar.SetMana(currentMana); }}
 
     // void OnDrawGizmos()
     // {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Cinemachine;
 
-public class CameraShake : MonoBehaviour
+public class CameraShake : Singleton<CameraShake>
 {
     private CinemachineCamera cinemachineCamera;
     [SerializeField] private float intensity = 0.75f;
@@ -28,9 +28,15 @@ public class CameraShake : MonoBehaviour
     public void ShakeCamera()
     {
         _cbmcp.AmplitudeGain = intensity;
-        AudioSource.PlayClipAtPoint(sfxError, this.transform.position);
-
         timer = duration;
+        AudioManager.Instance.PlaySFX(sfxError);
+    }
+
+    public void ShakeCamera(float intensity, float duration)
+    {
+        _cbmcp.AmplitudeGain = intensity;
+        timer = duration;
+        AudioManager.Instance.PlaySFX(sfxError);
     }
 
     void StopShake()

@@ -9,12 +9,10 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public Image image;
     public Color selectedColor, notSelectedColor;
     public InventoryItem itemInSlot;
-    InventoryManager inventoryManager;
     public GameObject inventoryItemPrefab;
 
     private void Awake()
     {
-        inventoryManager = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();
         Deselect();
     }
 
@@ -23,15 +21,15 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         UpdateTheInventoryItemInfo();
 
         //Re-add the holding items to the inventory if toggle it off
-        if(!inventoryManager.isOpeningTheInventory)
+        if(!InventoryManager.Instance.isOpeningTheInventory)
         {
-            if(inventoryManager.currentMouseItem != null)
+            if(InventoryManager.Instance.currentMouseItem != null)
             {
-                for(int i = 0; i < inventoryManager.currentMouseItem.count; i++)
+                for(int i = 0; i < InventoryManager.Instance.currentMouseItem.count; i++)
                 {
-                    inventoryManager.AddItem(inventoryManager.currentMouseItem.item);
-                    inventoryManager.currentMouseItem.count--;
-                    inventoryManager.currentMouseItem.RefreshCount();
+                    InventoryManager.Instance.AddItem(InventoryManager.Instance.currentMouseItem.item);
+                    InventoryManager.Instance.currentMouseItem.count--;
+                    InventoryManager.Instance.currentMouseItem.RefreshCount();
                 }
             }
         }
@@ -56,18 +54,18 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             itemInSlot = null;
     }
 
-    public void PickingUpItem(InventoryItem item)
+    public void PickItem(InventoryItem item)
     {
-        inventoryManager.currentMouseItem = item;
-        inventoryManager.currentMouseItem.parentAfterDrag = item.transform.parent;
-        inventoryManager.currentMouseItem.transform.SetParent(inventoryManager.currentMouseItem.transform.root);
+        InventoryManager.Instance.currentMouseItem = item;
+        InventoryManager.Instance.currentMouseItem.parentAfterDrag = item.transform.parent;
+        InventoryManager.Instance.currentMouseItem.transform.SetParent(InventoryManager.Instance.currentMouseItem.transform.root);
     }
 
     public void PlaceItem(InventoryItem item)
     {
-        item = inventoryManager.currentMouseItem;
-        item.transform.SetParent(inventoryManager.currentMouseItem.parentAfterDrag);
-        inventoryManager.currentMouseItem = null;
+        item = InventoryManager.Instance.currentMouseItem;
+        item.transform.SetParent(InventoryManager.Instance.currentMouseItem.parentAfterDrag);
+        InventoryManager.Instance.currentMouseItem = null;
     }
 
     public void SplitItem(InventoryItem item)
@@ -80,13 +78,13 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             item.RefreshCount();
 
             GameObject newItemGO = Instantiate(inventoryItemPrefab, transform);
-            inventoryManager.currentMouseItem = newItemGO.GetComponent<InventoryItem>();
-            inventoryManager.currentMouseItem.InitialiseItem(item.item);
-            inventoryManager.currentMouseItem.count = halfQuantity;
-            inventoryManager.currentMouseItem.RefreshCount();
+            InventoryManager.Instance.currentMouseItem = newItemGO.GetComponent<InventoryItem>();
+            InventoryManager.Instance.currentMouseItem.InitialiseItem(item.item);
+            InventoryManager.Instance.currentMouseItem.count = halfQuantity;
+            InventoryManager.Instance.currentMouseItem.RefreshCount();
             
-            inventoryManager.currentMouseItem.parentAfterDrag = item.transform.parent;
-            inventoryManager.currentMouseItem.transform.SetParent(inventoryManager.currentMouseItem.transform.root);
+            InventoryManager.Instance.currentMouseItem.parentAfterDrag = item.transform.parent;
+            InventoryManager.Instance.currentMouseItem.transform.SetParent(InventoryManager.Instance.currentMouseItem.transform.root);
         }
     }
 
@@ -95,41 +93,41 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         //swap count
         int tgII;
         tgII = itemInSlot.count;
-        itemInSlot.count = inventoryManager.currentMouseItem.count;
-        inventoryManager.currentMouseItem.count = tgII;
+        itemInSlot.count = InventoryManager.Instance.currentMouseItem.count;
+        InventoryManager.Instance.currentMouseItem.count = tgII;
 
         //swap info of item
         Item tg = itemInSlot.item;
-        itemInSlot.item = inventoryManager.currentMouseItem.item;
-        inventoryManager.currentMouseItem.item = tg;
+        itemInSlot.item = InventoryManager.Instance.currentMouseItem.item;
+        InventoryManager.Instance.currentMouseItem.item = tg;
 
         //refresh info
         itemInSlot.InitialiseItem(itemInSlot.item);
-        inventoryManager.currentMouseItem.InitialiseItem(inventoryManager.currentMouseItem.item);
+        InventoryManager.Instance.currentMouseItem.InitialiseItem(InventoryManager.Instance.currentMouseItem.item);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         Select();
-        inventoryManager.UpdateTooltips(itemInSlot);
+        InventoryManager.Instance.UpdateTooltips(itemInSlot);
 
-        if(inventoryManager.currentMouseItem != null)
+        if(InventoryManager.Instance.currentMouseItem != null)
         {
-            inventoryManager.currentMouseItem.parentAfterDrag = transform;
+            InventoryManager.Instance.currentMouseItem.parentAfterDrag = transform;
         }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         Deselect(); 
-        inventoryManager.UpdateTooltips((InventoryItem)null);
+        InventoryManager.Instance.UpdateTooltips((InventoryItem)null);
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if(inventoryManager.isOpeningTheInventory)
+        if(InventoryManager.Instance.isOpeningTheInventory)
         {
-            if(inventoryManager.currentMouseItem != null)
+            if(InventoryManager.Instance.currentMouseItem != null)
             {
                 if(Input.GetMouseButtonDown(0))
                 {
@@ -139,47 +137,35 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                         PlaceItem(itemInSlot);
                     }
                     //if it is not, and the slot item is the same as the holding item, then add
-                    else if(inventoryManager.currentMouseItem.item == itemInSlot.item)
+                    else if(InventoryManager.Instance.currentMouseItem.item == itemInSlot.item)
                     {
                         //if the sum out of MaxStackSize, add to the slot till it full stack
-                        if(inventoryManager.currentMouseItem.count + itemInSlot.count > itemInSlot.item.MaxStackSize && itemInSlot.count < itemInSlot.item.MaxStackSize)
+                        if(InventoryManager.Instance.currentMouseItem.count + itemInSlot.count > itemInSlot.item.MaxStackSize && itemInSlot.count < itemInSlot.item.MaxStackSize)
                         {
                             int quantity = Mathf.Abs(itemInSlot.item.MaxStackSize - itemInSlot.count);
-                            AddItemToSlot(itemInSlot, inventoryManager.currentMouseItem, quantity);
+                            AddItemToSlot(itemInSlot, InventoryManager.Instance.currentMouseItem, quantity);
                         }
                         //else, add all
-                        else if(inventoryManager.currentMouseItem.count + itemInSlot.count <= itemInSlot.item.MaxStackSize)
-                        {
-                            AddItemToSlot(itemInSlot, inventoryManager.currentMouseItem, inventoryManager.currentMouseItem.count);
-                        }
-                        else if(itemInSlot.count == itemInSlot.item.MaxStackSize && inventoryManager.currentMouseItem.count < itemInSlot.item.MaxStackSize)
-                        {
+                        else if(InventoryManager.Instance.currentMouseItem.count + itemInSlot.count <= itemInSlot.item.MaxStackSize)
+                            AddItemToSlot(itemInSlot, InventoryManager.Instance.currentMouseItem, InventoryManager.Instance.currentMouseItem.count);
+                        else if(itemInSlot.count == itemInSlot.item.MaxStackSize && InventoryManager.Instance.currentMouseItem.count < itemInSlot.item.MaxStackSize)
                             SwapItem();
-                        }
                     }
-                    else if(inventoryManager.currentMouseItem.item != itemInSlot.item)
-                    {
+                    else if(InventoryManager.Instance.currentMouseItem.item != itemInSlot.item)
                         SwapItem();
-                    }
                 }
                 //else if press Right-click and (slot is empty, or slot item is the same as the holding item), add to the slot 
-                else if(((itemInSlot == null) || (inventoryManager.currentMouseItem.item.Name == itemInSlot.item.Name)) && Input.GetMouseButtonDown(1))
-                {
-                    AddItemToSlot(itemInSlot, inventoryManager.currentMouseItem, 1);
-                }
+                else if(((itemInSlot == null) || (InventoryManager.Instance.currentMouseItem.item.Name == itemInSlot.item.Name)) && Input.GetMouseButtonDown(1))
+                    AddItemToSlot(itemInSlot, InventoryManager.Instance.currentMouseItem, 1);
                 
             }
             //else if not holding item, pick item, or split item
-            else if(inventoryManager.currentMouseItem == null && itemInSlot != null)
+            else if(InventoryManager.Instance.currentMouseItem == null && itemInSlot != null)
             {
                 if(Input.GetMouseButtonDown(0))
-                {
-                    PickingUpItem(itemInSlot);
-                }
+                    PickItem(itemInSlot);
                 else if(Input.GetMouseButtonDown(1))
-                {
                     SplitItem(itemInSlot);
-                }
             }
         }
     }
@@ -199,8 +185,8 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         {
             itemInSlot.count += quantity;
             itemInSlot.RefreshCount();
-            inventoryManager.currentMouseItem.count -= quantity;
-            inventoryManager.currentMouseItem.RefreshCount();
+            InventoryManager.Instance.currentMouseItem.count -= quantity;
+            InventoryManager.Instance.currentMouseItem.RefreshCount();
         }
     }
 

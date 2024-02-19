@@ -1,17 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class QuestManager : MonoBehaviour
+public class QuestManager : Singleton<QuestManager>
 {
     public GameObject questUI;
-    public GameObject inventoryGroup;
-    public GameObject upgradeGroup;
-    public InventoryManager inventoryManagerScript;
+    public GameObject storageWhiteBorder;
+    [SerializeField] private Scrollbar questScrollbar;
 
     private bool canOpenQuestUI = false;
-    public bool isOpeningTheQuestUI = false;
-    public GameObject storageWhiteBorder;
+    [HideInInspector] public bool isOpeningTheQuestUI = false;
 
     [Space(20)]
     public AudioClip sfxOpenQuest;
@@ -25,36 +24,37 @@ public class QuestManager : MonoBehaviour
 
     void Update()
     {
-        if(canOpenQuestUI)
+        if(!canOpenQuestUI)
+            return;
+
+        if(Input.GetKeyDown(KeyCode.F))
         {
-            if(Input.GetKeyDown(KeyCode.F) && !isOpeningTheQuestUI && !inventoryManagerScript.isOpeningTheInventory)
+            if(!isOpeningTheQuestUI)
             {
-                AudioSource.PlayClipAtPoint(sfxOpenQuest, transform.position);
-                questUI.SetActive(true);
-                inventoryGroup.SetActive(true);
-                inventoryManagerScript.EnablePage(inventoryManagerScript.inventory, inventoryManagerScript.inventoryButton);
-                upgradeGroup.SetActive(false);
-                isOpeningTheQuestUI = true;
-                inventoryManagerScript.isOpeningTheInventory = true;
-                
-                //deselect all the slots, except the selected one
-                for(int i = 0; i < inventoryManagerScript.inventorySlots.Length; i++)
-                {
-                    if(inventoryManagerScript.inventorySlots[i] != inventoryManagerScript.inventorySlots[inventoryManagerScript.selectedSlot])
-                    {
-                        inventoryManagerScript.inventorySlots[i].Deselect();
-                    }
-                }
+                InventoryManager.Instance.ToggleOnTheInventory();
+                ToggleOnTheQuestUI();
             }
-            else if(Input.GetKeyDown(KeyCode.F) && isOpeningTheQuestUI)
+            else
             {
-                AudioSource.PlayClipAtPoint(sfxCloseQuest, transform.position);
-                isOpeningTheQuestUI = false;
-                inventoryManagerScript.isOpeningTheInventory = false;
-                questUI.SetActive(false);
-                inventoryGroup.SetActive(false);
+                InventoryManager.Instance.ToggleOffTheInventory();
+                ToggleOffTheQuestUI();
             }
         }
+    }
+
+    private void ToggleOnTheQuestUI()
+    {
+        questUI.SetActive(true);
+        isOpeningTheQuestUI = true;
+        questScrollbar.value = 1;
+        AudioManager.Instance.PlaySFX(sfxOpenQuest);
+    }
+
+    private void ToggleOffTheQuestUI()
+    {
+        questUI.SetActive(false);
+        isOpeningTheQuestUI = false;
+        AudioManager.Instance.PlaySFX(sfxCloseQuest);
     }
 
     private void OnTriggerStay2D(Collider2D col) 
@@ -72,9 +72,8 @@ public class QuestManager : MonoBehaviour
         {
             canOpenQuestUI = false;
             storageWhiteBorder.SetActive(false);
-            questUI.SetActive(false);
-            inventoryManagerScript.isOpeningTheInventory = false;
-            isOpeningTheQuestUI = false;
+            InventoryManager.Instance.isOpeningTheInventory = false;
+            ToggleOffTheQuestUI();
         }   
     }
 }

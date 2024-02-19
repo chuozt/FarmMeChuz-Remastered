@@ -14,18 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Pumpkin
   <ItemSprite>k__BackingField: {fileID: -1215738027, guid: 7620f440e20cb34449cf112ff79e75ee, type: 3}
-  <IsStackable>k__BackingField: 1
-  <MaxStackSize>k__BackingField: 16
-  <IsUnlocked>k__BackingField: 0
   <Cost>k__BackingField: 0
   <Value>k__BackingField: 50
-  <BuffPercentage>k__BackingField: 0
-  descriptions: 'Health regen: 10
-
-    Mana regen: 10'
-  itemType: 0
-  Fuel:
-    <CanAddFuel>k__BackingField: 0
-    <FuelCanAdd>k__BackingField: 0
+  Descriptions: 
+  <IsUnlocked>k__BackingField: 0
+  <IsStackable>k__BackingField: 1
+  <MaxStackSize>k__BackingField: 16
+  <IsFuelResource>k__BackingField: 0
+  <FuelAmount>k__BackingField: 0
+  ItemType: 0
   <HealthIncreaseAmount>k__BackingField: 10
   <ManaIncreaseAmount>k__BackingField: 10

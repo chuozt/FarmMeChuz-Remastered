@@ -8,7 +8,6 @@ public class ShopSlot_ParentClass : MonoBehaviour
 {
     [Header("- Slot Components -")]
     [SerializeField] protected Item itemData;
-    protected Text playerCoinText;
     [SerializeField] protected Image itemPic;
     [SerializeField] protected Text itemName;
     [SerializeField] protected Text coinText;
@@ -20,23 +19,10 @@ public class ShopSlot_ParentClass : MonoBehaviour
     [Space(10)]
     [SerializeField] protected AudioClip sfx;
 
-    //Managers
-    protected InventoryManager inventoryManager;
-    protected AudioManager audioManager;
-    protected Feedback feedback;
-    protected CameraShake cameraShake;
-
-    void Awake()
-    {
-        inventoryManager = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();
-        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
-        cameraShake = GameObject.FindGameObjectWithTag("CinemachineCamera").GetComponent<CameraShake>();
-        feedback = GameObject.FindGameObjectWithTag("FeedbackText").GetComponent<Feedback>();
-        playerCoinText = GameObject.Find("PlayerCoinText").GetComponent<Text>();
-        
+    protected virtual void Awake()
+    {        
         itemPic.sprite = itemData.ItemSprite;
         itemName.text = itemData.Name;
-        coinText.text = itemData.Cost.ToString();
 
         if(!itemData.IsUnlocked)
             DisableWhenIsNotUnlocked();

@@ -6,20 +6,26 @@ using Unity.Cinemachine;
 
 public class BuyShopSlot : ShopSlot_ParentClass
 {
+    protected override void Awake()
+    {
+        base.Awake();
+        coinText.text = itemData.Cost.ToString();
+    }
+
     public void BuyItem()
     {
         //if has enough money
-        if(int.Parse(playerCoinText.text) >= itemData.Cost && itemData.IsUnlocked)
+        if(int.Parse(PlayerCoin.Instance.PlayerCoinText.text) >= itemData.Cost && itemData.IsUnlocked)
         {
-            inventoryManager.AddItem(itemData);
-            playerCoinText.text = (int.Parse(playerCoinText.text) - itemData.Cost).ToString();
-            audioManager.PlaySFX(sfx);
+            InventoryManager.Instance.AddItem(itemData);
+            PlayerCoin.Instance.PlayerCoinText.text = (int.Parse(PlayerCoin.Instance.PlayerCoinText.text) - itemData.Cost).ToString();
+            AudioManager.Instance.PlaySFX(sfx);
         }
         //else send error feedback
         else 
         {
-            feedback.StartCoroutine(feedback.FeedbackTrigger("You don't have enough money!"));
-            cameraShake.ShakeCamera();
+            Feedback.Instance.StartCoroutine(Feedback.Instance.FeedbackTrigger("You don't have enough money!"));
+            CameraShake.Instance.ShakeCamera();
         }
     }
 }
