@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Crop_Corn
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Corn
-  <ItemSprite>k__BackingField: {fileID: 900468715, guid: 7620f440e20cb34449cf112ff79e75ee, type: 3}
+  <ItemSprite>k__BackingField: {fileID: -1010118597598872900, guid: a67bbcdff74e7c242ad7167f4902dd0b, type: 3}
   <Cost>k__BackingField: 0
   <Value>k__BackingField: 30
   Descriptions: 

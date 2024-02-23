@@ -1,0 +1,450 @@
+fileFormatVersion: 2
+guid: 83c939b04e580314dab0543a733c9d71
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5582547546141778641
+    second: WorldBuildingsWhiteBorders_0
+  - first:
+      213: 1669894270623101603
+    second: WorldBuildingsWhiteBorders_1
+  - first:
+      213: 870503721109991848
+    second: WorldBuildingsWhiteBorders_2
+  - first:
+      213: 8790550392902420672
+    second: WorldBuildingsWhiteBorders_3
+  - first:
+      213: 8290582893900520612
+    second: WorldBuildingsWhiteBorders_4
+  - first:
+      213: -812895600363371930
+    second: WorldBuildingsWhiteBorders_5
+  - first:
+      213: -2528735017636214080
+    second: WorldBuildingsWhiteBorders_6
+  - first:
+      213: -5806388581453114656
+    second: WorldBuildingsWhiteBorders_7
+  - first:
+      213: 633938469308847211
+    second: WorldBuildingsWhiteBorders_8
+  - first:
+      213: -85984580507670510
+    second: WorldBuildingsWhiteBorders_9
+  - first:
+      213: -1670498928150613485
+    second: WorldBuildingsWhiteBorders_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: WorldBuildingsWhiteBorders_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e25a9649509b6fa0800000000000000
+      internalID: -5806388581453114656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildingsWhiteBorders_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a144d6aa1bdad7845b019ffea900f95b
+      internalID: -170754672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildingsWhiteBorders_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fd37a58dc92b3447aedc58cc7caa2c9
+      internalID: 1983456095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildingsWhiteBorders_26
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b235570a80bec1340ae202472d60dc80
+      internalID: 2091082189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildingsWhiteBorders_28
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa84a9c2d056d804e8f7f6a99d21cccd
+      internalID: 1925109584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildingsWhiteBorders_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ba10f23b00eeed4e816fcbf9afbce0e
+      internalID: -869112562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildingsWhiteBorders_36
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 429cf38e47c652d41b5144c4ff454781
+      internalID: -726942430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildingsWhiteBorders_38
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38d8720ae02073844b004627d175f16e
+      internalID: 327260976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildingsWhiteBorders_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85a79ca156f52624db235d9b3a0d8a53
+      internalID: -1847882537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildingsWhiteBorders_42
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1dcd3e8910598a468b1523dce30fa4b
+      internalID: -288204072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildingsWhiteBorders_44
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a5f6603a1c2fa041a43943745ff5fb0
+      internalID: 241224018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ee5c7d40fc896e441ba23c47d34ce867
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      WorldBuildingsWhiteBorders_0: 5582547546141778641
+      WorldBuildingsWhiteBorders_1: 1669894270623101603
+      WorldBuildingsWhiteBorders_10: -1670498928150613485
+      WorldBuildingsWhiteBorders_11: 357982083
+      WorldBuildingsWhiteBorders_12: -503897045
+      WorldBuildingsWhiteBorders_13: -1440401169
+      WorldBuildingsWhiteBorders_14: 359111711
+      WorldBuildingsWhiteBorders_15: 1642683293
+      WorldBuildingsWhiteBorders_16: -1617840853
+      WorldBuildingsWhiteBorders_17: -881600840
+      WorldBuildingsWhiteBorders_18: -170754672
+      WorldBuildingsWhiteBorders_19: 170142070
+      WorldBuildingsWhiteBorders_2: 870503721109991848
+      WorldBuildingsWhiteBorders_20: 109514604
+      WorldBuildingsWhiteBorders_21: -1820321170
+      WorldBuildingsWhiteBorders_22: -85718254
+      WorldBuildingsWhiteBorders_23: -2108323901
+      WorldBuildingsWhiteBorders_24: 1983456095
+      WorldBuildingsWhiteBorders_25: -459288822
+      WorldBuildingsWhiteBorders_26: 2091082189
+      WorldBuildingsWhiteBorders_27: -1034849539
+      WorldBuildingsWhiteBorders_28: 1925109584
+      WorldBuildingsWhiteBorders_29: 1530925662
+      WorldBuildingsWhiteBorders_3: 8790550392902420672
+      WorldBuildingsWhiteBorders_30: -1344901771
+      WorldBuildingsWhiteBorders_31: 85813329
+      WorldBuildingsWhiteBorders_32: -839953175
+      WorldBuildingsWhiteBorders_33: 389437062
+      WorldBuildingsWhiteBorders_34: -869112562
+      WorldBuildingsWhiteBorders_35: 55743506
+      WorldBuildingsWhiteBorders_36: -726942430
+      WorldBuildingsWhiteBorders_37: 1759238868
+      WorldBuildingsWhiteBorders_38: 327260976
+      WorldBuildingsWhiteBorders_39: -1823265111
+      WorldBuildingsWhiteBorders_4: 8290582893900520612
+      WorldBuildingsWhiteBorders_40: -1847882537
+      WorldBuildingsWhiteBorders_41: -1416754909
+      WorldBuildingsWhiteBorders_42: -288204072
+      WorldBuildingsWhiteBorders_43: 1972446543
+      WorldBuildingsWhiteBorders_44: 241224018
+      WorldBuildingsWhiteBorders_45: 824264093
+      WorldBuildingsWhiteBorders_5: -812895600363371930
+      WorldBuildingsWhiteBorders_6: -2528735017636214080
+      WorldBuildingsWhiteBorders_7: -5806388581453114656
+      WorldBuildingsWhiteBorders_8: 633938469308847211
+      WorldBuildingsWhiteBorders_9: -85984580507670510
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

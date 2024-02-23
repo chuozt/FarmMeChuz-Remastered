@@ -1,0 +1,685 @@
+fileFormatVersion: 2
+guid: 541be9f498335284491866f186ffbc7b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6489182848287228643
+    second: WorldBuildings_0
+  - first:
+      213: 4999118493581364194
+    second: WorldBuildings_1
+  - first:
+      213: 4037097907235632190
+    second: WorldBuildings_2
+  - first:
+      213: -3115816020353372879
+    second: WorldBuildings_3
+  - first:
+      213: 831694210176528401
+    second: WorldBuildings_4
+  - first:
+      213: 5531520255566754030
+    second: WorldBuildings_5
+  - first:
+      213: 1495134430985243120
+    second: WorldBuildings_6
+  - first:
+      213: -2368891992714876888
+    second: WorldBuildings_7
+  - first:
+      213: -1784250418846453020
+    second: WorldBuildings_8
+  - first:
+      213: -6035087677834782163
+    second: WorldBuildings_9
+  - first:
+      213: 7137342400335185395
+    second: WorldBuildings_10
+  - first:
+      213: -2176032089376161684
+    second: WorldBuildings_11
+  - first:
+      213: 1167121893355547821
+    second: WorldBuildings_12
+  - first:
+      213: -1620620577875053001
+    second: WorldBuildings_13
+  - first:
+      213: 3780638640622683755
+    second: WorldBuildings_14
+  - first:
+      213: 697607169202679149
+    second: WorldBuildings_15
+  - first:
+      213: 2738110127554194279
+    second: WorldBuildings_16
+  - first:
+      213: 9095615362374265983
+    second: WorldBuildings_17
+  - first:
+      213: 431637243398048766
+    second: WorldBuildings_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: WorldBuildings_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b664e6e10d6877430800000000000000
+      internalID: 3780638640622683755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildings_19
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 192
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47fef99cda93be341b6fa5ac4e1670cd
+      internalID: 616672539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildings_28
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 160
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8618496d516c416448750e3f01e5addd
+      internalID: -1650937335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildings_30
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 160
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 565d129040c768a448e91facb02a82fa
+      internalID: 1995677451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildings_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07fbc20755a3a364f957bedef8ac1971
+      internalID: -1168464659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildings_55
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 112
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca0f99b030b010d49b072ae4a39c54e6
+      internalID: 488790537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildings_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da1a80ceff4d27f4cbdb1fe361ea9072
+      internalID: 564671292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildings_65
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edc7e0cd143434841b1d9848557860c7
+      internalID: -360902679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildings_67
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd1b8c9453a6d384a877b2742c085cd4
+      internalID: -2048913277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildings_69
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6334fde9dc9939f409818347729a008e
+      internalID: -91647399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildings_70
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9418b916d2a4f854f84ff81121086930
+      internalID: 2032091876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildings_71
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c74995106a0f614f8067f241f44229b
+      internalID: 210617797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildings_72
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10bad46fdf8b9f04a8e4030156975b9e
+      internalID: -22386243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildings_77
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411f81cff493db14cbb5ad8242f114a9
+      internalID: -1020579070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildings_79
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32adcb742f1579c4cb807dd23864b03f
+      internalID: 1297505501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildings_81
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9386118bfdf97bd4cb05941863a43b67
+      internalID: 406914630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildings_83
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 403bbdac4a1f6654d95fa7e1c6fbb682
+      internalID: 708118741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildings_85
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cdbeec436c37634b9928ca98e0512f5
+      internalID: 1738494845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorldBuildings_87
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43765398ce00ff5489009f73b585e29c
+      internalID: -701304072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 519677420cc98b34ca2f1ce36ae40fc4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      WorldBuildings_0: 6489182848287228643
+      WorldBuildings_1: 4999118493581364194
+      WorldBuildings_10: 7137342400335185395
+      WorldBuildings_11: -2176032089376161684
+      WorldBuildings_12: 1167121893355547821
+      WorldBuildings_13: -1620620577875053001
+      WorldBuildings_14: 3780638640622683755
+      WorldBuildings_15: 697607169202679149
+      WorldBuildings_16: 2738110127554194279
+      WorldBuildings_17: 9095615362374265983
+      WorldBuildings_18: 431637243398048766
+      WorldBuildings_19: 616672539
+      WorldBuildings_2: 4037097907235632190
+      WorldBuildings_20: 690470114
+      WorldBuildings_21: 304349744
+      WorldBuildings_22: -1789418607
+      WorldBuildings_23: -1660922391
+      WorldBuildings_24: 101173654
+      WorldBuildings_25: -47346426
+      WorldBuildings_26: 1527559027
+      WorldBuildings_27: 2042226476
+      WorldBuildings_28: -1650937335
+      WorldBuildings_29: 199097727
+      WorldBuildings_3: -3115816020353372879
+      WorldBuildings_30: 1995677451
+      WorldBuildings_31: 641606025
+      WorldBuildings_32: -1033376886
+      WorldBuildings_33: 1346417557
+      WorldBuildings_34: -594743955
+      WorldBuildings_35: -2069712224
+      WorldBuildings_36: -1167575645
+      WorldBuildings_37: 1439347586
+      WorldBuildings_38: 196172273
+      WorldBuildings_39: -193065258
+      WorldBuildings_4: 831694210176528401
+      WorldBuildings_40: 1734553724
+      WorldBuildings_41: -1473020882
+      WorldBuildings_42: -1995410320
+      WorldBuildings_43: 2035305201
+      WorldBuildings_44: -355679860
+      WorldBuildings_45: 2090532195
+      WorldBuildings_46: 1734773800
+      WorldBuildings_47: 1813483218
+      WorldBuildings_48: -1547585085
+      WorldBuildings_49: 1221265980
+      WorldBuildings_5: 5531520255566754030
+      WorldBuildings_50: -1168464659
+      WorldBuildings_51: 1254080343
+      WorldBuildings_52: -1531474356
+      WorldBuildings_53: 349124540
+      WorldBuildings_54: -1461927648
+      WorldBuildings_55: 488790537
+      WorldBuildings_56: 1654693247
+      WorldBuildings_57: 649871772
+      WorldBuildings_58: -1274719342
+      WorldBuildings_59: 1463187635
+      WorldBuildings_6: 1495134430985243120
+      WorldBuildings_60: -1300198916
+      WorldBuildings_61: -852984064
+      WorldBuildings_62: -149363835
+      WorldBuildings_63: 564671292
+      WorldBuildings_64: 1995886891
+      WorldBuildings_65: -360902679
+      WorldBuildings_66: -454566182
+      WorldBuildings_67: -2048913277
+      WorldBuildings_68: -1949796334
+      WorldBuildings_69: -91647399
+      WorldBuildings_7: -2368891992714876888
+      WorldBuildings_70: 2032091876
+      WorldBuildings_71: 210617797
+      WorldBuildings_72: -22386243
+      WorldBuildings_73: -97686629
+      WorldBuildings_74: 205517483
+      WorldBuildings_75: -645291866
+      WorldBuildings_76: -59539328
+      WorldBuildings_77: -1020579070
+      WorldBuildings_78: -1821378050
+      WorldBuildings_79: 1297505501
+      WorldBuildings_8: -1784250418846453020
+      WorldBuildings_80: -454463253
+      WorldBuildings_81: 406914630
+      WorldBuildings_82: -121320604
+      WorldBuildings_83: 708118741
+      WorldBuildings_84: 1133211859
+      WorldBuildings_85: 1738494845
+      WorldBuildings_86: -2125826960
+      WorldBuildings_87: -701304072
+      WorldBuildings_88: 859058955
+      WorldBuildings_9: -6035087677834782163
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

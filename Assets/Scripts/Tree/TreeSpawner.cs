@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class TreeSpawner : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> treesToSpawn;
+    [field:SerializeField] List<Tree> trees;
     [SerializeField] private float padding;
     [SerializeField] private LayerMask treeZoneLayer;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask grassLayer;
     [SerializeField] private LayerMask layersTreeAffect;
-    [SerializeField] private List<float> percentages;
+    
+    void Start() => SpawnTree();
 
-    void Start()
-    {
-        SpawnTree();
-    }
-
+    [ContextMenu("SpawnTree")]
     public void SpawnTree()
     {
         for(float xScale = -transform.localScale.x/2; xScale <= transform.localScale.x/2; xScale += Random.Range(padding, padding + 0.5f))
@@ -36,7 +33,7 @@ public class TreeSpawner : MonoBehaviour
                 {
                     if(Physics2D.OverlapCircle(ray.point, 0.5f, treeZoneLayer) == null)
                     {
-                        GameObject tree = Instantiate(treesToSpawn[GetRandomSpawn()], ray.point, Quaternion.identity);
+                        GameObject tree = Instantiate(trees[GetRandomSpawn()].treesToSpawn, ray.point, Quaternion.identity);
                         tree.transform.position -= new Vector3(0, 0.02f, 0);
                         GameObject treeZone = tree.transform.GetChild(0).gameObject;
 
@@ -61,17 +58,24 @@ public class TreeSpawner : MonoBehaviour
         float numForAdding = 0;
         float total = 0;
 
-        for(int i = 0; i < percentages.Count; i++)
-            total += percentages[i];
+        for(int i = 0; i < trees.Count; i++)
+            total += trees[i].percentages;
 
-        for(int i = 0; i < treesToSpawn.Count; i++)
+        for(int i = 0; i < trees.Count; i++)
         {
-            if(percentages[i] / total + numForAdding >= random)
+            if(trees[i].percentages / total + numForAdding >= random)
                 return i;
             else
-                numForAdding += percentages[i]/total;
+                numForAdding += trees[i].percentages/total;
         }
 
         return 0;
     }
+}
+
+[System.Serializable]
+public struct Tree
+{
+    [SerializeField] public GameObject treesToSpawn;
+    [SerializeField] public float percentages;
 }

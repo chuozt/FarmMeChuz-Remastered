@@ -37,7 +37,7 @@ public class QuestLevel : MonoBehaviour
             // quest.IsDone[i] = false;
 
             GameObject obj = Instantiate(questPrefab, this.transform.position, Quaternion.identity);
-            obj.transform.parent = questArea;
+            obj.transform.SetParent(questArea);
             obj.GetComponent<QuestButton>().item = quest.ItemsNeed[i].ItemNeed;
             obj.GetComponent<QuestButton>().num = quest.ItemsNeed[i].NumbersOfItemNeed;
             obj.GetComponent<QuestButton>().questIndex = i;
@@ -53,7 +53,7 @@ public class QuestLevel : MonoBehaviour
         {
             reward.ItemsUnlock[i].IsUnlocked = false;
             GameObject obj = Instantiate(rewardPrefab, this.transform.position, Quaternion.identity);
-            obj.transform.parent = rewardArea;
+            obj.transform.SetParent(rewardArea);
             Transform child = obj.transform.GetChild(0);
             child.GetComponentInChildren<Image>().sprite = reward.ItemsUnlock[i].ItemSprite;
         }

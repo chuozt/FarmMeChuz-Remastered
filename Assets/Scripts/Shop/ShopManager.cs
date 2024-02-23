@@ -84,9 +84,11 @@ public class ShopManager : Singleton<ShopManager>
     {
         if(col.gameObject.name == "Player")
         {
-            ToggleOffShopUI();
+            shopGroup.SetActive(false);
+            isOpeningTheShop = false;
             canShopNow = false;
             shopWhiteBorder.GetComponent<SpriteRenderer>().enabled = false;
+            InventoryManager.Instance.ToggleOffTheInventory();
         }        
     }
 

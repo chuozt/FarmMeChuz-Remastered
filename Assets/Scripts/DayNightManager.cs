@@ -14,7 +14,7 @@ public class DayNightManager : Singleton<DayNightManager>
     [SerializeField] private GameObject thinkingBubble;
     [SerializeField] private SpriteRenderer bedBorder;
 
-    private int currentDay = 1;
+    [SerializeField] private int currentDay = 1;
     private float currentTime = 0;
     [HideInInspector] public bool isDay = true;
     int hour, startHour = 6, totalHourInADay = 18;
@@ -112,6 +112,7 @@ public class DayNightManager : Singleton<DayNightManager>
         foreach(var spawner in mineralSpawners)
         {
             spawner.TryGetComponent<MineralSpawner>(out MineralSpawner ms);
+            ms.UpdateSpawnPercentages();
             ms.SpawnMineral();
         }
 
@@ -156,4 +157,6 @@ public class DayNightManager : Singleton<DayNightManager>
             bedBorder.enabled = false;
         }
     }
+
+    public int CurrentDay { get{ return currentDay; } }
 }

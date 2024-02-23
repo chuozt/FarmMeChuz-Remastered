@@ -91,14 +91,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e6789ae807385342878c6cd90099882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  treesToSpawn:
-  - {fileID: 6948638796759350840, guid: a385ad0f03863d644bc174df17d2da14, type: 3}
-  - {fileID: 3624210569269222426, guid: a3f4f3c8be67d034491e79eb0609c3b5, type: 3}
-  - {fileID: 9083090571891213902, guid: 312f666bfebd5644d9d5d7fad8d172f7, type: 3}
-  - {fileID: 6158244432055065481, guid: 6ce0b37d307ceb7488fca06e90de7e11, type: 3}
-  - {fileID: 2877484671924853379, guid: 1ea08d7b3f0f6dc4a88b5c15595416b0, type: 3}
-  - {fileID: 7690979186384267149, guid: 12dbb307147c1c94b921880b1c5a71c5, type: 3}
-  padding: 0.5
+  trees:
+  - treesToSpawn: {fileID: 6948638796759350840, guid: a385ad0f03863d644bc174df17d2da14, type: 3}
+    percentages: 20
+  - treesToSpawn: {fileID: 3624210569269222426, guid: a3f4f3c8be67d034491e79eb0609c3b5, type: 3}
+    percentages: 25
+  - treesToSpawn: {fileID: 9083090571891213902, guid: 312f666bfebd5644d9d5d7fad8d172f7, type: 3}
+    percentages: 20
+  - treesToSpawn: {fileID: 6158244432055065481, guid: 6ce0b37d307ceb7488fca06e90de7e11, type: 3}
+    percentages: 15
+  - treesToSpawn: {fileID: 2877484671924853379, guid: 1ea08d7b3f0f6dc4a88b5c15595416b0, type: 3}
+    percentages: 5
+  - treesToSpawn: {fileID: 7690979186384267149, guid: 12dbb307147c1c94b921880b1c5a71c5, type: 3}
+    percentages: 1
+  padding: 0.35
   treeZoneLayer:
     serializedVersion: 2
     m_Bits: 262144
@@ -111,10 +117,3 @@ MonoBehaviour:
   layersTreeAffect:
     serializedVersion: 2
     m_Bits: 1835072
-  percentages:
-  - 27
-  - 25
-  - 20
-  - 10
-  - 6
-  - 2

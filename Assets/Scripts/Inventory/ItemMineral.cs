@@ -6,5 +6,8 @@ using UnityEngine;
 public class ItemMineral : Item
 {
     [field: SerializeField, Header("Item Mineral")]
-    public ItemMineral Output { get; set; }
+    public Item Output { get; set; }
+
+    [field: SerializeField]
+    public float FuelNeed { get; set; }
 }

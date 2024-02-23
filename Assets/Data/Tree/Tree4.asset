@@ -15,7 +15,7 @@ MonoBehaviour:
   <Health>k__BackingField: 85
   <Log>k__BackingField:
   - <DropLog>k__BackingField: {fileID: 2663618756790312542, guid: 854c399b6b5708241874f5411714a8d6, type: 3}
-    <MinimumSpawnNumber>k__BackingField: 0
+    <MinimumSpawnNumber>k__BackingField: 1
     <MaximumSpawnNumber>k__BackingField: 4
   - <DropLog>k__BackingField: {fileID: 1022411026463347003, guid: e4d8d99c20e13354dace377dcc9c2002, type: 3}
     <MinimumSpawnNumber>k__BackingField: 1

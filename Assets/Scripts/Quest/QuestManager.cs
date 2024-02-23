@@ -70,10 +70,11 @@ public class QuestManager : Singleton<QuestManager>
     {
         if(col.gameObject.name == "Player")
         {
+            questUI.SetActive(false);
+            isOpeningTheQuestUI = false;
             canOpenQuestUI = false;
             storageWhiteBorder.SetActive(false);
             InventoryManager.Instance.isOpeningTheInventory = false;
-            ToggleOffTheQuestUI();
         }   
     }
 }

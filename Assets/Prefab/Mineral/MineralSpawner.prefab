@@ -92,28 +92,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mineralPrefab: {fileID: 3349086188430701243, guid: 20c0725c8b4c53040929f50b566cd6be, type: 3}
-  mineralDatas:
-  - {fileID: 11400000, guid: 4a0f4540253b2ca4db7cfd81ad703bd6, type: 2}
-  - {fileID: 11400000, guid: 3004b6dddc3e9694cb01e42c9b56bf3a, type: 2}
-  - {fileID: 11400000, guid: b56396027ddfada4aaa8c2e267a554e6, type: 2}
-  - {fileID: 11400000, guid: 3453b085ce9d81949928c702fd4b010d, type: 2}
-  - {fileID: 11400000, guid: 0b40ef1ac56f44041972e40d9d25152d, type: 2}
-  - {fileID: 11400000, guid: 15f48e9c59e9878458d2285e5146d42d, type: 2}
-  - {fileID: 11400000, guid: f526f5d9650760c4697abbc33c9be111, type: 2}
-  - {fileID: 11400000, guid: 01142898b05aef049a8ef3c012581739, type: 2}
-  padding: 0.3
+  minerals:
+  - mineralData: {fileID: 11400000, guid: 4a0f4540253b2ca4db7cfd81ad703bd6, type: 2}
+    percentages: 10
+  - mineralData: {fileID: 11400000, guid: b56396027ddfada4aaa8c2e267a554e6, type: 2}
+    percentages: 10
+  - mineralData: {fileID: 11400000, guid: 0b40ef1ac56f44041972e40d9d25152d, type: 2}
+    percentages: 6
+  - mineralData: {fileID: 11400000, guid: f526f5d9650760c4697abbc33c9be111, type: 2}
+    percentages: 4
+  - mineralData: {fileID: 11400000, guid: 3004b6dddc3e9694cb01e42c9b56bf3a, type: 2}
+    percentages: 9
+  - mineralData: {fileID: 11400000, guid: 3453b085ce9d81949928c702fd4b010d, type: 2}
+    percentages: 8
+  - mineralData: {fileID: 11400000, guid: 15f48e9c59e9878458d2285e5146d42d, type: 2}
+    percentages: 7
+  - mineralData: {fileID: 11400000, guid: 01142898b05aef049a8ef3c012581739, type: 2}
+    percentages: 6
+  - mineralData: {fileID: 11400000, guid: ffb22b2b606430a409275aa9ddc8c8a7, type: 2}
+    percentages: 4
+  - mineralData: {fileID: 11400000, guid: 33ae538d5eba5d349bce25a78befb7c5, type: 2}
+    percentages: 3
+  - mineralData: {fileID: 11400000, guid: b1ea2b4243f94964b8a9ed1d121a1cba, type: 2}
+    percentages: 2
+  - mineralData: {fileID: 11400000, guid: c375a40281cf1a54a94a915580ceb35a, type: 2}
+    percentages: 1
+  - mineralData: {fileID: 11400000, guid: 954fc333398c8424f89954d396f71152, type: 2}
+    percentages: 1
+  - mineralData: {fileID: 11400000, guid: 3be5d6875017d244280aa323b466081e, type: 2}
+    percentages: 0.75
+  - mineralData: {fileID: 11400000, guid: 24a7975e9e83bd144a90a0cbdde46de8, type: 2}
+    percentages: 0.5
+  - mineralData: {fileID: 11400000, guid: 173949a14f5eb1d47a4fd034ae02b274, type: 2}
+    percentages: 0.5
+  padding: 0.1
   mineralLayer:
     serializedVersion: 2
     m_Bits: 1572864
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  percentages:
-  - 22
-  - 20
-  - 18
-  - 15
-  - 13
-  - 12
-  - 9
-  - 6

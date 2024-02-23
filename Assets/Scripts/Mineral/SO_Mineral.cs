@@ -19,4 +19,10 @@ public class SO_Mineral : ScriptableObject
 
     [field: SerializeField]
     public int MaximumSpawnNumber { get; set; }
+
+    [field: SerializeField] 
+    public float PercentageIncreasement { get; set; }
+
+    [field: SerializeField]
+    public bool IsSpecialMineral { get; set; }
 }

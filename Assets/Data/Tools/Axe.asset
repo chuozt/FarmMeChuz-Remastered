@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Axe
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Axe
-  <ItemSprite>k__BackingField: {fileID: 913984929, guid: 7620f440e20cb34449cf112ff79e75ee, type: 3}
+  <ItemSprite>k__BackingField: {fileID: -3569232777630780389, guid: a495e596e0c41de42a87ef83590caefc, type: 3}
   <Cost>k__BackingField: 0
   <Value>k__BackingField: 0
   Descriptions: 

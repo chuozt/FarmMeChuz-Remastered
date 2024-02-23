@@ -18,5 +18,5 @@ MonoBehaviour:
     <MinimumSpawnNumber>k__BackingField: 3
     <MaximumSpawnNumber>k__BackingField: 4
   - <DropLog>k__BackingField: {fileID: 1022411026463347003, guid: e4d8d99c20e13354dace377dcc9c2002, type: 3}
-    <MinimumSpawnNumber>k__BackingField: 0
+    <MinimumSpawnNumber>k__BackingField: 1
     <MaximumSpawnNumber>k__BackingField: 1

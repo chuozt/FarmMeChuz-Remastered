@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pickaxe
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Pickaxe
-  <ItemSprite>k__BackingField: {fileID: 1402900212, guid: 7620f440e20cb34449cf112ff79e75ee, type: 3}
+  <ItemSprite>k__BackingField: {fileID: 3379066624450153177, guid: a495e596e0c41de42a87ef83590caefc, type: 3}
   <Cost>k__BackingField: 0
   <Value>k__BackingField: 0
   Descriptions: 

@@ -1,21 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MineralSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject mineralPrefab;
-    [SerializeField] private List<SO_Mineral> mineralDatas;
+    [field:SerializeField] List<Mineral> minerals;
     [SerializeField] private float padding;
     [SerializeField] private LayerMask mineralLayer;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private List<float> percentages;
 
-    void Start()
-    {
-        SpawnMineral();
-    }
+    void Start() => SpawnMineral();
 
+    [ContextMenu("SpawnMineral")]
     public void SpawnMineral()
     {
         for(float xScale = -transform.localScale.x/2; xScale <= transform.localScale.x/2; xScale += Random.Range(padding, padding + 0.45f))
@@ -33,14 +31,25 @@ public class MineralSpawner : MonoBehaviour
             
                 if(ray.collider != null)
                 {
-                    if(Physics2D.OverlapCircle(ray.point, 0.5f, mineralLayer) == null)
-                    {
-                        Vector3 pos = ray.point;
-                        pos.y += 0.45f;
-                        GameObject mineral = Instantiate(mineralPrefab, pos, Quaternion.identity);
-                        mineral.GetComponent<MineralBehaviours>().mineralData = mineralDatas[GetRandomSpawn()];
-                        mineral.GetComponent<MineralBehaviours>().UpdateMineral();
-                    }
+                    if(Physics2D.OverlapCircle(ray.point, 0.5f, mineralLayer) != null)
+                        continue;
+                    
+                    int randomNum = GetRandomSpawn();
+                    if(minerals[randomNum].mineralData.IsSpecialMineral)
+                        if(!(DayNightManager.Instance.CurrentDay % 5 == 0))
+                            continue;
+
+                    Vector3 pos = ray.point;
+                    pos.y += 0.45f;
+                    GameObject mineral = Instantiate(mineralPrefab, pos, Quaternion.identity);
+                    mineral.GetComponent<MineralBehaviours>().mineralData = minerals[randomNum].mineralData;
+                    mineral.GetComponent<MineralBehaviours>().UpdateMineral();
+
+                    //Decrease an "Increased" amount
+                    minerals[randomNum].percentages -= minerals[randomNum].mineralData.PercentageIncreasement;
+                    //Decrease 5%
+                    minerals[randomNum].percentages *= 0.95f;
+                    
                 }
             }
             else
@@ -54,23 +63,33 @@ public class MineralSpawner : MonoBehaviour
         float numForAdding = 0;
         float total = 0;
 
-        for(int i = 0; i < percentages.Count; i++)
+        for(int i = 0; i < minerals.Count; i++)
         {
-            total += percentages[i];
+            total += minerals[i].percentages;
         }
 
-        for(int i = 0; i < mineralDatas.Count; i++)
+        for(int i = 0; i < minerals.Count; i++)
         {
-            if(percentages[i] / total + numForAdding >= random)
-            {
+            if(minerals[i].percentages / total + numForAdding >= random)
                 return i;
-            }
             else
-            {
-                numForAdding += percentages[i]/total;
-            }
+                numForAdding += minerals[i].percentages/total;
         }
 
         return 0;
     }
+
+    [ContextMenu("UpdateSpawnPercentages")]
+    public void UpdateSpawnPercentages()
+    {
+        foreach(Mineral mineral in minerals)
+            mineral.percentages += mineral.mineralData.PercentageIncreasement;
+    }
+}
+
+[System.Serializable]
+public class Mineral
+{
+    [SerializeField] public SO_Mineral mineralData;
+    [SerializeField] public float percentages;
 }
