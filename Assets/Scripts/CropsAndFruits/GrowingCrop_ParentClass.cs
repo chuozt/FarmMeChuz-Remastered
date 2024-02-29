@@ -10,17 +10,23 @@ public class GrowingCrop_ParentClass : MonoBehaviour
     [SerializeField] protected List<AudioClip> sfxList;
 
     protected GameObject waterBubble;
-    protected bool isWatered = false;
+    [SerializeField] protected bool isWatered = false;
     protected bool canBeHavested = false;
     protected bool isInHarvestZone = false;
     protected float timeLeft;
     protected int progressIndex = 0;
 
+    void OnEnable() => DayNightManager.eventHitTheSackFloat += DecreaseTimeAfterDay;
+    void OnDisable() => DayNightManager.eventHitTheSackFloat -= DecreaseTimeAfterDay;
+
     void Awake()
     {
         timeLeft = cropSeedData.TimeToGrow;
-        waterBubble = Instantiate(waterBubblePrefab, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
-        waterBubble.transform.SetParent(transform);
+        if(!isWatered)
+        {   
+            waterBubble = Instantiate(waterBubblePrefab, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+            waterBubble.transform.SetParent(transform);
+        }
         SetStage(progressIndex);
     }
 

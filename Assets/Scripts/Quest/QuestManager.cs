@@ -16,6 +16,9 @@ public class QuestManager : Singleton<QuestManager>
     public AudioClip sfxOpenQuest;
     public AudioClip sfxCloseQuest;
 
+    void OnEnable() => Player.onPlayerDie += ToggleOffTheQuestUI;
+    void OnDisable() => Player.onPlayerDie -= ToggleOffTheQuestUI;
+
     void Start()
     {
         questUI.SetActive(false);

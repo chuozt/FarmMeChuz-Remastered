@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EnemyStats : MonoBehaviour
 {
@@ -10,12 +11,13 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] private float knockbackForce;
     [HideInInspector] public bool isDead = false;
     [HideInInspector] public bool isTakingDamage = false;
-    float time = 0;
+    [SerializeField] private List<AudioClip> sfx;
 
+    public static event Action<GameObject> onEnemyDie;
+
+    float time = 0;
     private float health;
     private float damage;
-
-    [SerializeField] private List<AudioClip> sfx;
 
     void Awake()
     {
@@ -45,7 +47,7 @@ public class EnemyStats : MonoBehaviour
             anim.SetTrigger("isTakingDamage");
             isTakingDamage = true;
             
-            if(transform.position.x - GameObject.Find("Player").transform.position.x >= 0)
+            if(transform.position.x - Player.Instance.transform.position.x >= 0)
                 rb.AddForce(new Vector2(knockbackForce, 1), ForceMode2D.Impulse);
             else 
                 rb.AddForce(new Vector2(-knockbackForce, 1), ForceMode2D.Impulse);
@@ -54,11 +56,15 @@ public class EnemyStats : MonoBehaviour
         }
 
         if(health <= 0)
-        {
-            anim.SetTrigger("isDead");
-            gameObject.layer = 3;
-            isDead = true;
-            Destroy(gameObject, 1f);
-        }
+            Die();
+    }
+
+    private void Die()
+    {
+        onEnemyDie?.Invoke(gameObject);
+        anim.SetTrigger("isDead");
+        gameObject.layer = 3;
+        isDead = true;
+        Destroy(gameObject, 1f);
     }
 }

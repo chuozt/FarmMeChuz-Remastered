@@ -25,6 +25,7 @@ public enum ItemType
     CropSeed,
     Mineral,
     Tools,
+    SpecialItems,
     None,
 };
 

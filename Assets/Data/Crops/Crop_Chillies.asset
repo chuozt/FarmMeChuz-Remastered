@@ -16,7 +16,11 @@ MonoBehaviour:
   <ItemSprite>k__BackingField: {fileID: -254259178, guid: a67bbcdff74e7c242ad7167f4902dd0b, type: 3}
   <Cost>k__BackingField: 0
   <Value>k__BackingField: 8
-  Descriptions: 
+  Descriptions: 'Can be eaten
+
+    +3 HP
+
+    +3 MP'
   <IsUnlocked>k__BackingField: 0
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 16

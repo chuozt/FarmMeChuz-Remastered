@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,58 +6,37 @@ using UnityEngine.UI;
 
 public class DayNightManager : Singleton<DayNightManager>
 {
+    [SerializeField] private Animator blackScreenAnimator;
     [SerializeField] private SpriteRenderer srDayNightBackGround;
     [SerializeField] private Gradient gradientDayNight;
     [SerializeField] private float cycleTime;
     [SerializeField] private Text dayNightText;
     [SerializeField] private Text timeInDayText;
-
     [SerializeField] private GameObject thinkingBubble;
     [SerializeField] private SpriteRenderer bedBorder;
 
     [SerializeField] private int currentDay = 1;
     private float currentTime = 0;
     [HideInInspector] public bool isDay = true;
-    int hour, startHour = 6, totalHourInADay = 18;
+    int currentHour, startHour = 6, totalHourInADay = 18;
     float minute;
     bool canSleep = false;
     bool enemyIsSpawned = false;
+    bool isPlayerSleeping = false;
+    bool isPlayerDying = false;
+
+    public static event Action eventHitTheSack;
+    public static event Action<float> eventHitTheSackFloat;
 
     void Start()
     {
-        hour = startHour;
+        currentHour = startHour;
         isDay = true;
     }
     
     void Update()
     {
-        if(currentTime <= cycleTime)
-            currentTime += Time.deltaTime; 
-
-        if(hour < 24)
-            minute += (Time.deltaTime / cycleTime * totalHourInADay * 10);
-
-        if(minute >= 10)
-        {
-            minute = 0;
-            hour++;
-        }
-
-        if(hour < 22)
-            thinkingBubble.SetActive(false);
-        else
-            thinkingBubble.SetActive(true);
-
-        if(hour == 24)
-        {
-            Player.Instance.TakeDamage(1000);
-            HitTheSack();
-        }
-
-        timeInDayText.text = hour + ":" + (int)minute;
-        
-        srDayNightBackGround.color = gradientDayNight.Evaluate(currentTime/cycleTime);
-        srDayNightBackGround.color = new Color(srDayNightBackGround.color.r, srDayNightBackGround.color.g, srDayNightBackGround.color.b, 0.5f * currentTime / cycleTime);
+        UpdateTime();
 
         if(currentTime <= cycleTime * 0.55f)
         {
@@ -87,55 +67,86 @@ public class DayNightManager : Singleton<DayNightManager>
             CameraShake.Instance.ShakeCamera();
         }
         else if(canSleep && Input.GetKeyDown(KeyCode.F) && !isDay)
-        {
-            Player.Instance.SetCurrentHealth = 100;
-            Player.Instance.SetCurrentMana = 100;
-            HitTheSack();
-        } 
+            StartCoroutine("HitTheSack");
     }
 
-    void HitTheSack()
+    void UpdateTime()
     {
-        hour = startHour;
+        if(isPlayerSleeping || isPlayerDying)  
+            return;
+
+        if(currentTime <= cycleTime)
+            currentTime += Time.deltaTime; 
+        
+
+        if(currentHour < 24)
+            minute += (Time.deltaTime / cycleTime * totalHourInADay * 10);
+
+        if(minute >= 10)
+        {
+            minute = 0;
+            currentHour++;
+        }
+
+        if(currentHour < 22)
+            thinkingBubble.SetActive(false);
+        else
+            thinkingBubble.SetActive(true);
+
+        if(currentHour == 24)
+            StartCoroutine("OnPlayerDieByNotSleep");
+
+        timeInDayText.text = currentHour + ":" + (int)minute;
+        
+        srDayNightBackGround.color = gradientDayNight.Evaluate(currentTime/cycleTime);
+        srDayNightBackGround.color = new Color(srDayNightBackGround.color.r, srDayNightBackGround.color.g, srDayNightBackGround.color.b, 0.5f * currentTime / cycleTime);
+    }
+
+    IEnumerator HitTheSack()
+    {
+        isPlayerSleeping = true;
+
+        blackScreenAnimator.Play("BlackScreen_FadeInAndOut");
+        StartCoroutine(Player.Instance.DisableMovingAbilityTemporary(blackScreenAnimator.GetCurrentAnimatorStateInfo(0).length));
+        yield return new WaitForSeconds(blackScreenAnimator.GetCurrentAnimatorStateInfo(0).length / 2);
+
+        RefreshTimer();
+
+        //Regen player's stats
+        Player.Instance.SetCurrentHealth = Player.Instance.GetMaxHealth;
+        Player.Instance.SetCurrentMana = Player.Instance.GetMaxMana;
+
+        //Trigger all the events
+        eventHitTheSack?.Invoke();
+        eventHitTheSackFloat?.Invoke(cycleTime - currentTime);
+
+        isPlayerSleeping = false;
+    }
+
+    IEnumerator OnPlayerDieByNotSleep()
+    {
+        isPlayerDying = true;
+        Player.Instance.TakeDamage(1000);
+        yield return new WaitForSeconds(Player.Instance.Anim.GetCurrentAnimatorStateInfo(0).length);
+
+        blackScreenAnimator.Play("BlackScreen_FadeInAndOut");
+        StartCoroutine(Player.Instance.DisableMovingAbilityTemporary(blackScreenAnimator.GetCurrentAnimatorStateInfo(0).length));
+        yield return new WaitForSeconds(blackScreenAnimator.GetCurrentAnimatorStateInfo(0).length / 1.75f);
+
+        Player.Instance.ResetToSpawnPoint();
+        RefreshTimer();
+
+        //Trigger all the events
+        eventHitTheSack?.Invoke();
+        eventHitTheSackFloat?.Invoke(cycleTime - currentTime);
+
+        isPlayerDying = false;
+    }
+
+    void RefreshTimer()
+    {
+        currentHour = startHour;
         minute = 0;
-
-        GameObject[] growingCrops = GameObject.FindGameObjectsWithTag("GrowingCrops");
-        foreach(var crop in growingCrops)
-        {
-            crop.TryGetComponent<GrowingCrop_ParentClass>(out GrowingCrop_ParentClass growingCrop);
-
-            if(growingCrop != null)
-                growingCrop.DecreaseTimeAfterDay(cycleTime - currentTime);
-        }
-
-        GameObject[] mineralSpawners = GameObject.FindGameObjectsWithTag("MineralSpawners");
-        foreach(var spawner in mineralSpawners)
-        {
-            spawner.TryGetComponent<MineralSpawner>(out MineralSpawner ms);
-            ms.UpdateSpawnPercentages();
-            ms.SpawnMineral();
-        }
-
-        GameObject[] trees = GameObject.FindGameObjectsWithTag("Tree");
-        foreach(var tree in trees)
-        {
-            tree.TryGetComponent<TreeBehaviours>(out TreeBehaviours tb);
-            tb.TreeGrowUp();
-        }
-
-        GameObject[] treeSpawners = GameObject.FindGameObjectsWithTag("TreeSpawners");
-        foreach(var spawner in treeSpawners)
-        {
-            spawner.TryGetComponent<TreeSpawner>(out TreeSpawner ts);
-            ts.SpawnTree();
-        }
-
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach(var enemy in enemies)
-        {
-            Destroy(enemy);
-        }
-
         currentDay++;
         currentTime = 0;
     }

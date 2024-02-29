@@ -27,6 +27,9 @@ public class ShopManager : Singleton<ShopManager>
     public AudioClip closeSFX;
     public AudioClip clickSFX;
 
+    void OnEnable() => Player.onPlayerDie += ToggleOffShopUI;
+    void OnDisable() => Player.onPlayerDie -= ToggleOffShopUI;
+
     void Start()
     {
         shopGroup.SetActive(false);

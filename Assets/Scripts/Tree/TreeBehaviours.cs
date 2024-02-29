@@ -14,10 +14,9 @@ public class TreeBehaviours : MonoBehaviour
     [SerializeField] private LayerMask treeZoneLayer;
     [SerializeField] private List<AudioClip> sfxList_BeingChopped;
 
-    void OnEnable()
-    {
-        health = treeData.Health;
-    }
+    void OnEnable() => DayNightManager.eventHitTheSack += TreeGrowUp;
+    void OnDisable() => DayNightManager.eventHitTheSack -= TreeGrowUp;
+    void Awake() => health = treeData.Health;
 
     public void TreeGrowUp()
     {

@@ -25,6 +25,6 @@ MonoBehaviour:
   ItemType: 1
   <MinSpawningCrops>k__BackingField: 1
   <MaxSpawningCrops>k__BackingField: 3
-  <TimeToGrow>k__BackingField: 8
+  <TimeToGrow>k__BackingField: 72
   <GrowingCrop>k__BackingField: {fileID: 3731629921276526799, guid: 1af70697bc7dde0438c05e84a7eeff67, type: 3}
   <DropCrop>k__BackingField: {fileID: 1502045577703463028, guid: e7ebc1335fbbd7f478749ae3a7b96df7, type: 3}

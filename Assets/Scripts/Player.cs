@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using System;
 
 public class Player : Singleton<Player>
 {
@@ -10,6 +11,7 @@ public class Player : Singleton<Player>
     Vector2 move;
     private Rigidbody2D rb;
     private Animator anim;
+    public Animator Anim => anim;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private Transform checkGroundPoint;
     [SerializeField] private LayerMask groundLayer;
@@ -35,11 +37,16 @@ public class Player : Singleton<Player>
     
     // Booleans
     bool isGrounded;
-    [HideInInspector] public bool canPlant = false;
     bool isFacingLeft = false;
     bool isFacingRight = true;
     bool isTakingDamage = false;
-    [HideInInspector] public bool isDead = false;    
+    bool isDead = false;    
+    bool canPlant = false;
+    bool canMove = true;
+
+    public bool IsDead => isDead;
+    public bool CanPlant => canPlant;
+
 
     [Space(10)]
     [SerializeField] private Transform toolsPoint;
@@ -88,6 +95,10 @@ public class Player : Singleton<Player>
     [Header("Particles")]
     [SerializeField] ParticleSystem waterParticle;
 
+    //Actions
+    public static event Action onPlayerDie;
+    public static event Action onUseHeartOfMotherland;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -107,9 +118,12 @@ public class Player : Singleton<Player>
 
         if(!isDead)
         {
+            if(!canMove)
+                return;
+
             FlipX();
             Jump();
-            anim.SetBool("isTakingDamageBool", isTakingDamage);
+            
             if(isTakingDamage)
             {
                 currentAnimationTime = Mathf.MoveTowards(currentAnimationTime, anim.GetCurrentAnimatorStateInfo(0).length, Time.deltaTime);
@@ -120,6 +134,7 @@ public class Player : Singleton<Player>
                 }
                 CameraShake.Instance.ShakeCamera(0.15f, 0.1f);
             }
+
             if(isGrounded)
             {
                 if(moveX != 0)
@@ -127,14 +142,14 @@ public class Player : Singleton<Player>
                 else
                     anim.SetTrigger("isIdle");
             }
+
+            anim.SetBool("isTakingDamageBool", isTakingDamage);
         }
-        else
-            ResetToSpawnPoint();
     }
 
     void FixedUpdate()
     {
-        if(!isDead)
+        if(!isDead && canMove)
             Move();
     }
 
@@ -150,9 +165,7 @@ public class Player : Singleton<Player>
     {
         isGrounded = Physics2D.OverlapCircle(checkGroundPoint.position, 0.08f, groundLayer);
         if (isGrounded && Input.GetButtonDown("Jump"))
-        {
             rb.AddForce(new Vector2(rb.velocity.x, jumpForce), ForceMode2D.Impulse);
-        }
     }
 
     void FlipX()
@@ -184,9 +197,9 @@ public class Player : Singleton<Player>
             if(col != null)
             {
                 if(col.CompareTag("Mineral"))
-                    col.GetComponent<MineralBehaviours>().TakeDamage((int)Random.Range(InventoryManager.Instance.tool.Damage - 1, InventoryManager.Instance.tool.Damage + 4));
+                    col.GetComponent<MineralBehaviours>().TakeDamage((int)UnityEngine.Random.Range(InventoryManager.Instance.ItemTool.Damage - 1, InventoryManager.Instance.ItemTool.Damage + 4));
                 else if(col.CompareTag("Enemy"))
-                    col.GetComponent<EnemyStats>().TakeDamage((int)Random.Range(InventoryManager.Instance.tool.Damage - 3, InventoryManager.Instance.tool.Damage + 4));
+                    col.GetComponent<EnemyStats>().TakeDamage((int)UnityEngine.Random.Range(InventoryManager.Instance.ItemTool.Damage - 3, InventoryManager.Instance.ItemTool.Damage + 4));
             }
 
             DecreaseMana(1);
@@ -196,8 +209,8 @@ public class Player : Singleton<Player>
         //Cooldown
         if(isMining)
         {
-            delayMiningTime = Mathf.MoveTowards(delayMiningTime, InventoryManager.Instance.tool.Delay + 1, Time.deltaTime);
-            if(delayMiningTime >= InventoryManager.Instance.tool.Delay)
+            delayMiningTime = Mathf.MoveTowards(delayMiningTime, InventoryManager.Instance.ItemTool.Delay + 1, Time.deltaTime);
+            if(delayMiningTime >= InventoryManager.Instance.ItemTool.Delay)
             {
                 canMine = true;
                 isMining = false;
@@ -220,7 +233,7 @@ public class Player : Singleton<Player>
             if(col != null)
             {
                 for(int i = 0; i < col.Length; i++)
-                    col[i].GetComponent<EnemyStats>().TakeDamage((int)Random.Range(InventoryManager.Instance.tool.Damage - col.Length, InventoryManager.Instance.tool.Damage + 4 - col.Length));
+                    col[i].GetComponent<EnemyStats>().TakeDamage((int)UnityEngine.Random.Range(InventoryManager.Instance.ItemTool.Damage - col.Length, InventoryManager.Instance.ItemTool.Damage + 4 - col.Length));
             }
 
             DecreaseMana(1);
@@ -230,8 +243,8 @@ public class Player : Singleton<Player>
         //Cooldown
         if(isFighting)
         {
-            delayFightingTime = Mathf.MoveTowards(delayFightingTime, InventoryManager.Instance.tool.Delay + 1, Time.deltaTime);
-            if(delayFightingTime >= InventoryManager.Instance.tool.Delay)
+            delayFightingTime = Mathf.MoveTowards(delayFightingTime, InventoryManager.Instance.ItemTool.Delay + 1, Time.deltaTime);
+            if(delayFightingTime >= InventoryManager.Instance.ItemTool.Delay)
             {
                 canFight = true;
                 isFighting = false;
@@ -253,9 +266,9 @@ public class Player : Singleton<Player>
             if(col != null)
             {
                 if(col.CompareTag("Tree"))
-                    col.GetComponent<TreeBehaviours>().TakeDamage((int)Random.Range(InventoryManager.Instance.tool.Damage - 1, InventoryManager.Instance.tool.Damage + 4));
+                    col.GetComponent<TreeBehaviours>().TakeDamage((int)UnityEngine.Random.Range(InventoryManager.Instance.ItemTool.Damage - 1, InventoryManager.Instance.ItemTool.Damage + 4));
                 else if(col.CompareTag("Enemy"))
-                    col.GetComponent<EnemyStats>().TakeDamage((int)Random.Range(InventoryManager.Instance.tool.Damage - 3, InventoryManager.Instance.tool.Damage + 4));
+                    col.GetComponent<EnemyStats>().TakeDamage((int)UnityEngine.Random.Range(InventoryManager.Instance.ItemTool.Damage - 3, InventoryManager.Instance.ItemTool.Damage + 4));
             }
 
             DecreaseMana(1);
@@ -265,8 +278,8 @@ public class Player : Singleton<Player>
         //Cooldown
         if(isChopping)
         {
-            delayChoppingTime = Mathf.MoveTowards(delayChoppingTime, InventoryManager.Instance.tool.Delay + 1, Time.deltaTime);
-            if(delayChoppingTime >= InventoryManager.Instance.tool.Delay)
+            delayChoppingTime = Mathf.MoveTowards(delayChoppingTime, InventoryManager.Instance.ItemTool.Delay + 1, Time.deltaTime);
+            if(delayChoppingTime >= InventoryManager.Instance.ItemTool.Delay)
             {
                 canChop = true;
                 isChopping = false;
@@ -304,14 +317,11 @@ public class Player : Singleton<Player>
                         grassTilemap.SetTile(pos, grassTileRule);
                 }
 
-                AudioManager.Instance.PlaySFX(dirtSFXList[Random.Range(0, dirtSFXList.Count)]);
+                AudioManager.Instance.PlaySFX(dirtSFXList[UnityEngine.Random.Range(0, dirtSFXList.Count)]);
             }
         }
         else if(ray.collider == null && ray2.collider == null)
-        {
             SetTempBox(false);
-        }
-
         
         if(ray2.collider != null)
         {
@@ -349,7 +359,7 @@ public class Player : Singleton<Player>
             SetTempBox(false);
     }
 
-    public void CropAction()
+    public void CropAction(ItemCrop itemCrop)
     {
         SetTempBox(false);
         if(Input.GetMouseButton(1))
@@ -357,10 +367,10 @@ public class Player : Singleton<Player>
             eatingTime += Time.deltaTime;
             if(eatingTime >= 1)
             {
-                IncreaseHealth(InventoryManager.Instance.crop.HealthIncreaseAmount);
-                IncreaseMana(InventoryManager.Instance.crop.ManaIncreaseAmount);
+                IncreaseHealth(itemCrop.HealthIncreaseAmount);
+                IncreaseMana(itemCrop.ManaIncreaseAmount);
 
-                InventoryManager.Instance.DecreaseItem(InventoryManager.Instance.itemInSelectedSlot.item);
+                InventoryManager.Instance.DecreaseItem(itemCrop);
                 isEating = false;
                 eatingTime =  0;
             }
@@ -381,7 +391,7 @@ public class Player : Singleton<Player>
         }
     }
 
-    public void CropSeedAction()
+    public void CropSeedAction(ItemCropSeed itemCropSeed)
     {
         RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector2.down, 1f, groundLayer);
         Debug.DrawRay(transform.position, Vector3.down, Color.green);
@@ -414,12 +424,12 @@ public class Player : Singleton<Player>
                         plantPos.x += 0.5f;
                         plantPos.z = 0;
 
-                        Instantiate(InventoryManager.Instance.cropSeed.GrowingCrop, plantPos, Quaternion.identity);
-                        InventoryManager.Instance.DecreaseItem(InventoryManager.Instance.cropSeed);
+                        Instantiate(itemCropSeed.GrowingCrop, plantPos, Quaternion.identity);
+                        InventoryManager.Instance.DecreaseItem(itemCropSeed);
                         anim.SetTrigger("isPlanting");
                         
                         DecreaseMana(1);
-                        AudioManager.Instance.PlaySFX(dirtSFXList[Random.Range(0, dirtSFXList.Count)]);
+                        AudioManager.Instance.PlaySFX(dirtSFXList[UnityEngine.Random.Range(0, dirtSFXList.Count)]);
                     }
                 }
             }
@@ -433,6 +443,18 @@ public class Player : Singleton<Player>
         {
             canPlant = false;
             SetTempBox(false);
+        }
+    }
+
+    public void SpecialItemAction(Item specialItem)
+    {
+        if(Input.GetMouseButtonDown(1))
+        {
+            if(specialItem.Name == "Heart of Motherland")
+            {
+                onUseHeartOfMotherland?.Invoke();
+                InventoryManager.Instance.DecreaseItem(specialItem);
+            }
         }
     }
 
@@ -471,6 +493,7 @@ public class Player : Singleton<Player>
         }
         else if(currentHealth <= 0)
         {
+            onPlayerDie?.Invoke();
             if(!isDead)
             {
                 isDead = true;
@@ -481,17 +504,11 @@ public class Player : Singleton<Player>
 
     public void ResetToSpawnPoint()
     {
-        ShutDownUI();
-        currentAnimationTime = Mathf.MoveTowards(currentAnimationTime, anim.GetCurrentAnimatorStateInfo(0).length, Time.deltaTime);
-        if(currentAnimationTime >= anim.GetCurrentAnimatorStateInfo(0).length)
-        {
-            transform.position = spawnPoint.position;
-            currentHealth = maxHealth/3;
-            healthBar.SetHealth(currentHealth);
-            anim.SetTrigger("isIdle");
-            isDead = false;
-            currentAnimationTime = 0;
-        }
+        transform.position = spawnPoint.position;
+        currentHealth = maxHealth/3;
+        healthBar.SetHealth(currentHealth);
+        anim.SetTrigger("isIdle");
+        isDead = false;
     }
 
     public void DecreaseMana(int amount)
@@ -524,14 +541,18 @@ public class Player : Singleton<Player>
         manaBar.SetMana(currentMana);
     }
 
-    public void ShutDownUI()
+    public IEnumerator DisableMovingAbilityTemporary(float duration)
     {
-        inventoryGroup.SetActive(false);
-        InventoryManager.Instance.isOpeningTheInventory = false;
+        canMove = false;
+        yield return new WaitForSeconds(duration);
+        canMove = true;
     }
 
-    public int SetCurrentHealth { set { currentHealth = value; healthBar.SetHealth(currentHealth); }}
-    public int SetCurrentMana { set { currentMana = value; manaBar.SetMana(currentMana); }}
+    public int GetMaxHealth { get{ return maxHealth; } }
+    public int GetMaxMana { get{ return maxMana; } }
+    public int SetCurrentHealth { set{ currentHealth = value; healthBar.SetHealth(currentHealth); }}
+    public int SetCurrentMana { set{ currentMana = value; manaBar.SetMana(currentMana); }}
+    public bool CanMove { get{ return canMove; } set{ canMove = value; }}
 
     // void OnDrawGizmos()
     // {

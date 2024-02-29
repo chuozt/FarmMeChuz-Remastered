@@ -20,11 +20,13 @@ public class Furnace : Singleton<Furnace>
     float fuelLeft = 0;
     bool isHaveFuel = false;
 
+    void OnEnable() => Player.onPlayerDie += ToggleOffFurnaceUI;
+    void OnDisable() => Player.onPlayerDie -= ToggleOffFurnaceUI;
+
     void Start()
     {
         furnaceUI.SetActive(false);
         mineralBubble.SetActive(true);
-        sliderProgress.maxValue = 3;
         sliderProgress.value = 0;
         sliderFuel.value = 0;
     }
@@ -32,7 +34,20 @@ public class Furnace : Singleton<Furnace>
     // Update is called once per frame
     void Update()
     {
-        OpenAndCloseFurnace();
+        if(canFurnace && Input.GetKeyDown(KeyCode.F))
+        {
+            if(!isOpeningTheFurnace)
+            {
+                InventoryManager.Instance.ToggleOnTheInventory();
+                ToggleOnFurnaceUI();
+            }
+            else
+            {
+                InventoryManager.Instance.ToggleOffTheInventory();
+                ToggleOffFurnaceUI();
+            }
+                
+        }
 
         if((fuelSlot.itemInSlot != null || fuelLeft > 0) && inputSlot.itemInSlot != null)
             StartFurnace();
@@ -46,6 +61,18 @@ public class Furnace : Singleton<Furnace>
         sliderFuel.value = fuelLeft;
     }
 
+    void ToggleOnFurnaceUI()
+    {
+        furnaceUI.SetActive(true);
+        isOpeningTheFurnace = true;
+    }
+
+    void ToggleOffFurnaceUI()
+    {
+        furnaceUI.SetActive(false);
+        isOpeningTheFurnace = false;
+    }
+
     void StartFurnace()
     {
         if(inputSlot.itemInSlot.item.ItemType == ItemType.Mineral)
@@ -55,6 +82,8 @@ public class Furnace : Singleton<Furnace>
             {
                 if((outputSlot.itemInSlot != null && outputSlot.itemInSlot.count < itemMineral.MaxStackSize && outputSlot.itemInSlot.item == itemMineral.Output) || outputSlot.itemInSlot == null)
                 {
+                    sliderProgress.maxValue = itemMineral.FuelNeed;
+
                     //Update the current melting mineral
                     mineralBubble.SetActive(true);
                     mineralBubble.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite = inputSlot.itemInSlot.item.ItemSprite;
@@ -72,7 +101,7 @@ public class Furnace : Singleton<Furnace>
                         isHaveFuel = false;
                     
                     //After finishing 1 melting session
-                    if(time > 3)
+                    if(time > itemMineral.FuelNeed)
                     {
                         //Decrease the input's number
                         time = 0;
@@ -80,7 +109,7 @@ public class Furnace : Singleton<Furnace>
                         inputSlot.itemInSlot.RefreshCount();
 
                         //Increase the output's number
-                        outputSlot.AddItemToSlot(outputSlot.itemInSlot, itemMineral.Output, 2);
+                        outputSlot.AddItemToSlot(outputSlot.itemInSlot, itemMineral.Output, itemMineral.OutputNumber);
                         outputSlot.UpdateTheInventoryItemInfo();
 
                         //If the outputs > MaxStackSize, then set the number to MaxStackSize
@@ -100,26 +129,6 @@ public class Furnace : Singleton<Furnace>
         }
         
         sliderProgress.value = time;
-    }
-
-    void OpenAndCloseFurnace()
-    {
-        if(canFurnace && Input.GetKeyDown(KeyCode.F))
-        {
-            if(!isOpeningTheFurnace)
-            {
-                furnaceUI.SetActive(true);
-                isOpeningTheFurnace = true;
-                InventoryManager.Instance.ToggleOnTheInventory();
-            }
-            else
-            {
-                furnaceUI.SetActive(false);
-                isOpeningTheFurnace = false;
-                InventoryManager.Instance.ToggleOffTheInventory();
-            }
-            
-        }
     }
 
     void OnTriggerStay2D(Collider2D col)

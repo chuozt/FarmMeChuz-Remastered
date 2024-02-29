@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TreeSpawner : MonoBehaviour
 {
-    [field:SerializeField] List<Tree> trees;
+    [field:SerializeField] List<Tree> mainTreeList;
+    [field:SerializeField] List<Tree> pinkTreeList;
     [SerializeField] private float padding;
     [SerializeField] private LayerMask treeZoneLayer;
     [SerializeField] private LayerMask groundLayer;
@@ -12,6 +13,17 @@ public class TreeSpawner : MonoBehaviour
     [SerializeField] private LayerMask layersTreeAffect;
     
     void Start() => SpawnTree();
+
+    void OnEnable()
+    {
+        DayNightManager.eventHitTheSack += SpawnTree;
+        Player.onUseHeartOfMotherland += BreakTheHeartOfMotherland;
+    }
+    void OnDisable()
+    {
+        DayNightManager.eventHitTheSack -= SpawnTree;
+        Player.onUseHeartOfMotherland -= BreakTheHeartOfMotherland;
+    }
 
     [ContextMenu("SpawnTree")]
     public void SpawnTree()
@@ -33,7 +45,7 @@ public class TreeSpawner : MonoBehaviour
                 {
                     if(Physics2D.OverlapCircle(ray.point, 0.5f, treeZoneLayer) == null)
                     {
-                        GameObject tree = Instantiate(trees[GetRandomSpawn()].treesToSpawn, ray.point, Quaternion.identity);
+                        GameObject tree = Instantiate(mainTreeList[GetRandomSpawn()].treesToSpawn, ray.point, Quaternion.identity);
                         tree.transform.position -= new Vector3(0, 0.02f, 0);
                         GameObject treeZone = tree.transform.GetChild(0).gameObject;
 
@@ -58,18 +70,26 @@ public class TreeSpawner : MonoBehaviour
         float numForAdding = 0;
         float total = 0;
 
-        for(int i = 0; i < trees.Count; i++)
-            total += trees[i].percentages;
+        for(int i = 0; i < mainTreeList.Count; i++)
+            total += mainTreeList[i].percentages;
 
-        for(int i = 0; i < trees.Count; i++)
+        for(int i = 0; i < mainTreeList.Count; i++)
         {
-            if(trees[i].percentages / total + numForAdding >= random)
+            if(mainTreeList[i].percentages / total + numForAdding >= random)
                 return i;
             else
-                numForAdding += trees[i].percentages/total;
+                numForAdding += mainTreeList[i].percentages/total;
         }
 
         return 0;
+    }
+
+    public void BreakTheHeartOfMotherland()
+    {
+        foreach(Tree tree in pinkTreeList)
+            mainTreeList.Add(tree);
+        
+        pinkTreeList.Clear();
     }
 }
 

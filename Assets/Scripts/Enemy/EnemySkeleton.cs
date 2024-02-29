@@ -75,9 +75,7 @@ public class EnemySkeleton : MonoBehaviour
             anim.SetBool("isDetecting", isDetecting);
 
             if(isFighting || !canFight)
-            {
                 ResetAttack();
-            }
         }
     }
 
@@ -110,13 +108,9 @@ public class EnemySkeleton : MonoBehaviour
     void FlipXState()
     {
         if(transform.position.x <= enemySpawnerTransform.position.x + (-enemySpawnerTransform.localScale.x/2) - 0.5f && isFacingLeft)
-        {
             SetFacingRight();
-        }
         else if(transform.position.x >= enemySpawnerTransform.position.x + (enemySpawnerTransform.localScale.x/2) + 0.5f && isFacingRight)
-        {
             SetFacingLeft();
-        }
     }
 
     bool DetectPlayerState()
@@ -133,13 +127,10 @@ public class EnemySkeleton : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, col.transform.position, enemyStats.enemyData.Speed * Time.deltaTime);
             
             if(transform.position.x < col.transform.position.x && isFacingLeft)
-            {
                 SetFacingRight();
-            }
             else if(transform.position.x >= col.transform.position.x && isFacingRight)
-            {
                 SetFacingLeft();
-            }
+
             return true;
         }
         isDetecting = false;
@@ -178,9 +169,7 @@ public class EnemySkeleton : MonoBehaviour
             Collider2D col = Physics2D.OverlapCircle(hitboxPoint.position, hitboxRadius * 2, detectLayer);
             {
                 if(col != null)
-                {
                     col.GetComponent<Player>().TakeDamage((int)enemyStats.enemyData.Damage, this.transform, enemyStats.enemyData.KnockBackForce);
-                }
             }
         }
     }

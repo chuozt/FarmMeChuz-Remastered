@@ -9,9 +9,15 @@ public class InventoryManager : Singleton<InventoryManager>
     public InventorySlot[] inventorySlots;
     [SerializeField] private GameObject inventoryItemPrefab;
     [HideInInspector] public InventoryItem itemInSelectedSlot;
-    [HideInInspector] public ItemTool tool;
-    [HideInInspector] public ItemCrop crop;
-    [HideInInspector] public ItemCropSeed cropSeed;
+    private ItemTool itemTool;
+    private ItemCrop itemCrop;
+    private ItemCropSeed itemCropSeed;
+    private Item itemSpecialItem;
+
+    public ItemTool ItemTool => itemTool;
+    public ItemCrop ItemCrop => itemCrop;
+    public ItemCropSeed ItemCropSeed => itemCropSeed;
+    public Item ItemSpecialItem => itemSpecialItem;
 
     [Space(10)]
     [HideInInspector] public int selectedSlot = -1;
@@ -35,6 +41,9 @@ public class InventoryManager : Singleton<InventoryManager>
     [SerializeField] private AudioClip clickSFX;
 
     public List<Item> startItem;
+
+    void OnEnable() => Player.onPlayerDie += ToggleOffTheInventory;
+    void OnDisable() => Player.onPlayerDie -= ToggleOffTheInventory;
 
     void Start()
     {
@@ -82,16 +91,18 @@ public class InventoryManager : Singleton<InventoryManager>
                 inventorySlots[i].Deselect();
         }
 
+        isOpeningTheInventory = true;
         inventoryGroup.SetActive(true);
         EnablePage(inventory, inventoryButton);
-        isOpeningTheInventory = true;
+        Player.Instance.CanMove = false;
     }
 
     public void ToggleOffTheInventory()
     {
+        isOpeningTheInventory = false;
         inventoryGroup.SetActive(false);
         EnablePage(inventory, inventoryButton);
-        isOpeningTheInventory = false;
+        Player.Instance.CanMove = true;
     }
 
     void HighlightCurrentSlot()
@@ -148,7 +159,7 @@ public class InventoryManager : Singleton<InventoryManager>
     {
         if(!pauseMenu.activeInHierarchy && !isOpeningTheInventory)
         {
-            if(itemInSelectedSlot != null && !Player.Instance.isDead)
+            if(itemInSelectedSlot != null && !Player.Instance.IsDead)
             {
                 switch(itemInSelectedSlot.item.ItemType)
                 {
@@ -160,6 +171,9 @@ public class InventoryManager : Singleton<InventoryManager>
                         break;
                     case ItemType.CropSeed:
                         HoldingCropSeeds(itemInSelectedSlot.item);
+                        break;
+                    case ItemType.SpecialItems:
+                        HoldingSpecialItems(itemInSelectedSlot.item);
                         break;
                     default:
                         Player.Instance.SetTempBox(false);
@@ -173,9 +187,9 @@ public class InventoryManager : Singleton<InventoryManager>
 
     void HoldingTools(Item item)
     {
-        tool = (ItemTool)item;
+        itemTool = (ItemTool)item;
 
-        switch(tool.toolType)
+        switch(itemTool.toolType)
         {
             case ToolType.Pickaxe:
                 Player.Instance.PickaxeAction();
@@ -197,14 +211,20 @@ public class InventoryManager : Singleton<InventoryManager>
 
     void HoldingCrops(Item item)
     {
-        crop = (ItemCrop)item;
-        Player.Instance.CropAction();
+        itemCrop = (ItemCrop)item;
+        Player.Instance.CropAction(itemCrop);
     }
 
     void HoldingCropSeeds(Item item)
     {
-        cropSeed = (ItemCropSeed)item;
-        Player.Instance.CropSeedAction();
+        itemCropSeed = (ItemCropSeed)item;
+        Player.Instance.CropSeedAction(itemCropSeed);
+    }
+
+    void HoldingSpecialItems(Item item)
+    {
+        itemSpecialItem = item;
+        Player.Instance.SpecialItemAction(itemSpecialItem);
     }
 
     public bool AddItem(Item item)

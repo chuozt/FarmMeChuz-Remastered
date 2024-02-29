@@ -13,9 +13,14 @@ public class MineralSpawner : MonoBehaviour
 
     void Start() => SpawnMineral();
 
+    void OnEnable() => DayNightManager.eventHitTheSack += SpawnMineral;
+    void OnDisable() => DayNightManager.eventHitTheSack -= SpawnMineral;
+
     [ContextMenu("SpawnMineral")]
     public void SpawnMineral()
     {
+        bool isSpawnedSpecialMineral = false;
+
         for(float xScale = -transform.localScale.x/2; xScale <= transform.localScale.x/2; xScale += Random.Range(padding, padding + 0.45f))
         {
             float xPos = xScale + transform.position.x;
@@ -36,8 +41,16 @@ public class MineralSpawner : MonoBehaviour
                     
                     int randomNum = GetRandomSpawn();
                     if(minerals[randomNum].mineralData.IsSpecialMineral)
-                        if(!(DayNightManager.Instance.CurrentDay % 5 == 0))
+                    {
+                        //Special minerals can only be spawned each 3-day period
+                        if(!(DayNightManager.Instance.CurrentDay % 3 == 0))
                             continue;
+                        //Only 1 Special mineral can be spawned in a day
+                        if(isSpawnedSpecialMineral)
+                            continue;
+
+                        isSpawnedSpecialMineral = true;
+                    }
 
                     Vector3 pos = ray.point;
                     pos.y += 0.45f;
@@ -56,7 +69,7 @@ public class MineralSpawner : MonoBehaviour
                 continue;
         }
     }
-
+    
     public int GetRandomSpawn()
     {
         float random = Random.Range(0f, 1f);
