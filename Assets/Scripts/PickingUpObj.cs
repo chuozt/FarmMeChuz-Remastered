@@ -11,16 +11,19 @@ public class PickingUpObj : MonoBehaviour
         //check if correct type
         if(col.gameObject.CompareTag("Item"))
         {
-            //check if can be picked, if yes, set the collision to trigger, move towards to the player
-            if(col.gameObject.GetComponent<CanBePicked>().canBePicked)
+            //Check if there is any slot for this item
+            if(!InventoryManager.Instance.IsFullInventory(col.gameObject.GetComponent<ObjectsDatas>().item))
             {
-                Rigidbody2D rb = col.gameObject.GetComponent<Rigidbody2D>();
-
-                rb.gravityScale = 0f;
-                rb.mass = 0f;
-                rb.isKinematic = true;
-                col.gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
-                col.gameObject.transform.position = Vector3.MoveTowards(col.gameObject.transform.position, lerpPos.position, 0.16f);
+                //check if can be picked, if yes, set the collision to trigger, move towards to the player
+                if(col.gameObject.GetComponent<CanBePicked>().canBePicked)
+                {
+                    Rigidbody2D rb = col.gameObject.GetComponent<Rigidbody2D>();
+                    rb.gravityScale = 0f;
+                    rb.mass = 0f;
+                    rb.isKinematic = true;
+                    col.gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
+                    col.gameObject.transform.position = Vector3.MoveTowards(col.gameObject.transform.position, lerpPos.position, 0.16f);
+                }
             }
         }
     }

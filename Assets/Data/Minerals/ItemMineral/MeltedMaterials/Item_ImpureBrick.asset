@@ -17,9 +17,9 @@ MonoBehaviour:
   <Cost>k__BackingField: 0
   <Value>k__BackingField: 0
   Descriptions: COMING SOON...
-  <IsUnlocked>k__BackingField: 1
+  <IsUnlocked>k__BackingField: 0
   <IsStackable>k__BackingField: 1
-  <MaxStackSize>k__BackingField: 16
+  <MaxStackSize>k__BackingField: 1
   <IsFuelResource>k__BackingField: 0
   <FuelAmount>k__BackingField: 0
   ItemType: 4

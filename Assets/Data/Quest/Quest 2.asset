@@ -17,5 +17,11 @@ MonoBehaviour:
   - <ItemNeed>k__BackingField: {fileID: 11400000, guid: d74368f223e82584cae26353418f77b3, type: 2}
     <NumbersOfItemNeed>k__BackingField: 16
   - <ItemNeed>k__BackingField: {fileID: 11400000, guid: 291a316495720344f9735a55991ebfa6, type: 2}
-    <NumbersOfItemNeed>k__BackingField: 16
-  <IsDone>k__BackingField: 0000
+    <NumbersOfItemNeed>k__BackingField: 32
+  - <ItemNeed>k__BackingField: {fileID: 11400000, guid: 138d35eee39e2004bb497af6e5653b5f, type: 2}
+    <NumbersOfItemNeed>k__BackingField: 8
+  - <ItemNeed>k__BackingField: {fileID: 11400000, guid: b89636c8ca688b0419182978155fa98a, type: 2}
+    <NumbersOfItemNeed>k__BackingField: 6
+  - <ItemNeed>k__BackingField: {fileID: 11400000, guid: 0950f693e8fe7bf4c9ad8c2a4ac12d33, type: 2}
+    <NumbersOfItemNeed>k__BackingField: 6
+  <IsDone>k__BackingField: 0000000000

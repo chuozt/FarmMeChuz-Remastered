@@ -16,25 +16,26 @@ public class DayNightManager : Singleton<DayNightManager>
     [SerializeField] private SpriteRenderer bedBorder;
 
     [SerializeField] private int currentDay = 1;
-    private float currentTime = 0;
-    [HideInInspector] public bool isDay = true;
+    float currentTime = 0;
     int currentHour, startHour = 6, totalHourInADay = 18;
     float minute;
     bool canSleep = false;
     bool enemyIsSpawned = false;
     bool isPlayerSleeping = false;
     bool isPlayerDying = false;
+    bool isDay = true;
 
     public static event Action eventHitTheSack;
     public static event Action<float> eventHitTheSackFloat;
 
     void Start()
     {
+        bedBorder.enabled = false;
         currentHour = startHour;
         isDay = true;
     }
     
-    void Update()
+    void LateUpdate()
     {
         UpdateTime();
 
@@ -60,6 +61,9 @@ public class DayNightManager : Singleton<DayNightManager>
             }
             enemyIsSpawned = true;
         }
+        
+        if(Player.Instance.IsInteracting)
+            return;
 
         if(canSleep && Input.GetKeyDown(KeyCode.F) && isDay)
         {
@@ -104,6 +108,7 @@ public class DayNightManager : Singleton<DayNightManager>
 
     IEnumerator HitTheSack()
     {
+        Player.Instance.SetInteractingState(false);
         isPlayerSleeping = true;
 
         blackScreenAnimator.Play("BlackScreen_FadeInAndOut");
@@ -121,12 +126,13 @@ public class DayNightManager : Singleton<DayNightManager>
         eventHitTheSackFloat?.Invoke(cycleTime - currentTime);
 
         isPlayerSleeping = false;
+        Player.Instance.SetInteractingState(true);
     }
 
     IEnumerator OnPlayerDieByNotSleep()
     {
         isPlayerDying = true;
-        Player.Instance.TakeDamage(1000);
+        Player.Instance.SetDead();
         yield return new WaitForSeconds(Player.Instance.Anim.GetCurrentAnimatorStateInfo(0).length);
 
         blackScreenAnimator.Play("BlackScreen_FadeInAndOut");
@@ -140,6 +146,19 @@ public class DayNightManager : Singleton<DayNightManager>
         eventHitTheSack?.Invoke();
         eventHitTheSackFloat?.Invoke(cycleTime - currentTime);
 
+        isPlayerDying = false;
+    }
+
+    public IEnumerator OnPlayerDieByHit()
+    {
+        isPlayerDying = true;
+        yield return new WaitForSeconds(Player.Instance.Anim.GetCurrentAnimatorStateInfo(0).length);
+
+        blackScreenAnimator.Play("BlackScreen_FadeInAndOut");
+        StartCoroutine(Player.Instance.DisableMovingAbilityTemporary(blackScreenAnimator.GetCurrentAnimatorStateInfo(0).length));
+        yield return new WaitForSeconds(blackScreenAnimator.GetCurrentAnimatorStateInfo(0).length / 1.75f);
+
+        Player.Instance.ResetToSpawnPoint();
         isPlayerDying = false;
     }
 

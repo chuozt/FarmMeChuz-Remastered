@@ -16,7 +16,7 @@ MonoBehaviour:
   <ItemSprite>k__BackingField: {fileID: -3569232777630780389, guid: a495e596e0c41de42a87ef83590caefc, type: 3}
   <Cost>k__BackingField: 0
   <Value>k__BackingField: 0
-  Descriptions: 
+  Descriptions: Use to chop the trees!
   <IsUnlocked>k__BackingField: 1
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1

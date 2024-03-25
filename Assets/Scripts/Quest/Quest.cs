@@ -9,7 +9,7 @@ public class Quest : ScriptableObject
 {
     [field:SerializeField] public int Level { get; set; }
     [field:SerializeField] public List<ItemsNeed> ItemsNeed;
-    [field:HideInInspector] public List<bool> IsDone { get; set; }
+    [field:SerializeField] public List<bool> IsDone { get; set; }
 }
 
 [System.Serializable]

@@ -171,8 +171,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mineralData: {fileID: 0}
   addMineralForce: 3
-  sfx:
-  - {fileID: 8300000, guid: 9e5fa467cae1e62499e42316ccade326, type: 3}
-  - {fileID: 8300000, guid: 0e4b8f5ce369d0948bac8486bcde12e6, type: 3}
-  - {fileID: 8300000, guid: a1b0984ce44ab3c47b3f729815dba38d, type: 3}
-  - {fileID: 8300000, guid: 7fe4e03d7a1849b46ae98d1d406f02cf, type: 3}
+  sfxBeingMined:
+  - {fileID: 8300000, guid: 4d326a972a0291d4191cfd13682e851f, type: 3}
+  - {fileID: 8300000, guid: eda5305278633dc409f4bf0224d215ce, type: 3}
+  - {fileID: 8300000, guid: ac9f108df7a10dd4088b6c400ac6cf34, type: 3}
+  sfxBroken: {fileID: 8300000, guid: eeb95fc11fac91d4db0302d183b488a1, type: 3}

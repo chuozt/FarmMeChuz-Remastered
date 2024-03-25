@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float padding;
     [SerializeField] private int maxSpawn;
     [SerializeField] private LayerMask enemyLayer;
-    private List<GameObject> activeEnemyList;
+    private List<GameObject> activeEnemyList = new List<GameObject>();
 
     void OnEnable()
     {
@@ -43,5 +43,10 @@ public class EnemySpawner : MonoBehaviour
     }
 
     private void RemoveEnemyFromList(GameObject enemy) => activeEnemyList.Remove(enemy);
-    private void RemoveAllEnemyFromList() => activeEnemyList.Clear();
+    private void RemoveAllEnemyFromList()
+    {
+        foreach(GameObject enemy in activeEnemyList)
+            Destroy(enemy, 1);
+        activeEnemyList.Clear();
+    }
 }

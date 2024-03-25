@@ -11,7 +11,8 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] private float knockbackForce;
     [HideInInspector] public bool isDead = false;
     [HideInInspector] public bool isTakingDamage = false;
-    [SerializeField] private List<AudioClip> sfx;
+    [SerializeField] private List<AudioClip> sfxEnemyHurtList;
+    [SerializeField] private AudioClip sfxEnemyDead;
 
     public static event Action<GameObject> onEnemyDie;
 
@@ -52,11 +53,14 @@ public class EnemyStats : MonoBehaviour
             else 
                 rb.AddForce(new Vector2(-knockbackForce, 1), ForceMode2D.Impulse);
             
-            //AudioSource.PlayClipAtPoint(sfx[Random.Range(0, sfx.Count)], transform.position);
+            AudioManager.Instance.PlaySFX(sfxEnemyHurtList[UnityEngine.Random.Range(0, sfxEnemyHurtList.Count)]);
         }
 
         if(health <= 0)
+        {
             Die();
+            AudioManager.Instance.PlaySFX(sfxEnemyDead);
+        }
     }
 
     private void Die()

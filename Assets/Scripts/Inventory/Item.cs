@@ -17,6 +17,14 @@ public class Item : ScriptableObject
     [field: SerializeField] public bool IsFuelResource { get; set; }
     [field: SerializeField] public float FuelAmount { get; set; }
     [field: SerializeField] public ItemType ItemType;
+    [field: SerializeField] public List<CraftingRecipe> CraftingRecipes { get; set; }
+}
+
+[System.Serializable]
+public struct CraftingRecipe
+{
+    [field: SerializeField] public Item NeededMaterial { get; set; }
+    [field: SerializeField] public int NumberOfNeededMaterial { get; set; }
 }
 
 public enum ItemType

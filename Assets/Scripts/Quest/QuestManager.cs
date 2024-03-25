@@ -5,16 +5,17 @@ using UnityEngine.UI;
 
 public class QuestManager : Singleton<QuestManager>
 {
-    public GameObject questUI;
-    public GameObject storageWhiteBorder;
+    [SerializeField] private GameObject questUI;
+    [SerializeField] private GameObject storageWhiteBorder;
     [SerializeField] private Scrollbar questScrollbar;
 
     private bool canOpenQuestUI = false;
-    [HideInInspector] public bool isOpeningTheQuestUI = false;
+    bool isOpeningTheQuestUI = false;
+    public bool IsOpeningTheQuestUI => isOpeningTheQuestUI;
 
     [Space(20)]
-    public AudioClip sfxOpenQuest;
-    public AudioClip sfxCloseQuest;
+    [SerializeField] private AudioClip sfxOpenQuest;
+    [SerializeField] private AudioClip sfxCloseQuest;
 
     void OnEnable() => Player.onPlayerDie += ToggleOffTheQuestUI;
     void OnDisable() => Player.onPlayerDie -= ToggleOffTheQuestUI;
@@ -25,7 +26,7 @@ public class QuestManager : Singleton<QuestManager>
         storageWhiteBorder.SetActive(false);
     }
 
-    void Update()
+    void LateUpdate()
     {
         if(!canOpenQuestUI)
             return;

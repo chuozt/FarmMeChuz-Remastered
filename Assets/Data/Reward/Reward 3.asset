@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03723478812831e45ac2aa2fe3eaaf7d, type: 3}
   m_Name: Reward 3
   m_EditorClassIdentifier: 
-  coin: 1000
-  point: 3
+  <Coin>k__BackingField: 900
+  <Point>k__BackingField: 6
   <ItemsUnlock>k__BackingField:
   - {fileID: 11400000, guid: 68e4bbd5acf6e50468a34070f5a7f928, type: 2}
   - {fileID: 11400000, guid: b4efeebd621d30244ab972c546d41b33, type: 2}

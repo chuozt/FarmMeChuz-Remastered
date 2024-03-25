@@ -15,9 +15,13 @@ MonoBehaviour:
   <Level>k__BackingField: 3
   ItemsNeed:
   - <ItemNeed>k__BackingField: {fileID: 11400000, guid: 5f4751829dfb7f145bacb62ef468f143, type: 2}
-    <NumbersOfItemNeed>k__BackingField: 8
-  - <ItemNeed>k__BackingField: {fileID: 11400000, guid: aae8ab9ebfc9ec2449bfaf43b6f3d73b, type: 2}
     <NumbersOfItemNeed>k__BackingField: 16
-  - <ItemNeed>k__BackingField: {fileID: 11400000, guid: 6c673a7333bf70a45b10baea6104fcd0, type: 2}
+  - <ItemNeed>k__BackingField: {fileID: 11400000, guid: aae8ab9ebfc9ec2449bfaf43b6f3d73b, type: 2}
     <NumbersOfItemNeed>k__BackingField: 24
-  <IsDone>k__BackingField: 000000
+  - <ItemNeed>k__BackingField: {fileID: 11400000, guid: 6c673a7333bf70a45b10baea6104fcd0, type: 2}
+    <NumbersOfItemNeed>k__BackingField: 8
+  - <ItemNeed>k__BackingField: {fileID: 11400000, guid: b89636c8ca688b0419182978155fa98a, type: 2}
+    <NumbersOfItemNeed>k__BackingField: 8
+  - <ItemNeed>k__BackingField: {fileID: 11400000, guid: 27388831ca3732340873d55ea13f880a, type: 2}
+    <NumbersOfItemNeed>k__BackingField: 4
+  <IsDone>k__BackingField: 0000000000

@@ -17,12 +17,12 @@ public class TreeSpawner : MonoBehaviour
     void OnEnable()
     {
         DayNightManager.eventHitTheSack += SpawnTree;
-        Player.onUseHeartOfMotherland += BreakTheHeartOfMotherland;
+        SpecialItemManager.onUseHeartOfMotherland += BreakTheHeartOfMotherland;
     }
     void OnDisable()
     {
         DayNightManager.eventHitTheSack -= SpawnTree;
-        Player.onUseHeartOfMotherland -= BreakTheHeartOfMotherland;
+        SpecialItemManager.onUseHeartOfMotherland -= BreakTheHeartOfMotherland;
     }
 
     [ContextMenu("SpawnTree")]

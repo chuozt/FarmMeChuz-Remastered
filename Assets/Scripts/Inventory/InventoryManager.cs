@@ -30,10 +30,9 @@ public class InventoryManager : Singleton<InventoryManager>
     [HideInInspector] public InventoryItem currentMouseItem;
 
     [Space(20), Header("- UI Components -")]
-    public GameObject pauseMenu;
-    public GameObject inventoryGroup;
     public GameObject inventory;
-    public GameObject upgradeGroup;
+    public GameObject inventoryPage;
+    public GameObject upgradePage;
     public Button inventoryButton;
     public Button upgradeButton;
     [SerializeField] private Color enableButtonColor;
@@ -49,11 +48,13 @@ public class InventoryManager : Singleton<InventoryManager>
     {
         ChangeSelectedSlot(0);
         DisableTooltips();
-        EnablePage(inventory, inventoryButton);
+        EnablePage(inventoryPage, inventoryButton);
 
         //Starter pack
         for(int i = 0; i < startItem.Count; i++)
             AddItem(startItem[i]);
+
+        inventory.SetActive(false);
     }
 
     void Update()
@@ -65,7 +66,7 @@ public class InventoryManager : Singleton<InventoryManager>
         {
             if(!isOpeningTheInventory)
                 ToggleOnTheInventory();
-            else
+            else if(CheckIfOtherUIAreOn())
                 ToggleOffTheInventory();
         }
     }
@@ -73,13 +74,23 @@ public class InventoryManager : Singleton<InventoryManager>
     bool CheckCanOpenTheInventory()
     {
         //if none of these is opened, then can open inventory by pressing E key
-        if(pauseMenu.activeInHierarchy || ShopManager.Instance.isOpeningTheShop || QuestManager.Instance.isOpeningTheQuestUI || Furnace.Instance.isOpeningTheFurnace)
+        if(PauseManager.Instance.IsOpeningThePauseMenu)
             return false;
 
         if(Input.GetKeyDown(KeyCode.E))
             return true;
 
         return false;
+    }
+
+    bool CheckIfOtherUIAreOn()
+    {
+        if(QuestManager.Instance.IsOpeningTheQuestUI || ShopManager.Instance.IsOpeningTheShop ||
+           CraftingTable.Instance.IsOpeningCraftingTable || Furnace.Instance.IsOpeningTheFurnace || 
+           SpecialItemManager.Instance.IsOpeningTheSpecialPanel)
+            return false;
+        
+        return true;
     }
 
     public void ToggleOnTheInventory()
@@ -92,17 +103,17 @@ public class InventoryManager : Singleton<InventoryManager>
         }
 
         isOpeningTheInventory = true;
-        inventoryGroup.SetActive(true);
-        EnablePage(inventory, inventoryButton);
-        Player.Instance.CanMove = false;
+        inventory.SetActive(true);
+        EnablePage(inventoryPage, inventoryButton);
+        Player.Instance.SetInteractingState(false);
     }
 
     public void ToggleOffTheInventory()
     {
         isOpeningTheInventory = false;
-        inventoryGroup.SetActive(false);
-        EnablePage(inventory, inventoryButton);
-        Player.Instance.CanMove = true;
+        inventory.SetActive(false);
+        EnablePage(inventoryPage, inventoryButton);
+        Player.Instance.SetInteractingState(true);
     }
 
     void HighlightCurrentSlot()
@@ -113,23 +124,23 @@ public class InventoryManager : Singleton<InventoryManager>
             currentMouseItem.transform.position = Input.mousePosition;
 
         //Choosing slots by scrolling mouse
-        if(!isOpeningTheInventory && !pauseMenu.activeInHierarchy)
+        if(isOpeningTheInventory || PauseManager.Instance.IsOpeningThePauseMenu || SpecialItemManager.Instance.IsOpeningTheSpecialPanel)
+            return;
+
+        Vector2 mouseScroll = Input.mouseScrollDelta;
+        if(mouseScroll.y < 0)
         {
-            Vector2 mouseScroll = Input.mouseScrollDelta;
-            if(mouseScroll.y < 0)
-            {
-                if(selectedSlot < 6)
-                    ChangeSelectedSlot(selectedSlot + 1);
-                else
-                    ChangeSelectedSlot(0);
-            }
-            else if(mouseScroll.y > 0)
-            {
-                if(selectedSlot > 0)
-                    ChangeSelectedSlot(selectedSlot - 1);
-                else 
-                    ChangeSelectedSlot(6);
-            }
+            if(selectedSlot < 6)
+                ChangeSelectedSlot(selectedSlot + 1);
+            else
+                ChangeSelectedSlot(0);
+        }
+        else if(mouseScroll.y > 0)
+        {
+            if(selectedSlot > 0)
+                ChangeSelectedSlot(selectedSlot - 1);
+            else 
+                ChangeSelectedSlot(6);
         }
         
         //Choosing slots with numbers on keyboard
@@ -155,9 +166,25 @@ public class InventoryManager : Singleton<InventoryManager>
         itemInSelectedSlot = inventorySlots[selectedSlot].GetComponentInChildren<InventoryItem>();
     }
 
+    public int CountTotalNumberOfAnItem(Item item)
+    {
+        int count = 0;
+
+        for(int i = 0; i < inventorySlots.Length; i++)
+        {
+            if(inventorySlots[i].itemInSlot == null)
+                continue;
+
+            if(item == inventorySlots[i].itemInSlot.item)
+                count += inventorySlots[i].itemInSlot.count;
+        }
+
+        return count;
+    }
+
     void UseHoldingItem()
     {
-        if(!pauseMenu.activeInHierarchy && !isOpeningTheInventory)
+        if(!SpecialItemManager.Instance.IsOpeningTheSpecialPanel && !PauseManager.Instance.IsOpeningThePauseMenu && !isOpeningTheInventory)
         {
             if(itemInSelectedSlot != null && !Player.Instance.IsDead)
             {
@@ -275,6 +302,48 @@ public class InventoryManager : Singleton<InventoryManager>
         return false;
     }
 
+    public void DecreaseItem(Item item, int number)
+    {
+        int count = 0;
+        
+        for(int i = 0; i < inventorySlots.Length; i++)
+        {
+            InventorySlot slot = inventorySlots[i];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+
+            if(itemInSlot != null && itemInSlot.item == item && itemInSlot.count > 0)
+            {
+                count++;
+                itemInSlot.count--;
+                itemInSlot.RefreshCount();
+
+                if(count == number)
+                    break;
+
+                if(itemInSlot.count == 0)
+                    continue;
+            }
+        }
+    }
+
+    public bool IsFullInventory(Item item)
+    {
+        for(int i = 0; i < inventorySlots.Length; i++)
+        {
+            InventorySlot slot = inventorySlots[i];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+            slot.itemInSlot = itemInSlot;
+            //If that item's type can be stacked OR the item stack is max, then keep checking the next slot
+            //If cannot find any of available slot, then the inventory is FULL
+            if((slot.itemInSlot != null && slot.itemInSlot != item) && slot.itemInSlot.count >= item.MaxStackSize)
+                continue;
+            else
+                return false;
+        }
+
+        return true;
+    }
+
     public void SpawnNewItem(Item item, InventorySlot slot)
     {
         GameObject newItemGO = Instantiate(inventoryItemPrefab, slot.transform);
@@ -329,25 +398,25 @@ public class InventoryManager : Singleton<InventoryManager>
 
     public void OpenInventoryButton()
     {
-        EnablePage(inventory, inventoryButton);
+        EnablePage(inventoryPage, inventoryButton);
         AudioManager.Instance.PlaySFX(clickSFX);
     }
 
     public void OpenUpgradeGroupButton()
     {
-        EnablePage(upgradeGroup, upgradeButton);
+        EnablePage(upgradePage, upgradeButton);
         AudioManager.Instance.PlaySFX(clickSFX);
     }
 
-    public void EnablePage(GameObject inventoryPage, Button button)
+    public void EnablePage(GameObject page, Button button)
     {
-        inventory.SetActive(false);
-        upgradeGroup.SetActive(false);
-        inventoryPage.SetActive(true);
+        inventoryPage.SetActive(false);
+        upgradePage.SetActive(false);
+        page.SetActive(true);
 
         inventoryButton.image.color = disableButtonColor;
         upgradeButton.image.color = disableButtonColor;
-        button.image.color = enableButtonColor;     
+        button.image.color = enableButtonColor;
     }
 
     public void TrashCan()

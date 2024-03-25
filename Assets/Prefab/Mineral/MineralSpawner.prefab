@@ -118,13 +118,13 @@ MonoBehaviour:
   - mineralData: {fileID: 11400000, guid: c375a40281cf1a54a94a915580ceb35a, type: 2}
     percentages: 1
   - mineralData: {fileID: 11400000, guid: 954fc333398c8424f89954d396f71152, type: 2}
-    percentages: 1
+    percentages: 3
   - mineralData: {fileID: 11400000, guid: 3be5d6875017d244280aa323b466081e, type: 2}
-    percentages: 0.75
+    percentages: 1
   - mineralData: {fileID: 11400000, guid: 24a7975e9e83bd144a90a0cbdde46de8, type: 2}
-    percentages: 0.5
+    percentages: 1
   - mineralData: {fileID: 11400000, guid: 173949a14f5eb1d47a4fd034ae02b274, type: 2}
-    percentages: 0.5
+    percentages: 1
   padding: 0.1
   mineralLayer:
     serializedVersion: 2

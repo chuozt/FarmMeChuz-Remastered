@@ -18,14 +18,14 @@ MonoBehaviour:
   <Value>k__BackingField: 110
   Descriptions: 'Can be eaten
 
-    +7 HP
+    +10 HP
 
-    +3 MP'
+    +7 MP'
   <IsUnlocked>k__BackingField: 0
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 16
   <IsFuelResource>k__BackingField: 0
   <FuelAmount>k__BackingField: 0
   ItemType: 0
-  <HealthIncreaseAmount>k__BackingField: 7
-  <ManaIncreaseAmount>k__BackingField: 3
+  <HealthIncreaseAmount>k__BackingField: 10
+  <ManaIncreaseAmount>k__BackingField: 7

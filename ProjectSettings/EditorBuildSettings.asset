@@ -15,3 +15,4 @@ EditorBuildSettings:
     path: Assets/Scenes/IntructionsScene.unity
     guid: 4ffa0476f8338bd48b671b46a6a3de92
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

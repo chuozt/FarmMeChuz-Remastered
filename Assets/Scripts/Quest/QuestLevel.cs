@@ -34,7 +34,7 @@ public class QuestLevel : MonoBehaviour
         
         for(int i = 0; i < quest.ItemsNeed.Count; i++)
         {
-            // quest.IsDone[i] = false;
+            quest.IsDone[i] = false;
 
             GameObject obj = Instantiate(questPrefab, this.transform.position, Quaternion.identity);
             obj.transform.SetParent(questArea);
@@ -59,7 +59,7 @@ public class QuestLevel : MonoBehaviour
         }
 
         coinRewardText.text = reward.Coin.ToString();
-        pointRewardText.text = "+ " + reward.Point.ToString() + " point(s)";
+        pointRewardText.text = "+ " + reward.Point.ToString();
     }
 
     public void CheckIfQuestLevelIsDone()
@@ -86,7 +86,7 @@ public class QuestLevel : MonoBehaviour
 
             blurImage.enabled = true;
             PlayerCoin.Instance.PlayerCoinText.text = (int.Parse(PlayerCoin.Instance.PlayerCoinText.text) + reward.Coin).ToString();
-            PlayerCoin.Instance.PlayerCoinText.text = (int.Parse(PlayerCoin.Instance.PlayerCoinText.text) + reward.Point).ToString();
+            UpgradePoint.Instance.UpgradePointText.text = (int.Parse(UpgradePoint.Instance.UpgradePointText.text) + reward.Point).ToString();
             AudioManager.Instance.PlaySFX(sfxQuestLevelComplete);
         }
     }

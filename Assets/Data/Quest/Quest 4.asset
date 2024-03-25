@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f06114bf79b6a418985a0fb464cfe8, type: 3}
   m_Name: Quest 4
   m_EditorClassIdentifier: 
-  <Level>k__BackingField: 2
+  <Level>k__BackingField: 4
   ItemsNeed:
   - <ItemNeed>k__BackingField: {fileID: 11400000, guid: b4efeebd621d30244ab972c546d41b33, type: 2}
-    <NumbersOfItemNeed>k__BackingField: 16
+    <NumbersOfItemNeed>k__BackingField: 32
   - <ItemNeed>k__BackingField: {fileID: 11400000, guid: d66e53b08a81d3a4fb72e47f40494dcd, type: 2}
     <NumbersOfItemNeed>k__BackingField: 16
-  <IsDone>k__BackingField: 0000
+  - <ItemNeed>k__BackingField: {fileID: 11400000, guid: 0950f693e8fe7bf4c9ad8c2a4ac12d33, type: 2}
+    <NumbersOfItemNeed>k__BackingField: 8
+  - <ItemNeed>k__BackingField: {fileID: 11400000, guid: 54c88a2f560294249b3e6a207ec8b02f, type: 2}
+    <NumbersOfItemNeed>k__BackingField: 8
+  <IsDone>k__BackingField: 00000000

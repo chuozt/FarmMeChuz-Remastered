@@ -25,6 +25,13 @@ public class CameraShake : Singleton<CameraShake>
         _cbmcp = cinemachineCamera.GetComponent<CinemachineBasicMultiChannelPerlin>(); 
     }
 
+    public void ShakeCameraDamagingPlayer(AudioClip audioClip)
+    {
+        _cbmcp.AmplitudeGain = intensity;
+        timer = duration;
+        AudioManager.Instance.PlaySFX(audioClip);
+    }
+
     public void ShakeCamera()
     {
         _cbmcp.AmplitudeGain = intensity;

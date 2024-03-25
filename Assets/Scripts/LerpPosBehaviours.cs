@@ -12,14 +12,17 @@ public class LerpPosBehaviours : MonoBehaviour
         //check if correct type
         if(col.gameObject.CompareTag("Item"))
         {
-            //check if can be picked, then destroy objects, get the info and add to the inventory
-            if(col.gameObject.GetComponent<CanBePicked>().canBePicked)
+            if(!InventoryManager.Instance.IsFullInventory(col.gameObject.GetComponent<ObjectsDatas>().item))
             {
-                item = col.gameObject.GetComponent<ObjectsDatas>().item;
-                InventoryManager.Instance.AddItem(item);
-                AudioManager.Instance.PlaySFX(sfx[Random.Range(0, sfx.Count)]);
+                //check if can be picked, then destroy objects, get the info and add to the inventory
+                if(col.gameObject.GetComponent<CanBePicked>().canBePicked)
+                {
+                    item = col.gameObject.GetComponent<ObjectsDatas>().item;
+                    InventoryManager.Instance.AddItem(item);
+                    AudioManager.Instance.PlaySFX(sfx[Random.Range(0, sfx.Count)]);
 
-                Destroy(col.gameObject);
+                    Destroy(col.gameObject);
+                }
             }
         }
     }

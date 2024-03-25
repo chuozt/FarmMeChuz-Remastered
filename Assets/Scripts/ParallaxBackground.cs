@@ -1,22 +1,42 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class ParallaxBackground : MonoBehaviour
 {
-    Material m;
-    float distance;
-
-    [SerializeField] private float speed;
+    public ParallaxCamera parallaxCamera;
+    List<ParallaxLayer> parallaxLayers = new List<ParallaxLayer>();
 
     void Start()
     {
-        m = GetComponent<Renderer>().material;
-    }   
+        if (parallaxCamera == null)
+            parallaxCamera = Camera.main.GetComponent<ParallaxCamera>();
 
-    void Update()
+        if (parallaxCamera != null)
+            parallaxCamera.onCameraTranslate += Move;
+
+        SetLayers();
+    }
+
+    void SetLayers()
     {
-        distance += Time.deltaTime * speed;
-        m.SetTextureOffset("_MainTex", Vector2.right * distance);
+        parallaxLayers.Clear();
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            ParallaxLayer layer = transform.GetChild(i).GetComponent<ParallaxLayer>();
+
+            if (layer != null)
+            {
+                layer.name = "Layer-" + i;
+                parallaxLayers.Add(layer);
+            }
+        }
+    }
+
+    void Move(float delta)
+    {
+        foreach (ParallaxLayer layer in parallaxLayers)
+            layer.Move(delta);
     }
 }

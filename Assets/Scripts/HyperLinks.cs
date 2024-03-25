@@ -19,6 +19,11 @@ public class HyperLinks : MonoBehaviour
 		Application.OpenURL("https://discord.gg/657qkzJ3Wz");
 	}
 
+	public void OpenKoFi()
+	{
+		Application.OpenURL("https://ko-fi.com/chuozt");
+	}
+
     public void OpenInstagram()
 	{
 		Application.OpenURL("https://www.instagram.com/chuozt/");

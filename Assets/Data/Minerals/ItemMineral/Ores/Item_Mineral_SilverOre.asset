@@ -15,7 +15,7 @@ MonoBehaviour:
   <Name>k__BackingField: Silver Ore
   <ItemSprite>k__BackingField: {fileID: 4399162173060059682, guid: 9aa89723c49e22b488909b5fdb026107, type: 3}
   <Cost>k__BackingField: 0
-  <Value>k__BackingField: 0
+  <Value>k__BackingField: 25
   Descriptions: 
   <IsUnlocked>k__BackingField: 1
   <IsStackable>k__BackingField: 1
@@ -23,6 +23,7 @@ MonoBehaviour:
   <IsFuelResource>k__BackingField: 0
   <FuelAmount>k__BackingField: 0
   ItemType: 2
+  <CraftingRecipes>k__BackingField: []
   <Output>k__BackingField: {fileID: 11400000, guid: 0950f693e8fe7bf4c9ad8c2a4ac12d33, type: 2}
   <OutputNumber>k__BackingField: 2
   <FuelNeed>k__BackingField: 12

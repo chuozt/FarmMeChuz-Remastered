@@ -136,7 +136,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -205,7 +205,7 @@ BoxCollider2D:
   m_Offset: {x: -0.0045700073, y: 1.1065497}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 3, y: 3}
     newSize: {x: 3, y: 3}
     adaptiveTilingThreshold: 0.5
@@ -260,4 +260,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 262144
   sfxList_BeingChopped:
-  - {fileID: 8300000, guid: e82bad508e0580f498edc07921933521, type: 3}
+  - {fileID: 8300000, guid: e5a245a45fed8d04785682b04649abcb, type: 3}
+  - {fileID: 8300000, guid: 24d8174028817664a88e946deb26c2ea, type: 3}
+  - {fileID: 8300000, guid: c7c1b5d4bf30e83439181d13b6b412be, type: 3}
+  sfxTreeFallingDown: {fileID: 8300000, guid: c93235246d71d874987d0287bc1bc5f3, type: 3}

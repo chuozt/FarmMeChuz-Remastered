@@ -15,7 +15,7 @@ MonoBehaviour:
   <Name>k__BackingField: Copper Ore
   <ItemSprite>k__BackingField: {fileID: 5003936362096828408, guid: 9aa89723c49e22b488909b5fdb026107, type: 3}
   <Cost>k__BackingField: 0
-  <Value>k__BackingField: 0
+  <Value>k__BackingField: 15
   Descriptions: 
   <IsUnlocked>k__BackingField: 1
   <IsStackable>k__BackingField: 1
@@ -23,6 +23,7 @@ MonoBehaviour:
   <IsFuelResource>k__BackingField: 0
   <FuelAmount>k__BackingField: 0
   ItemType: 2
+  <CraftingRecipes>k__BackingField: []
   <Output>k__BackingField: {fileID: 11400000, guid: b89636c8ca688b0419182978155fa98a, type: 2}
   <OutputNumber>k__BackingField: 2
   <FuelNeed>k__BackingField: 9

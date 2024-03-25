@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 010ac9b3eaaf1e74284f842f2ea8b005, type: 3}
   m_Name: Tree4
   m_EditorClassIdentifier: 
-  <Health>k__BackingField: 85
+  <Health>k__BackingField: 90
   <Log>k__BackingField:
   - <DropLog>k__BackingField: {fileID: 2663618756790312542, guid: 854c399b6b5708241874f5411714a8d6, type: 3}
     <MinimumSpawnNumber>k__BackingField: 1

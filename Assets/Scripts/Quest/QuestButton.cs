@@ -14,8 +14,6 @@ public class QuestButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     [HideInInspector] public bool isDone = false;
     public Image blurImage;
     public int questIndex;
-
-    //Managers
     QuestLevel questLevel;
 
     [Space(20)]
@@ -67,6 +65,7 @@ public class QuestButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         if(isDone)
         {
             blurImage.enabled = true;
+            GetComponent<Button>().interactable = false;
             AudioManager.Instance.PlaySFX(sfx);
             
             for(int i = 0; i < InventoryManager.Instance.inventorySlots.Length; i++)
@@ -104,7 +103,7 @@ public class QuestButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        InventoryManager.Instance.UpdateTooltips(item);
+        InventoryManager.Instance.UpdateTooltips((Item)null);
     }
 
 }

@@ -15,11 +15,14 @@ MonoBehaviour:
   <Name>k__BackingField: Rock Block
   <ItemSprite>k__BackingField: {fileID: 1980142279973535832, guid: 9aa89723c49e22b488909b5fdb026107, type: 3}
   <Cost>k__BackingField: 0
-  <Value>k__BackingField: 0
+  <Value>k__BackingField: 25
   Descriptions: 
   <IsUnlocked>k__BackingField: 1
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 16
   <IsFuelResource>k__BackingField: 0
   <FuelAmount>k__BackingField: 0
-  ItemType: 4
+  ItemType: 0
+  <CraftingRecipes>k__BackingField:
+  - <NeededMaterial>k__BackingField: {fileID: 11400000, guid: 138d35eee39e2004bb497af6e5653b5f, type: 2}
+    <NumberOfNeededMaterial>k__BackingField: 2

@@ -28,7 +28,8 @@ public class RainingCloud : MonoBehaviour
         if(time > Random.Range(0.03f, 0.18f))
         {
             time = 0;
-            Instantiate(rainDrop, new Vector3(transform.position.x + Random.Range(-transform.localScale.x, transform.localScale.x)/2, transform.position.y, 2), Quaternion.identity);
+            GameObject drop = Instantiate(rainDrop, new Vector3(transform.position.x + Random.Range(-transform.localScale.x, transform.localScale.x)/2, transform.position.y, 2), Quaternion.identity);
+            Destroy(drop, 10);
         }
     }
 }

@@ -52,9 +52,7 @@ public class EnemySkeleton : MonoBehaviour
 
                     FlipXState();
                     if(isRunning)
-                    {
                         MoveState();
-                    }
 
                     if(currentIdleTime == idleTime)
                     {

@@ -10,7 +10,8 @@ public class MineralBehaviours : MonoBehaviour
 
     [HideInInspector] public SO_Mineral mineralData;
     [SerializeField] private float addMineralForce = 1;
-    [SerializeField] private List<AudioClip> sfx;
+    [SerializeField] private List<AudioClip> sfxBeingMined;
+    [SerializeField] private AudioClip sfxBroken;
 
     public void UpdateMineral()
     {
@@ -25,7 +26,10 @@ public class MineralBehaviours : MonoBehaviour
     {
         health -= damage;
         anim.SetTrigger("isBroken");
-        AudioManager.Instance.PlaySFX(sfx[Random.Range(0, sfx.Count)]);
+        if(health > 0)
+            AudioManager.Instance.PlaySFX(sfxBeingMined[Random.Range(0, sfxBeingMined.Count)]);
+        else
+            AudioManager.Instance.PlaySFX(sfxBroken);
 
         if(health <= 0)
         {

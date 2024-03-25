@@ -13,6 +13,7 @@ public class TreeBehaviours : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask treeZoneLayer;
     [SerializeField] private List<AudioClip> sfxList_BeingChopped;
+    [SerializeField] private AudioClip sfxTreeFallingDown;
 
     void OnEnable() => DayNightManager.eventHitTheSack += TreeGrowUp;
     void OnDisable() => DayNightManager.eventHitTheSack -= TreeGrowUp;
@@ -57,7 +58,10 @@ public class TreeBehaviours : MonoBehaviour
     {
         health -= damage;
         anim.SetTrigger("isChopped");
-        AudioManager.Instance.PlaySFX(sfxList_BeingChopped[Random.Range(0, sfxList_BeingChopped.Count)]);
+        if(health > 0)
+            AudioManager.Instance.PlaySFX(sfxList_BeingChopped[Random.Range(0, sfxList_BeingChopped.Count)]);
+        else
+            AudioManager.Instance.PlaySFX(sfxTreeFallingDown);
 
         if(health <= 0)
         {

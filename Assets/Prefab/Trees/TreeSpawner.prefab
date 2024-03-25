@@ -106,13 +106,13 @@ MonoBehaviour:
     percentages: 2
   pinkTreeList:
   - treesToSpawn: {fileID: 9083090571891213902, guid: 4669a545b3cc3fb42ae465db142f0b42, type: 3}
-    percentages: 3
+    percentages: 6
   - treesToSpawn: {fileID: 6158244432055065481, guid: d07315fada2a91b41817d48d1cffac53, type: 3}
-    percentages: 2
+    percentages: 4
   - treesToSpawn: {fileID: 2877484671924853379, guid: 1c503653f9d189441a468fe60d6f872c, type: 3}
-    percentages: 1
+    percentages: 3
   - treesToSpawn: {fileID: 7690979186384267149, guid: 7f891382c06cd764e8774dba14d0e2b9, type: 3}
-    percentages: 0.5
+    percentages: 2
   padding: 0.35
   treeZoneLayer:
     serializedVersion: 2

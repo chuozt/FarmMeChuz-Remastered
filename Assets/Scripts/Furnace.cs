@@ -15,12 +15,14 @@ public class Furnace : Singleton<Furnace>
     [SerializeField] private GameObject furnaceWhiteBorder;
 
     bool canFurnace = false;
-    [HideInInspector] public bool isOpeningTheFurnace;
     float time = 0;
     float fuelLeft = 0;
     bool isHaveFuel = false;
+    private bool isOpeningTheFurnace;
+    public bool IsOpeningTheFurnace => isOpeningTheFurnace;
 
     void OnEnable() => Player.onPlayerDie += ToggleOffFurnaceUI;
+
     void OnDisable() => Player.onPlayerDie -= ToggleOffFurnaceUI;
 
     void Start()
@@ -32,11 +34,11 @@ public class Furnace : Singleton<Furnace>
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if(canFurnace && Input.GetKeyDown(KeyCode.F))
         {
-            if(!isOpeningTheFurnace)
+            if(!isOpeningTheFurnace && !Player.Instance.IsInteracting)
             {
                 InventoryManager.Instance.ToggleOnTheInventory();
                 ToggleOnFurnaceUI();
@@ -144,12 +146,11 @@ public class Furnace : Singleton<Furnace>
     {
         if(col.gameObject.name == "Player")
         {
+            Player.Instance.SetInteractingState(true);
             canFurnace = false;
-            isOpeningTheFurnace = false;
-            furnaceUI.SetActive(false);
-            InventoryManager.Instance.inventoryGroup.SetActive(false);
-            InventoryManager.Instance.isOpeningTheInventory = false;
             furnaceWhiteBorder.SetActive(false);
+            ToggleOffFurnaceUI();
+            InventoryManager.Instance.ToggleOffTheInventory();
         }
     }
 }

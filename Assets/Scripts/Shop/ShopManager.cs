@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class ShopManager : Singleton<ShopManager>
 {
     [HideInInspector] public bool canShopNow = false;
-    [HideInInspector] public bool isOpeningTheShop = false;
+    bool isOpeningTheShop = false;
+    public bool IsOpeningTheShop => isOpeningTheShop;
 
     public GameObject shopGroup;
     [SerializeField] private Button buyButton;
@@ -36,18 +37,21 @@ public class ShopManager : Singleton<ShopManager>
         shopWhiteBorder.GetComponent<SpriteRenderer>().enabled = false;
     }
 
-    void Update()
+    void LateUpdate()
     {
-        if(canShopNow && Input.GetKeyDown(KeyCode.F) && !isOpeningTheShop && !InventoryManager.Instance.isOpeningTheInventory)
+        if(canShopNow && Input.GetKeyDown(KeyCode.F))
         {
-            InventoryManager.Instance.ToggleOnTheInventory();
-            ToggleOnShopUI();
-            EnableShopPage(buyShop, buyButton);
-        }
-        else if(canShopNow && Input.GetKeyDown(KeyCode.F) && isOpeningTheShop)
-        {
-            InventoryManager.Instance.ToggleOffTheInventory();
-            ToggleOffShopUI();
+            if(!isOpeningTheShop)
+            {
+                InventoryManager.Instance.ToggleOnTheInventory();
+                ToggleOnShopUI();
+                EnableShopPage(buyShop, buyButton);
+            }
+            else
+            {
+                InventoryManager.Instance.ToggleOffTheInventory();
+                ToggleOffShopUI();
+            }
         }
     }
 
