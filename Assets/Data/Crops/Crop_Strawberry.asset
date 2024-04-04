@@ -15,7 +15,7 @@ MonoBehaviour:
   <Name>k__BackingField: Strawberry
   <ItemSprite>k__BackingField: {fileID: 7113927244362079390, guid: a67bbcdff74e7c242ad7167f4902dd0b, type: 3}
   <Cost>k__BackingField: 0
-  <Value>k__BackingField: 34
+  <Value>k__BackingField: 30
   Descriptions: 'Can be eaten
 
     +4 HP
@@ -27,5 +27,6 @@ MonoBehaviour:
   <IsFuelResource>k__BackingField: 0
   <FuelAmount>k__BackingField: 0
   ItemType: 0
+  <CraftingRecipes>k__BackingField: []
   <HealthIncreaseAmount>k__BackingField: 4
   <ManaIncreaseAmount>k__BackingField: 4

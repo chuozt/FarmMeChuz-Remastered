@@ -15,7 +15,7 @@ MonoBehaviour:
   <Name>k__BackingField: Pumpkin
   <ItemSprite>k__BackingField: {fileID: -9177457062998269095, guid: a67bbcdff74e7c242ad7167f4902dd0b, type: 3}
   <Cost>k__BackingField: 0
-  <Value>k__BackingField: 50
+  <Value>k__BackingField: 65
   Descriptions: 'Can be eaten
 
     +9 HP
@@ -27,5 +27,6 @@ MonoBehaviour:
   <IsFuelResource>k__BackingField: 0
   <FuelAmount>k__BackingField: 0
   ItemType: 0
+  <CraftingRecipes>k__BackingField: []
   <HealthIncreaseAmount>k__BackingField: 9
   <ManaIncreaseAmount>k__BackingField: 5

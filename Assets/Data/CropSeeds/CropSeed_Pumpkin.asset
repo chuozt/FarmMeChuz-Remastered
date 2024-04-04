@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: CropSeed_Pumpkin
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Pumpkin Seed
-  <ItemSprite>k__BackingField: {fileID: -1119939516, guid: 0849bb3b169a05c4dbfa66ae45d3edd3, type: 3}
-  <Cost>k__BackingField: 100
+  <ItemSprite>k__BackingField: {fileID: 1198675096, guid: 86ecb2b84dbac8c4f93d7b0a95f97791, type: 3}
+  <Cost>k__BackingField: 125
   <Value>k__BackingField: 0
   Descriptions: 
   <IsUnlocked>k__BackingField: 0
@@ -23,7 +23,8 @@ MonoBehaviour:
   <IsFuelResource>k__BackingField: 0
   <FuelAmount>k__BackingField: 0
   ItemType: 1
-  <MinSpawningCrops>k__BackingField: 1
+  <CraftingRecipes>k__BackingField: []
+  <MinSpawningCrops>k__BackingField: 2
   <MaxSpawningCrops>k__BackingField: 3
   <TimeToGrow>k__BackingField: 60
   <GrowingCrop>k__BackingField: {fileID: 6728992063531097302, guid: a19ae47926e2116449d4f1d7b8ec25c6, type: 3}

@@ -8,6 +8,7 @@ public class PauseManager : Singleton<PauseManager>
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject instructionPage;
     [SerializeField] private GameObject settingsPage;
+    [SerializeField] private AudioClip sfxClick;
 
     private bool isOpeningThePauseMenu = false;
     public bool IsOpeningThePauseMenu => isOpeningThePauseMenu;
@@ -55,15 +56,25 @@ public class PauseManager : Singleton<PauseManager>
         isOpeningThePauseMenu = false;
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
+        AudioManager.Instance.PlaySFX(sfxClick);
     }
 
-    public void Instructions() => instructionPage.SetActive(true);
+    public void Instructions()
+    {
+        instructionPage.SetActive(true);
+        AudioManager.Instance.PlaySFX(sfxClick);
+    } 
 
-    public void Settings() => settingsPage.SetActive(true);
+    public void Settings()
+    {
+        settingsPage.SetActive(true);
+        AudioManager.Instance.PlaySFX(sfxClick);
+    } 
 
     public void Exit()
     {
-        SceneManager.LoadScene("MenuScene");
         Time.timeScale = 1;
+        AudioManager.Instance.PlaySFX(sfxClick);
+        SceneManager.LoadScene("MenuScene");
     }
 }

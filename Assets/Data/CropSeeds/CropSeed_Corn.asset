@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CropSeed_Corn
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Corn Seed
-  <ItemSprite>k__BackingField: {fileID: 1842385161, guid: 0849bb3b169a05c4dbfa66ae45d3edd3, type: 3}
+  <ItemSprite>k__BackingField: {fileID: -5347802427853439154, guid: 86ecb2b84dbac8c4f93d7b0a95f97791, type: 3}
   <Cost>k__BackingField: 70
   <Value>k__BackingField: 0
   Descriptions: 
@@ -23,6 +23,7 @@ MonoBehaviour:
   <IsFuelResource>k__BackingField: 0
   <FuelAmount>k__BackingField: 0
   ItemType: 1
+  <CraftingRecipes>k__BackingField: []
   <MinSpawningCrops>k__BackingField: 1
   <MaxSpawningCrops>k__BackingField: 3
   <TimeToGrow>k__BackingField: 36

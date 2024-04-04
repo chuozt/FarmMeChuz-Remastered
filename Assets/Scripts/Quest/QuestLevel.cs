@@ -27,7 +27,7 @@ public class QuestLevel : MonoBehaviour
 
     [SerializeField] private AudioClip sfxQuestLevelComplete;
     
-    void Awake()
+    void Start()
     {
         blurImage.enabled = false;
         levelText.text = "Level " + quest.Level.ToString();

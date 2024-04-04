@@ -3,18 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering.Universal;
 
 public class DayNightManager : Singleton<DayNightManager>
 {
+    [SerializeField] private List<SpriteRenderer> parallaxBackgroundsSRList;
+    [SerializeField] private Light2D globalLight;
+    [SerializeField] private Light2D playersSpotLight;
     [SerializeField] private Animator blackScreenAnimator;
-    [SerializeField] private SpriteRenderer srDayNightBackGround;
-    [SerializeField] private Gradient gradientDayNight;
     [SerializeField] private float cycleTime;
     [SerializeField] private Text dayNightText;
     [SerializeField] private Text timeInDayText;
     [SerializeField] private GameObject thinkingBubble;
     [SerializeField] private SpriteRenderer bedBorder;
 
+    float parallaxBackgroundRGB = 1;
+    float playersSpotLightAlpha = 0;
     [SerializeField] private int currentDay = 1;
     float currentTime = 0;
     int currentHour, startHour = 6, totalHourInADay = 18;
@@ -24,15 +28,18 @@ public class DayNightManager : Singleton<DayNightManager>
     bool isPlayerSleeping = false;
     bool isPlayerDying = false;
     bool isDay = true;
+    bool callNight = false;
 
     public static event Action eventHitTheSack;
     public static event Action<float> eventHitTheSackFloat;
+    public static event Action eventOnNight;
 
     void Start()
     {
         bedBorder.enabled = false;
         currentHour = startHour;
         isDay = true;
+        playersSpotLight.intensity = 0;
     }
     
     void LateUpdate()
@@ -82,7 +89,6 @@ public class DayNightManager : Singleton<DayNightManager>
         if(currentTime <= cycleTime)
             currentTime += Time.deltaTime; 
         
-
         if(currentHour < 24)
             minute += (Time.deltaTime / cycleTime * totalHourInADay * 10);
 
@@ -90,6 +96,12 @@ public class DayNightManager : Singleton<DayNightManager>
         {
             minute = 0;
             currentHour++;
+        }
+
+        if(currentHour == 19 && !callNight)
+        {
+            eventOnNight?.Invoke();
+            callNight = true;
         }
 
         if(currentHour < 22)
@@ -101,21 +113,48 @@ public class DayNightManager : Singleton<DayNightManager>
             StartCoroutine("OnPlayerDieByNotSleep");
 
         timeInDayText.text = currentHour + ":" + (int)minute;
-        
-        srDayNightBackGround.color = gradientDayNight.Evaluate(currentTime/cycleTime);
-        srDayNightBackGround.color = new Color(srDayNightBackGround.color.r, srDayNightBackGround.color.g, srDayNightBackGround.color.b, 0.5f * currentTime / cycleTime);
+
+        AdjustLighting();
+        AdjustParallaxBackgroundColor();
+    }
+
+    void AdjustLighting()
+    {
+        if(currentHour >= 13 && currentHour < 17)
+        {
+            globalLight.intensity = Mathf.MoveTowards(globalLight.intensity, 0.9f, totalHourInADay / cycleTime / 4 * 0.1f * Time.deltaTime);
+            playersSpotLight.intensity = Mathf.MoveTowards(playersSpotLight.intensity, 0.1f, totalHourInADay / cycleTime / 4 * 0.1f * Time.deltaTime);
+        }
+        else if(currentHour >= 17 && currentHour < 21)
+        {
+            globalLight.intensity = Mathf.MoveTowards(globalLight.intensity, 0.25f, totalHourInADay / cycleTime / 4 * 0.65f * Time.deltaTime);
+            playersSpotLight.intensity = Mathf.MoveTowards(playersSpotLight.intensity, 0.85f, totalHourInADay / cycleTime / 4 * 0.75f * Time.deltaTime);
+        }
+    }
+
+    void AdjustParallaxBackgroundColor()
+    {
+        if(currentHour >= 17 && currentHour < 21)
+        {
+            parallaxBackgroundRGB = Mathf.MoveTowards(parallaxBackgroundRGB, 0.5f, totalHourInADay / cycleTime / 4 * 0.5f * Time.deltaTime);
+            for(int i = 0; i < parallaxBackgroundsSRList.Count; i++)
+                parallaxBackgroundsSRList[i].color = new Color(parallaxBackgroundRGB, parallaxBackgroundRGB, parallaxBackgroundRGB, 1);
+        }
     }
 
     IEnumerator HitTheSack()
     {
         Player.Instance.SetInteractingState(false);
         isPlayerSleeping = true;
+        callNight = false;
 
         blackScreenAnimator.Play("BlackScreen_FadeInAndOut");
         StartCoroutine(Player.Instance.DisableMovingAbilityTemporary(blackScreenAnimator.GetCurrentAnimatorStateInfo(0).length));
         yield return new WaitForSeconds(blackScreenAnimator.GetCurrentAnimatorStateInfo(0).length / 2);
 
         RefreshTimer();
+        RefreshLighting();
+        RefreshBackground();
 
         //Regen player's stats
         Player.Instance.SetCurrentHealth = Player.Instance.GetMaxHealth;
@@ -131,6 +170,7 @@ public class DayNightManager : Singleton<DayNightManager>
 
     IEnumerator OnPlayerDieByNotSleep()
     {
+        callNight = false;
         isPlayerDying = true;
         Player.Instance.SetDead();
         yield return new WaitForSeconds(Player.Instance.Anim.GetCurrentAnimatorStateInfo(0).length);
@@ -141,6 +181,8 @@ public class DayNightManager : Singleton<DayNightManager>
 
         Player.Instance.ResetToSpawnPoint();
         RefreshTimer();
+        RefreshLighting();
+        RefreshBackground();
 
         //Trigger all the events
         eventHitTheSack?.Invoke();
@@ -168,6 +210,19 @@ public class DayNightManager : Singleton<DayNightManager>
         minute = 0;
         currentDay++;
         currentTime = 0;
+    }
+
+    void RefreshLighting()
+    {
+        globalLight.intensity = 1;
+        playersSpotLight.intensity = 0;
+    }
+
+    void RefreshBackground()
+    {
+        parallaxBackgroundRGB = 1;
+        for(int i = 0; i < parallaxBackgroundsSRList.Count; i++)
+            parallaxBackgroundsSRList[i].color = new Color(1, 1, 1, 1);
     }
 
     void OnTriggerStay2D(Collider2D col)

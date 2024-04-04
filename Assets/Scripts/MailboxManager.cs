@@ -95,25 +95,28 @@ public class MailboxManager : Singleton<MailboxManager>
     [ContextMenu("GenerateMail")]
     void GenerateMail()
     {
-        // if(!(DayNightManager.Instance.CurrentDay % 3 == 0) || !(DayNightManager.Instance.CurrentDay % 4 == 0))
-        //     return;
+        if(!(DayNightManager.Instance.CurrentDay % 3 == 0) || !(DayNightManager.Instance.CurrentDay % 4 == 0))
+            return;
         
         int randomNumber = Random.Range(0, 3);
 
         if(randomNumber == 0)
         {
-            //Update mailbox's state
-            isHavingMail = true;
-            hasCheckedTheMail = false;
-            mailBoxEmpty.SetActive(false);
-            mailBoxHasMailGroup.SetActive(true);
-            mailBoxThinkingBubble.SetActive(true);
-
             //Update request info
             mailRequest = mailRequestList[Random.Range(0, mailRequestList.Count)];
 
-            while(!mailRequest.RequestItem.IsUnlocked)
+            int count = 0;
+            while(!mailRequest.RequestItem.IsUnlocked && count < 10)
+            {
                 mailRequest = mailRequestList[Random.Range(0, mailRequestList.Count)];
+                count++;
+            }
+
+            if(!mailRequest.RequestItem.IsUnlocked)
+            {
+                mailRequest = null;
+                return;
+            }
 
             requestNumber = Random.Range(mailRequest.MinRequestNumber, mailRequest.MaxRequestNumber + 1);
             float randomGoldBuff = Random.Range(1.2f, 1.5f);
@@ -124,6 +127,13 @@ public class MailboxManager : Singleton<MailboxManager>
             signatureText.text = "- " + mailRequest.Signature + " -";
             requestItemImage.sprite = mailRequest.RequestItem.ItemSprite;
             requestNumberText.text = "x" + requestNumber;
+
+            //Update mailbox's state
+            isHavingMail = true;
+            hasCheckedTheMail = false;
+            mailBoxEmpty.SetActive(false);
+            mailBoxHasMailGroup.SetActive(true);
+            mailBoxThinkingBubble.SetActive(true);
         }
     }
 
@@ -174,6 +184,8 @@ public class MailboxManager : Singleton<MailboxManager>
         {
             canOpenMailBox = false;
             mailBoxBorder.SetActive(false);
+            ToggleOffTheMailUI();
+            InventoryManager.Instance.ToggleOffTheInventory();
         }
     }
 }

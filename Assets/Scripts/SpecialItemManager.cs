@@ -33,7 +33,7 @@ public class SpecialItemManager : Singleton<SpecialItemManager>
         {
             Player.Instance.SetInteractingState(false);
             onUseHeartOfMotherland?.Invoke();
-            InventoryManager.Instance.DecreaseItem(specialItem);
+            InventoryManager.Instance.DecreaseItemOnThisSlot(specialItem);
             StartCoroutine(Feedback.Instance.ShowLetter("You have used the HEART OF MOTHERLAND" + "\n\n" + "Trees are blessed with your kindness..."));
         }
 

@@ -48,16 +48,13 @@ public class QuestButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
                         break;
                     }
                     else
-                    {
-                        Feedback.Instance.StartCoroutine(Feedback.Instance.FeedbackTrigger("You don't have enough crops to put in the storage!"));
-                        CameraShake.Instance.ShakeCamera();
-                    }
+                        continue;
                 }
             }
 
-            if(!isHaveCrop)
+            if(!isHaveCrop || count < num)
             {
-                Feedback.Instance.StartCoroutine(Feedback.Instance.FeedbackTrigger("You don't have enough crops to put in the storage!"));
+                Feedback.Instance.StartCoroutine(Feedback.Instance.FeedbackTrigger("You don't have enough materials to put in the storage!"));
                 CameraShake.Instance.ShakeCamera();
             }
         }

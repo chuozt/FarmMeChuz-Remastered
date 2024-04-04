@@ -371,19 +371,25 @@ public class Player : Singleton<Player>
                     tempBoxPosition = ray.collider.transform.position;
                     SetTempBox(true);
                 }
+                else
+                {
+                    tempBoxPosition = ray.collider.transform.position;
+                    SetTempBox(false);
+                }
             }
 
             if(Input.GetMouseButtonDown(0))
             {
-                if(growingCrop != null)
+                if (!growingCrop.IsWatered)
+                {
                     growingCrop.WaterTheCrop();
-                
-                AudioManager.Instance.PlaySFX(waterBucketSFX);
-                ParticleSystem particle = Instantiate(waterParticle, ray.collider.transform.position, Quaternion.identity);
-                particle.transform.position += new Vector3(0,-0.25f,0);
-                particle.Play();
-                
-                Destroy(particle.gameObject, 1);
+                    AudioManager.Instance.PlaySFX(waterBucketSFX);
+                    ParticleSystem particle = Instantiate(waterParticle, ray.collider.transform.position, Quaternion.identity);
+                    particle.transform.position += new Vector3(0,-0.25f,0);
+                    particle.Play();
+                    
+                    Destroy(particle.gameObject, 1);
+                }
             }
         }
         else
@@ -401,7 +407,7 @@ public class Player : Singleton<Player>
                 IncreaseHealth(itemCrop.HealthIncreaseAmount);
                 IncreaseMana(itemCrop.ManaIncreaseAmount);
 
-                InventoryManager.Instance.DecreaseItem(itemCrop);
+                InventoryManager.Instance.DecreaseItemOnThisSlot(itemCrop);
                 isEating = false;
                 eatingTime =  0;
             }
@@ -456,7 +462,7 @@ public class Player : Singleton<Player>
                         plantPos.z = 0;
 
                         Instantiate(itemCropSeed.GrowingCrop, plantPos, Quaternion.identity);
-                        InventoryManager.Instance.DecreaseItem(itemCropSeed);
+                        InventoryManager.Instance.DecreaseItemOnThisSlot(itemCropSeed);
                         anim.SetTrigger("isPlanting");
                         
                         DecreaseMana(1);

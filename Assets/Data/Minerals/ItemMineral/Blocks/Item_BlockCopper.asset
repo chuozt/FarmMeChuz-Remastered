@@ -22,7 +22,7 @@ MonoBehaviour:
   <MaxStackSize>k__BackingField: 16
   <IsFuelResource>k__BackingField: 0
   <FuelAmount>k__BackingField: 0
-  ItemType: 0
+  ItemType: 5
   <CraftingRecipes>k__BackingField:
   - <NeededMaterial>k__BackingField: {fileID: 11400000, guid: 138d35eee39e2004bb497af6e5653b5f, type: 2}
     <NumberOfNeededMaterial>k__BackingField: 2

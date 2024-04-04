@@ -15,7 +15,7 @@ MonoBehaviour:
   <Name>k__BackingField: Wheat
   <ItemSprite>k__BackingField: {fileID: -2244004397112234398, guid: a67bbcdff74e7c242ad7167f4902dd0b, type: 3}
   <Cost>k__BackingField: 0
-  <Value>k__BackingField: 110
+  <Value>k__BackingField: 125
   Descriptions: 'Can be eaten
 
     +10 HP
@@ -27,5 +27,6 @@ MonoBehaviour:
   <IsFuelResource>k__BackingField: 0
   <FuelAmount>k__BackingField: 0
   ItemType: 0
+  <CraftingRecipes>k__BackingField: []
   <HealthIncreaseAmount>k__BackingField: 10
   <ManaIncreaseAmount>k__BackingField: 7

@@ -18,3 +18,8 @@ MonoBehaviour:
   <KnockBackForce>k__BackingField: 5
   <DelayBeforeAttack>k__BackingField: 1.25
   <DelayAfterAttack>k__BackingField: 3
+  <DroppedItem>k__BackingField:
+  - {fileID: 634865929086417314, guid: 4b7dc7e96c05151498cb71c3f27f3de3, type: 3}
+  - {fileID: 3982508382327944435, guid: eaaf74b9c722cdd44842cdb3207c73c9, type: 3}
+  - {fileID: 5282432310339478956, guid: 8c6c94ccd334dd24b986abb545023fcb, type: 3}
+  - {fileID: 2663618756790312542, guid: 854c399b6b5708241874f5411714a8d6, type: 3}

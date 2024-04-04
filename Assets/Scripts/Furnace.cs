@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering.Universal;
 
 public class Furnace : Singleton<Furnace>
 {
@@ -13,6 +14,8 @@ public class Furnace : Singleton<Furnace>
     [SerializeField] private Slider sliderProgress;
     [SerializeField] private Slider sliderFuel;
     [SerializeField] private GameObject furnaceWhiteBorder;
+    [SerializeField] private GameObject furnaceBlast;
+    [SerializeField] private GameObject furnaceLight;
 
     bool canFurnace = false;
     float time = 0;
@@ -31,6 +34,8 @@ public class Furnace : Singleton<Furnace>
         mineralBubble.SetActive(true);
         sliderProgress.value = 0;
         sliderFuel.value = 0;
+        furnaceBlast.SetActive(false);
+        furnaceLight.SetActive(false);
     }
 
     // Update is called once per frame
@@ -48,7 +53,6 @@ public class Furnace : Singleton<Furnace>
                 InventoryManager.Instance.ToggleOffTheInventory();
                 ToggleOffFurnaceUI();
             }
-                
         }
 
         if((fuelSlot.itemInSlot != null || fuelLeft > 0) && inputSlot.itemInSlot != null)
@@ -58,6 +62,8 @@ public class Furnace : Singleton<Furnace>
             mineralBubble.SetActive(false);
             time = 0;
             sliderProgress.value = 0;
+            furnaceBlast.SetActive(false);
+            furnaceLight.SetActive(false);
         }
 
         sliderFuel.value = fuelLeft;
@@ -77,6 +83,11 @@ public class Furnace : Singleton<Furnace>
 
     void StartFurnace()
     {
+        if(!furnaceBlast.activeInHierarchy || !furnaceLight.activeInHierarchy)
+        {
+            furnaceBlast.SetActive(true);
+            furnaceLight.SetActive(true);
+        }
         if(inputSlot.itemInSlot.item.ItemType == ItemType.Mineral)
         {
             ItemMineral itemMineral = (ItemMineral)inputSlot.itemInSlot.item;

@@ -59,7 +59,22 @@ public class EnemyStats : MonoBehaviour
         if(health <= 0)
         {
             Die();
+            StartCoroutine("DropItem");
             AudioManager.Instance.PlaySFX(sfxEnemyDead);
+        }
+    }
+
+    private IEnumerator DropItem()
+    {
+        yield return new WaitForSeconds(0.15f);
+
+        int randomNumber = UnityEngine.Random.Range(0, 3);
+
+        if(randomNumber == 0)
+        {
+            GameObject droppedItem = Instantiate(enemyData.DroppedItem[UnityEngine.Random.Range(0, enemyData.DroppedItem.Count)], transform.position, Quaternion.identity);
+            droppedItem.GetComponent<Rigidbody2D>().AddForce(new Vector2(UnityEngine.Random.Range(-0.75f, 0.75f), 1) * 10, ForceMode2D.Force);
+            Destroy(droppedItem, 120);
         }
     }
 

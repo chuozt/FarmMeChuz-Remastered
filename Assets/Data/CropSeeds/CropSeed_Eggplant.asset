@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: CropSeed_Eggplant
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Eggplant Seed
-  <ItemSprite>k__BackingField: {fileID: -1572852529, guid: 0849bb3b169a05c4dbfa66ae45d3edd3, type: 3}
-  <Cost>k__BackingField: 90
+  <ItemSprite>k__BackingField: {fileID: 551974980, guid: 86ecb2b84dbac8c4f93d7b0a95f97791, type: 3}
+  <Cost>k__BackingField: 95
   <Value>k__BackingField: 0
   Descriptions: 
   <IsUnlocked>k__BackingField: 0
@@ -23,6 +23,7 @@ MonoBehaviour:
   <IsFuelResource>k__BackingField: 0
   <FuelAmount>k__BackingField: 0
   ItemType: 1
+  <CraftingRecipes>k__BackingField: []
   <MinSpawningCrops>k__BackingField: 1
   <MaxSpawningCrops>k__BackingField: 3
   <TimeToGrow>k__BackingField: 72

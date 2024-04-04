@@ -22,4 +22,7 @@ public class Enemy : ScriptableObject
 
     [field: SerializeField]
     public float DelayAfterAttack { get; set; }
+
+    [field: SerializeField]
+    public List<GameObject> DroppedItem { get; set; }
 }

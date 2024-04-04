@@ -32,8 +32,8 @@ public class Singleton<T> : MonoBehaviour where T:Component
         }
         else
         {
-            if(instance != null)
-                Destroy(gameObject);
+            //if(instance != null)
+                //Destroy(gameObject);
         }
     }
 }

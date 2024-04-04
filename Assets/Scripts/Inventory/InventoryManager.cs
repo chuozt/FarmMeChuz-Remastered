@@ -9,6 +9,7 @@ public class InventoryManager : Singleton<InventoryManager>
     public InventorySlot[] inventorySlots;
     [SerializeField] private GameObject inventoryItemPrefab;
     [HideInInspector] public InventoryItem itemInSelectedSlot;
+    private Item newItem;
     private ItemTool itemTool;
     private ItemCrop itemCrop;
     private ItemCropSeed itemCropSeed;
@@ -87,7 +88,7 @@ public class InventoryManager : Singleton<InventoryManager>
     {
         if(QuestManager.Instance.IsOpeningTheQuestUI || ShopManager.Instance.IsOpeningTheShop ||
            CraftingTable.Instance.IsOpeningCraftingTable || Furnace.Instance.IsOpeningTheFurnace || 
-           SpecialItemManager.Instance.IsOpeningTheSpecialPanel)
+           SpecialItemManager.Instance.IsOpeningTheSpecialPanel || MailboxManager.Instance.IsOpeningTheMail)
             return false;
         
         return true;
@@ -203,6 +204,7 @@ public class InventoryManager : Singleton<InventoryManager>
                         HoldingSpecialItems(itemInSelectedSlot.item);
                         break;
                     default:
+                        HoldingItems(itemInSelectedSlot.item);
                         Player.Instance.SetTempBox(false);
                         break;
                 }
@@ -210,6 +212,11 @@ public class InventoryManager : Singleton<InventoryManager>
             else if(itemInSelectedSlot == null)
                 Player.Instance.SetTempBox(false);
         }
+    }
+
+    void HoldingItems(Item item)
+    {
+        
     }
 
     void HoldingTools(Item item)
@@ -283,6 +290,17 @@ public class InventoryManager : Singleton<InventoryManager>
             }
         }
         return false;
+    }
+
+    public void DecreaseItemOnThisSlot(Item item)
+    {
+        InventorySlot slot = inventorySlots[selectedSlot];
+        InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+        if(itemInSlot != null && itemInSlot.item == item && itemInSlot.count > 0)
+        {
+            itemInSlot.count--;
+            itemInSlot.RefreshCount();
+        }
     }
 
     public bool DecreaseItem(Item item)

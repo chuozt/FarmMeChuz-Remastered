@@ -761,7 +761,7 @@ GameObject:
   - component: {fileID: 6875195360148810767}
   - component: {fileID: 6875195360148810764}
   - component: {fileID: 6875195360148810765}
-  - component: {fileID: 118049308330319300}
+  - component: {fileID: 6591897368993161850}
   m_Layer: 5
   m_Name: QuestsArea
   m_TagString: Untagged
@@ -826,7 +826,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &118049308330319300
+--- !u!114 &6591897368993161850
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -839,14 +839,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 14
-    m_Right: 14
-    m_Top: 0
-    m_Bottom: 7
+    m_Left: 10
+    m_Right: 10
+    m_Top: -12
+    m_Bottom: 0
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 40, y: 40}
-  m_Spacing: {x: 10, y: 18}
+  m_CellSize: {x: 55, y: 55}
+  m_Spacing: {x: 10, y: 8}
   m_Constraint: 0
-  m_ConstraintCount: 2
+  m_ConstraintCount: 4

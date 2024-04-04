@@ -25,5 +25,5 @@ MonoBehaviour:
   ItemType: 2
   <CraftingRecipes>k__BackingField: []
   <Output>k__BackingField: {fileID: 11400000, guid: b89636c8ca688b0419182978155fa98a, type: 2}
-  <OutputNumber>k__BackingField: 2
-  <FuelNeed>k__BackingField: 9
+  <OutputNumber>k__BackingField: 1
+  <FuelNeed>k__BackingField: 12

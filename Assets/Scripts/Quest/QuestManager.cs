@@ -37,11 +37,13 @@ public class QuestManager : Singleton<QuestManager>
             {
                 InventoryManager.Instance.ToggleOnTheInventory();
                 ToggleOnTheQuestUI();
+                AudioManager.Instance.PlaySFX(sfxOpenQuest);
             }
             else
             {
                 InventoryManager.Instance.ToggleOffTheInventory();
                 ToggleOffTheQuestUI();
+                AudioManager.Instance.PlaySFX(sfxCloseQuest);
             }
         }
     }
@@ -51,14 +53,12 @@ public class QuestManager : Singleton<QuestManager>
         questUI.SetActive(true);
         isOpeningTheQuestUI = true;
         questScrollbar.value = 1;
-        AudioManager.Instance.PlaySFX(sfxOpenQuest);
     }
 
     private void ToggleOffTheQuestUI()
     {
         questUI.SetActive(false);
         isOpeningTheQuestUI = false;
-        AudioManager.Instance.PlaySFX(sfxCloseQuest);
     }
 
     private void OnTriggerStay2D(Collider2D col) 
