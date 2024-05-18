@@ -13,6 +13,11 @@ public class AudioManager : Singleton<AudioManager>
         sfxSource.PlayOneShot(clip);
     }
 
+    public void PlayBackgroundMusic(AudioClip clip)
+    {
+        musicSource.PlayOneShot(clip);
+    }
+
     public void StopSFX()
     {
         sfxSource.Stop();

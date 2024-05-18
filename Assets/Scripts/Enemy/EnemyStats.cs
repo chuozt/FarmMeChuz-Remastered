@@ -14,6 +14,7 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] private List<AudioClip> sfxEnemyHurtList;
     [SerializeField] private AudioClip sfxEnemyDead;
 
+    public static event Action onEnemyTakenDamage;
     public static event Action<GameObject> onEnemyDie;
 
     float time = 0;
@@ -62,6 +63,8 @@ public class EnemyStats : MonoBehaviour
             StartCoroutine("DropItem");
             AudioManager.Instance.PlaySFX(sfxEnemyDead);
         }
+
+        onEnemyTakenDamage?.Invoke();
     }
 
     private IEnumerator DropItem()

@@ -15,7 +15,6 @@ public class EnemySkeleton : MonoBehaviour
     bool isFighting = false;
     [SerializeField] private float idleTime;
     [SerializeField] private float runningTime;
-    [SerializeField] private float fightingTime;
     [SerializeField] private Transform detectBoxPoint;
     [SerializeField] private Vector2 detectBoxSize;
     [SerializeField] private LayerMask detectLayer;
@@ -37,6 +36,16 @@ public class EnemySkeleton : MonoBehaviour
         enemyStats = GetComponent<EnemyStats>();
         currentIdleTime = Random.Range(0, 1.5f);
         currentRunningTime = Random.Range(0, 1.5f);
+    }
+
+    void OnEnable()
+    {
+        EnemyStats.onEnemyTakenDamage += ResetAttackFlag;
+    }
+
+    void OnDisable()
+    {
+        EnemyStats.onEnemyTakenDamage -= ResetAttackFlag;
     }
 
     void Update()
@@ -80,13 +89,9 @@ public class EnemySkeleton : MonoBehaviour
     void MoveState()
     {
         if(isFacingRight)
-        {
             transform.position += new Vector3(enemyStats.enemyData.Speed, 0, 0) * Time.deltaTime;
-        }
         else if(isFacingLeft)
-        {
             transform.position += new Vector3(-enemyStats.enemyData.Speed, 0, 0) * Time.deltaTime;
-        }
     }
 
     void SetFacingRight()
@@ -170,6 +175,8 @@ public class EnemySkeleton : MonoBehaviour
                     col.GetComponent<Player>().TakeDamage((int)enemyStats.enemyData.Damage, this.transform, enemyStats.enemyData.KnockBackForce);
             }
         }
+
+        currentDelayBeforeAttackTime = 0;
     }
 
     void ResetAttack()
@@ -189,6 +196,11 @@ public class EnemySkeleton : MonoBehaviour
             canFight = true;
             currentDelayAfterAttackTime = 0;
         }
+    }
+
+    void ResetAttackFlag()
+    {
+        currentDelayBeforeAttackTime = 0;
     }
 
     void OnDrawGizmos()

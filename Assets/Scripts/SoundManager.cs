@@ -9,18 +9,21 @@ public class SoundManager : MonoBehaviour
     private bool isPlayingRain = false, isPlayingThunder = false;
 
     [Space(20)]
-    public List<AudioSource> bgm;
+    public List<AudioClip> bgm;
     float t = 0;
     float t2 = 0;
     int randomNum;
 
-    void Start()
-    {
-        randomNum = Random.Range(200, 500);
-    }
+    void Start() => randomNum = Random.Range(400, 500);
 
     // Update is called once per frame
     void Update()
+    {
+        HandleRaining();   
+        HandleBackgroundMusic();
+    }
+
+    void HandleRaining()
     {
         //if isRaining is triggered
         if(rainingSystem.isRaining)
@@ -47,14 +50,20 @@ public class SoundManager : MonoBehaviour
             isPlayingRain = false;
             isPlayingThunder = false;
         }        
-        
+    }
+
+    void HandleBackgroundMusic()
+    {
         t2 = Mathf.MoveTowards(t2, randomNum + 10, Time.deltaTime);
         //play the background music randomly
         if(t2 > randomNum)
         {
-            bgm[Random.Range(0,2)].Play();
+            AudioClip music = bgm[Random.Range(0, bgm.Count)];
+            AudioManager.Instance.PlayBackgroundMusic(music);
+
+            randomNum = Random.Range(250, 350) + (int)music.length;
+            Debug.Log(randomNum + "    " + (int)music.length);
             t2 = 0;
-            randomNum = Random.Range(200, 500);
         }
     }
 }
