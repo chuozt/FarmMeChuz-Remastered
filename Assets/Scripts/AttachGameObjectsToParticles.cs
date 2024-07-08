@@ -10,14 +10,12 @@ public class AttachGameObjectsToParticles : MonoBehaviour
     private List<GameObject> m_Instances = new List<GameObject>();
     private ParticleSystem.Particle[] m_Particles;
 
-    // Start is called before the first frame update
     void Start()
     {
         m_ParticleSystem = GetComponent<ParticleSystem>();
         m_Particles = new ParticleSystem.Particle[m_ParticleSystem.main.maxParticles];
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
         int count = m_ParticleSystem.GetParticles(m_Particles);

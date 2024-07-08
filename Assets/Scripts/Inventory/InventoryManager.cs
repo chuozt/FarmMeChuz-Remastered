@@ -292,7 +292,7 @@ public class InventoryManager : Singleton<InventoryManager>
         return false;
     }
 
-    public void DecreaseItemOnThisSlot(Item item)
+    public void DecreaseItemOnThisSlot(Item item) //Decrease 1 item on the selected slot
     {
         InventorySlot slot = inventorySlots[selectedSlot];
         InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
@@ -320,7 +320,7 @@ public class InventoryManager : Singleton<InventoryManager>
         return false;
     }
 
-    public void DecreaseItem(Item item, int number)
+    public void DecreaseItem(Item item, int number) //Decrease a number of items
     {
         int count = 0;
         
@@ -344,7 +344,7 @@ public class InventoryManager : Singleton<InventoryManager>
         }
     }
 
-    public bool IsFullInventory(Item item)
+    public bool IsFullInventory(Item item) // Check if the inventory is full
     {
         for(int i = 0; i < inventorySlots.Length; i++)
         {
@@ -362,15 +362,14 @@ public class InventoryManager : Singleton<InventoryManager>
         return true;
     }
 
-    public void SpawnNewItem(Item item, InventorySlot slot)
+    public void SpawnNewItem(Item item, InventorySlot slot) //Create new item in the inventory
     {
         GameObject newItemGO = Instantiate(inventoryItemPrefab, slot.transform);
         InventoryItem inventoryItem = newItemGO.GetComponent<InventoryItem>();
         inventoryItem.InitialiseItem(item);
     }
 
-    //Update the tooltips infor when the Player.Instance points at the items in the inventory
-    public void UpdateTooltips(InventoryItem item)
+    public void UpdateTooltips(InventoryItem item) //Update the tooltips infor when the Player.Instance points at the items in the inventory
     {
         if(item != null)
         {
@@ -383,8 +382,7 @@ public class InventoryManager : Singleton<InventoryManager>
             DisableTooltips();
     }
 
-    //Update tooltips infor when the Player.Instance points at quest
-    public void UpdateTooltips(Item item)
+    public void UpdateTooltips(Item item) //Update tooltips infor when the Player.Instance points at quest
     {
         //Update info inside tooltips
         if(item != null)

@@ -11,10 +11,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public InventoryItem itemInSlot;
     public GameObject inventoryItemPrefab;
 
-    private void Awake()
-    {
-        Deselect();
-    }
+    private void Awake() => Deselect();
 
     void Update()
     {
@@ -35,15 +32,9 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }
     }
 
-    public void Select()
-    {
-        image.color = selectedColor;
-    }
+    public void Select() => image.color = selectedColor;
 
-    public void Deselect()
-    {
-        image.color = notSelectedColor;
-    }
+    public void Deselect() => image.color = notSelectedColor;
 
     public void UpdateTheInventoryItemInfo()
     {
@@ -133,9 +124,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                 {
                     //if slot is empty, add all to slot
                     if(itemInSlot == null)
-                    {
                         PlaceItem(itemInSlot);
-                    }
                     //if it is not, and the slot item is the same as the holding item, then add
                     else if(InventoryManager.Instance.currentMouseItem.item == itemInSlot.item)
                     {

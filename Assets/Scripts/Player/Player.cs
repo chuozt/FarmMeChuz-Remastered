@@ -184,8 +184,8 @@ public class Player : Singleton<Player>
         SetTempBox(false);
         if(Input.GetMouseButtonDown(0) && canMine && currentMana > 0)
         {
-            canMove = false;
             anim.SetTrigger("isMining");
+            canMove = false;
             canMine = false;
             isMining = true;
 
@@ -270,8 +270,8 @@ public class Player : Singleton<Player>
         SetTempBox(false);
         if(Input.GetMouseButtonDown(0) && canChop && currentMana > 0)
         {
-            canMove = false;
             anim.SetTrigger("isChopping");
+            canMove = false;
             canChop = false;
             isChopping = true;
 

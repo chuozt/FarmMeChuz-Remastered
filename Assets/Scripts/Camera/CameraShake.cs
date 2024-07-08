@@ -14,15 +14,22 @@ public class CameraShake : Singleton<CameraShake>
 
     [SerializeField] private AudioClip sfxError;
 
-    void Start()
-    {
-        StopShake();
-    }
-
     void Awake()
     {
         cinemachineCamera = GetComponent<CinemachineCamera>();   
         _cbmcp = cinemachineCamera.GetComponent<CinemachineBasicMultiChannelPerlin>(); 
+    }
+
+    void Start() => StopShake();
+
+    void Update()
+    {
+        if(timer > 0)
+        {
+            timer -= Time.deltaTime;
+            if(timer <= 0)
+                StopShake();
+        }
     }
 
     public void ShakeCameraDamagingPlayer(AudioClip audioClip)
@@ -50,15 +57,5 @@ public class CameraShake : Singleton<CameraShake>
     {
         _cbmcp.AmplitudeGain = 0;
         timer = 0;
-    }
-    
-    void Update()
-    {
-        if(timer > 0)
-        {
-            timer -= Time.deltaTime;
-            if(timer <= 0)
-                StopShake();
-        }
     }
 }

@@ -145,6 +145,7 @@ public class CraftingTable : Singleton<CraftingTable>
         output_ItemImage.enabled = true;
         AudioManager.Instance.PlaySFX(sfxShowRecipe);
         
+        //If there is only 1 needed material, get the material's datas and show the recipes
         if(craftingItem.CraftingRecipes.Count == 1)
         {
             neededMaterial1 = craftingItem.CraftingRecipes[0].NeededMaterial;
@@ -155,6 +156,7 @@ public class CraftingTable : Singleton<CraftingTable>
             craftingText1.enabled = true;
             craftingText2.enabled = false;
         }
+        //If there are 2 needed materials, get the materials' datas and show the recipes
         else if(craftingItem.CraftingRecipes.Count == 2)
         {
             neededMaterial1 = craftingItem.CraftingRecipes[0].NeededMaterial;
@@ -173,16 +175,19 @@ public class CraftingTable : Singleton<CraftingTable>
     {
         if(craftingItem == null)
             return;
+        
+        //If the inventory is full, then callback the error
+        if(InventoryManager.Instance.IsFullInventory(craftingItem))
+        {
+            StartCoroutine(Feedback.Instance.FeedbackTrigger("Your inventory is full!"));
+            CameraShake.Instance.ShakeCamera();
+            return;
+        }
 
         //If the recipe only has 1 needed material
         if(craftingItem.CraftingRecipes.Count == 1)
         {
-            if(InventoryManager.Instance.IsFullInventory(craftingItem))
-            {
-                StartCoroutine(Feedback.Instance.FeedbackTrigger("Your inventory is full!"));
-                CameraShake.Instance.ShakeCamera();
-            }
-            
+            //Check if the required number of material is enough
             if(numberOfMaterial1 >= craftingItem.CraftingRecipes[0].NumberOfNeededMaterial)
             {
                 for(int i = 0; i < craftingItem.CraftingRecipes[0].NumberOfNeededMaterial; i++)
@@ -200,12 +205,7 @@ public class CraftingTable : Singleton<CraftingTable>
         //If the recipe has 2 needed materials
         else if(craftingItem.CraftingRecipes.Count == 2)
         {
-            if(InventoryManager.Instance.IsFullInventory(craftingItem))
-            {
-                StartCoroutine(Feedback.Instance.FeedbackTrigger("Your inventory is full!"));
-                CameraShake.Instance.ShakeCamera();
-            }
-
+            //Check if the required number of materials are enough
             if(numberOfMaterial1 >= craftingItem.CraftingRecipes[0].NumberOfNeededMaterial &&
                numberOfMaterial2 >= craftingItem.CraftingRecipes[1].NumberOfNeededMaterial)
             {

@@ -37,6 +37,7 @@ public class PauseManager : Singleton<PauseManager>
         Player.Instance.SetInteractingState(false);
         isOpeningThePauseMenu = true;
         pauseMenu.SetActive(true);
+        AudioManager.Instance.OnPauseAudio();
         Time.timeScale = 0;
     }
 
@@ -47,6 +48,7 @@ public class PauseManager : Singleton<PauseManager>
         pauseMenu.SetActive(false);
         instructionPage.SetActive(false);
         settingsPage.SetActive(false);
+        AudioManager.Instance.OnUnPauseAudio();
         Time.timeScale = 1;
     }
 
@@ -55,6 +57,7 @@ public class PauseManager : Singleton<PauseManager>
         Player.Instance.SetInteractingState(true);
         isOpeningThePauseMenu = false;
         pauseMenu.SetActive(false);
+        AudioManager.Instance.OnUnPauseAudio();
         Time.timeScale = 1;
         AudioManager.Instance.PlaySFX(sfxClick);
     }
